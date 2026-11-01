@@ -1,0 +1,6 @@
+jsonschema[format]==4.23.0
+pytest>=8.3,<9
+testcontainers[postgres]>=4.9,<5
+psycopg[binary]>=3.2,<4
+websockets>=13,<16
+PyJWT>=2.9,<3
