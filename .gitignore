@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+.local/
+data/private/
+artifacts/
+# Model weights are installed from explicit local artifacts, never committed.
+*.onnx
+/warden-th-artifacts/

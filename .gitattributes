@@ -1,0 +1,2 @@
+# Preserve verbatim upstream license/NOTICE text, including original whitespace.
+apps/management-web/public/worldview-local-layers-notices.txt -whitespace
