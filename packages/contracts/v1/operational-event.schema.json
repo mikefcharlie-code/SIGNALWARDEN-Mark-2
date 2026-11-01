@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS operational event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "event_type", "severity", "status", "occurred_at", "received_at", "source", "entity"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "event_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "event_type": {"enum": ["telemetry_stale", "telemetry_duplicate", "telemetry_late", "stream_gap", "camera_stale", "maintenance_watch", "access_conflict", "tracegate_review"]},
+    "severity": {"enum": ["info", "warning", "critical"]},
+    "status": {"enum": ["open", "acknowledged", "resolved"]},
+    "occurred_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "received_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "source": {"enum": ["simulated", "management-api", "telemetry-stream", "tracegate"]},
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {"enum": ["aircraft", "camera", "user", "assignment", "stream", "configuration"]},
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"}
+      }
+    },
+    "correlation_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 500},
+    "attributes": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}}
+  }
+}

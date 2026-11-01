@@ -1,0 +1,177 @@
+# Management API — local reference implementation
+
+This directory contains a dependency-light Python HTTP API for the M1 simulation-first milestone plus an opt-in PostgreSQL persistence implementation. It uses the repository’s JSON Schemas, a repository boundary, and synthetic/read-only boundaries.
+
+**The default is not a production service.** In-memory mode has no durability, authentication/authorization, TLS, rate limiting, device identity, queue, or aircraft connection. PostgreSQL mode adds durable tables and transaction boundaries but is still not production-approved until security, backup/restore, pooling, retention, and source identity are reviewed. No mode exposes an aircraft command route.
+
+## Run locally
+
+From the repository root:
+
+```bash
+.venv/bin/python services/management-api/app.py
+```
+
+Configuration:
+
+```bash
+UCAS_API_HOST=127.0.0.1 UCAS_API_PORT=8000 UCAS_FRESH_AFTER_SECONDS=30 \
+  .venv/bin/python services/management-api/app.py
+```
+
+The default seed aircraft is `sim-ucas-001`. The service binds to loopback by default.
+
+## Real-time telemetry WebSocket stream
+
+The local reference service can publish every telemetry ingestion outcome to a WebSocket listener beside the HTTP API. It is disabled by default. When enabled, JWT authentication and TLS are required unless `UCAS_STREAM_ALLOW_INSECURE=1` is explicitly set for local development:
+
+```bash
+UCAS_STREAM_ENABLED=1 \
+  UCAS_STREAM_JWT_SECRET='use-a-secret-at-least-32-characters-long' \
+  UCAS_STREAM_TLS_CERTFILE=/etc/ucas/tls/server.crt \
+  UCAS_STREAM_TLS_KEYFILE=/etc/ucas/tls/server.key \
+  UCAS_STREAM_HOST=127.0.0.1 UCAS_STREAM_PORT=8765 \
+  .venv/bin/python services/management-api/app.py
+```
+
+Clients connect to `wss://127.0.0.1:8765/ws` and send `Authorization: Bearer <JWT>`. The token must use HS256 and contain `iss`, `aud`, `sub`, `iat`, `nbf`, `exp`, and the `telemetry:read` scope. Configure issuer/audience with `UCAS_STREAM_JWT_ISSUER` and `UCAS_STREAM_JWT_AUDIENCE`. Optional `aircraft_ids` and `sources` claims restrict the token to specific filters. A browser client that cannot set `Authorization` may send the token as a `bearer.<JWT>` WebSocket subprotocol; query-string tokens are rejected to avoid URL/log leakage.
+
+Optional query filters are `aircraft_id` and `source`:
+
+```text
+wss://127.0.0.1:8765/ws?aircraft_id=sim-ucas-001&source=simulated
+```
+
+The first message is a `hello` frame. Telemetry frames use the versioned stream envelope:
+
+```json
+{
+  "type": "telemetry",
+  "event_id": "stream-...",
+  "published_at": "2026-01-01T00:00:01Z",
+  "aircraft_id": "sim-ucas-001",
+  "source": "simulated",
+  "source_id": "local-simulator",
+  "sequence": 1,
+  "sampled_at": "2026-01-01T00:00:00Z",
+  "received_at": "2026-01-01T00:00:01Z",
+  "status": "accepted",
+  "sample": {"schema_version": "1.0", "...": "normalized telemetry"}
+}
+```
+
+Accepted, late, and duplicate outcomes are published; duplicate frames intentionally omit the sample payload. Each subscriber has a bounded queue. If a slow client falls behind, it receives a `stream_gap` frame and must refetch `/api/v1/aircraft/{id}/telemetry/latest` and bounded history before trusting the live view. This is a resynchronization signal, not silent data loss.
+
+TLS uses the configured server certificate/key with TLS 1.2 minimum. Optional mutual TLS is enabled with `UCAS_STREAM_TLS_REQUIRE_CLIENT_CERT=1` and `UCAS_STREAM_TLS_CAFILE=/etc/ucas/tls/clients-ca.crt`. The current implementation is an in-process hub suitable for one local/reference API process. It does not provide cross-process fanout, replay, or durable stream offsets. A multi-instance deployment must replace the hub with an authenticated broker or MQTT topic layer, retain the same event envelope, and define replay/retention semantics before real aircraft data is connected.
+
+## PostgreSQL mode
+
+Install the optional dependency and apply migrations to an empty or approved database:
+
+```bash
+.venv/bin/pip install -r requirements-prod.txt
+UCAS_DATABASE_URL=postgresql://user:password@host:5432/ucas \
+  .venv/bin/python services/management-api/migrate.py
+UCAS_STORAGE=postgres UCAS_DATABASE_URL=postgresql://user:password@host:5432/ucas \
+  .venv/bin/python services/management-api/app.py
+```
+
+The schema and design are documented in [ADR-0002](../../docs/decisions/0002-postgresql-persistence.md). PostgreSQL ingestion commits the ingestion outcome, history row, latest projection update, and evidence event in one transaction. The `telemetry_history.event_key` unique constraint is the database backstop for replay idempotency. `telemetry_latest` is rebuildable and is not the history source of truth.
+
+Do not place `UCAS_DATABASE_URL` in Git, shell history, issue text, or client-side configuration. Use a least-privileged application role and a separate migration role in shared environments.
+
+## Automated tests
+
+The repository uses pytest for the full test runner. Unit/contract tests do not require Docker:
+
+```bash
+.venv/bin/pytest -q -m 'not integration'
+```
+
+The PostgreSQL suite uses Testcontainers to start `postgres:16-alpine`, apply the real migration, and exercise the real `PostgresStore`:
+
+```bash
+.venv/bin/pytest -q -m integration tests/integration/test_postgres_repository.py
+```
+
+Docker must be installed and reachable by the test process. If Docker is unavailable, integration tests skip with an explicit reason rather than pretending they passed. CI runs both test groups on its Docker-capable runner.
+
+The integration suite verifies migration idempotency, schema creation, committed history/latest/outcome/evidence writes, duplicate replay behavior, late-sample projection rules, maintenance persistence/versioning, and rollback when a failure occurs after history insertion.
+
+## Endpoints
+
+All JSON responses use an error envelope such as:
+
+```json
+{"error":{"code":"aircraft_not_found","message":"aircraft_id was not found"}}
+```
+
+Request bodies must be JSON objects no larger than 1,000,000 bytes. Non-standard
+numeric constants (`NaN`, `Infinity`, `-Infinity`), numbers that overflow the
+finite float range, and bodies exceeding the JSON parser's nesting capacity are
+rejected with HTTP 400 and `invalid_json` before any repository writes. Regression
+coverage lives in `tests/test_json_request_validation.py`.
+
+| Method | Route | Purpose |
+|---|---|---|
+| GET | `/health` | Process health; reports selected storage and no aircraft-control path |
+| GET | `/api/v1/aircraft?limit=&cursor=` | Paginated aircraft inventory |
+| POST | `/api/v1/aircraft` | Add an aircraft inventory record |
+| GET | `/api/v1/aircraft/{id}` | Aircraft detail |
+| POST | `/api/v1/telemetry/ingest` | Validate and ingest a telemetry v1 sample; local source header `X-Source-ID` is accepted |
+| GET | `/api/v1/aircraft/{id}/telemetry/latest` | Latest state plus `freshness`, age, source, and sequence |
+| GET | `/api/v1/aircraft/{id}/telemetry?from=&to=&source=&limit=&cursor=` | Bounded, paginated telemetry history |
+| GET | `/api/v1/aircraft/{id}/telemetry/ingestion-status` | Accepted/late/duplicate outcome counts |
+| GET | `/api/v1/aircraft/{id}/evidence?limit=&cursor=` | Synthetic evidence records emitted for accepted/late telemetry |
+| GET | `/api/v1/aircraft/{id}/maintenance?limit=&cursor=` | Paginated maintenance records |
+| POST | `/api/v1/aircraft/{id}/maintenance` | Create a maintenance record |
+| PATCH | `/api/v1/maintenance/{record_id}` | Update summary/status/completion/notes |
+| WebSocket | `/ws?aircraft_id=&source=` on `UCAS_STREAM_PORT` | Filtered live telemetry and ingestion outcomes; opt-in reference stream |
+
+### Telemetry ingestion example
+
+```bash
+curl -sS -X POST http://127.0.0.1:8000/api/v1/telemetry/ingest \
+  -H 'Content-Type: application/json' \
+  -H 'X-Source-ID: local-simulator' \
+  -d @packages/contracts/examples/telemetry.json
+```
+
+The service overwrites `received_at` with its own UTC receipt time. Duplicate event keys are idempotent; a late sample is retained with `late` status but cannot replace a newer latest view. Invalid samples are rejected with HTTP 400. `source=aircraft` is accepted by the contract for testing only; this server does not connect to an aircraft.
+
+### Maintenance example
+
+```bash
+curl -sS -X POST http://127.0.0.1:8000/api/v1/aircraft/sim-ucas-001/maintenance \
+  -H 'Content-Type: application/json' \
+  -d '{"schema_version":"1.0","record_id":"maint-001","summary":"Synthetic inspection","status":"open","created_at":"2026-01-01T00:00:00Z"}'
+```
+
+Both storage modes validate maintenance PATCH requests against the same merged
+record contract before writing. Empty patches, immutable/unknown fields, and
+invalid values return HTTP 400 with `invalid_patch`. Moving to `completed`
+without an existing or supplied completion timestamp generates a UTC timestamp;
+explicit invalid timestamps are rejected. PostgreSQL locks the record during the
+read/validate/update transaction, so rejected patches change neither the record
+nor its version. This does not introduce a reviewed maintenance-state transition
+policy or aircraft-readiness authorization.
+
+## Implementation notes
+
+- `app.py` owns HTTP routing, validation, pagination, freshness projection, and storage selection.
+- `persistence.py` defines the repository boundary and the opt-in `PostgresStore`; `InMemoryStore` remains the default for local simulation/tests.
+- `migrations/001_initial.sql` defines aircraft, source registration, history, ingestion outcomes, latest projection, maintenance, evidence, audit, and migration tables.
+- `tests/integration/test_postgres_repository.py` is the Docker-backed verification suite; it is intentionally separate from the dependency-light unit suite.
+- `services/telemetry_stream/` owns the bounded in-process hub and WebSocket server used by the reference stream.
+- `packages/contracts/v1/` remains the source of truth for payload shape; application rules such as aircraft existence, deduplication, ordering, and freshness are enforced in code.
+- The store separates telemetry history, ingestion outcomes, latest-state calculation, maintenance, and evidence records so a durable implementation can replace it behind the same API.
+- The evidence endpoint is deliberately minimal. Confidence/provenance, communications state, model lifecycle, and mission reconciliation fields from `docs/patent-derived-specifications.md` remain candidate contract extensions, not silently added to v1.
+
+## Next production-hardening work
+
+1. Apply ADR-0002 with PostgreSQL integration tests, pooling, and a tested projection rebuild.
+2. Replace the reference HS256 secret distribution with a managed key/JWKS strategy and rotate keys without downtime.
+3. Add source registration, replay protection, and audit events.
+4. Define rate limits, queue/retry semantics, retention, backup/restore, and observability.
+5. Add contract versions for confidence/provenance, communications, health prediction, and evidence after review.
+6. Replace the local source header with authenticated adapter/device identity only after the controlled lab procedure is approved.

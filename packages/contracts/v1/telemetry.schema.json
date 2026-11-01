@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS telemetry v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "aircraft_id",
+    "timestamp",
+    "received_at",
+    "sequence",
+    "source",
+    "health"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "aircraft_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "enum": [
+        "simulated",
+        "aircraft"
+      ]
+    },
+    "health": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "battery_voltage_v",
+        "battery_percent",
+        "link_quality_percent"
+      ],
+      "properties": {
+        "battery_voltage_v": {
+          "type": "number",
+          "minimum": 0
+        },
+        "battery_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "link_quality_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "temperature_c": {
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "nominal",
+            "warning",
+            "unknown"
+          ]
+        }
+      }
+    }
+  }
+}
