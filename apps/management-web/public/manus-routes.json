@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"Fleet overview"},{"path":"/monitor","title":"Live monitor"},{"path":"/cameras","title":"Camera wall"},{"path":"/training","title":"Training C2"},{"path":"/maintenance","title":"Maintenance"},{"path":"/access","title":"Access management"},{"path":"/roles","title":"Role catalog"},{"path":"/audit","title":"Access audit"}]}
