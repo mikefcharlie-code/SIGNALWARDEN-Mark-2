@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS operational event v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "event_type", "severity", "status", "occurred_at", "received_at", "source", "entity"],
+  "properties": {
+    "schema_version": {"enum": ["1.0", "1.1"]},
+    "event_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "event_type": {"enum": [
+      "telemetry_stale", "telemetry_duplicate", "telemetry_late", "stream_gap", "camera_stale", "maintenance_watch", "access_conflict", "tracegate_review",
+      "telemetry_anomaly", "endurance_forecast", "gnss_integrity", "navigation_consistency", "reliability_assessment",
+      "envelope_window", "change_detected", "change_abstain", "camera_geolocation", "camera_geolocation_abstained",
+      "traffic_contact", "traffic_uncertainty", "track_created", "track_updated", "track_conflict"
+    ]},
+    "severity": {"enum": ["info", "warning", "critical"]},
+    "status": {"enum": ["open", "acknowledged", "resolved"]},
+    "occurred_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "received_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "source": {"enum": ["simulated", "management-api", "telemetry-stream", "tracegate", "warden-local", "local-ai"]},
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {"enum": ["aircraft", "camera", "user", "assignment", "stream", "configuration", "track", "imagery_pair", "airspace_contact"]},
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"}
+      }
+    },
+    "correlation_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,127}$"},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 500},
+    "attributes": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"event_type": {"enum": [
+          "telemetry_anomaly", "endurance_forecast", "gnss_integrity", "navigation_consistency", "reliability_assessment",
+          "envelope_window", "change_detected", "change_abstain", "camera_geolocation", "camera_geolocation_abstained",
+          "traffic_contact", "traffic_uncertainty", "track_created", "track_updated", "track_conflict"
+        ]}},
+        "required": ["event_type"]
+      },
+      "then": {
+        "required": ["attributes"],
+        "properties": {
+          "schema_version": {"const": "1.1"},
+          "source": {"enum": ["warden-local", "local-ai"]},
+          "attributes": {
+            "required": ["advisory_only", "command_issued", "mission_uploaded", "flight_authorized"],
+            "properties": {
+              "advisory_only": {"const": true},
+              "command_issued": {"const": false},
+              "mission_uploaded": {"const": false},
+              "flight_authorized": {"const": false}
+            },
+            "not": {"anyOf": [
+              {"required": ["command"]}, {"required": ["command_payload"]},
+              {"required": ["mission"]}, {"required": ["mission_upload"]},
+              {"required": ["sensor_tasking"]}, {"required": ["effector"]},
+              {"required": ["arm"]}, {"required": ["launch"]},
+              {"required": ["schedule"]}, {"required": ["scheduled"]},
+              {"required": ["flight_authorization"]}, {"required": ["target"]},
+              {"required": ["targeting"]}, {"required": ["threat_score"]},
+              {"required": ["engagement"]}, {"required": ["climb_instruction"]},
+              {"required": ["turn_instruction"]}, {"required": ["avoidance_instruction"]},
+              {"required": ["latitude_deg"]}, {"required": ["longitude_deg"]},
+              {"required": ["absolute_position"]}, {"required": ["corrected_position"]},
+              {"required": ["navigation_solution"]}, {"required": ["nav_solution"]}
+            ]}
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"event_type": {"enum": ["traffic_contact", "traffic_uncertainty"]}},
+        "required": ["event_type"]
+      },
+      "then": {"properties": {"attributes": {"required": ["not_daa"], "properties": {"not_daa": {"const": true}}}}}
+    },
+    {
+      "if": {
+        "properties": {"event_type": {"enum": ["track_created", "track_updated", "track_conflict"]}},
+        "required": ["event_type"]
+      },
+      "then": {
+        "properties": {
+          "attributes": {
+            "not": {"anyOf": [
+              {"required": ["target"]}, {"required": ["targeting"]}, {"required": ["threat_score"]},
+              {"required": ["engagement"]}, {"required": ["mission"]}
+            ]}
+          }
+        }
+      }
+    }
+  ],
+  "description": "Warden events are advisory only. v1.0 event payloads remain valid; Warden event types require explicit no-command, no-mission-upload, and no-flight-authorization flags."
+}

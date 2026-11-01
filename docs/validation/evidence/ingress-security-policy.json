@@ -1,0 +1,332 @@
+{
+  "scope": "Disarmed receive-only unsigned lab ingress policy validation; no provisioned-key firmware signing, hardware, HIL, or flight acceptance",
+  "firmware_runs": [
+    {
+      "family": "px4",
+      "artifact_directory": "artifacts/px4-ingress-policy-validation",
+      "firmware_binary_sha256": "c9bd20a03da4f17b37aff294047242fe339ca7b26d8c46943b636ede07eadc73",
+      "result": {
+        "family": "px4",
+        "firmware_command": [
+          "/tmp/ucas-px4-sitl/build/px4_sitl_default/bin/px4",
+          "-d",
+          "-s",
+          "/tmp/ucas-signing-px4-passive.rcS",
+          "/tmp/ucas-px4-sitl/build/px4_sitl_default/etc",
+          "-w",
+          "/tmp/ucas-signing-px4-work"
+        ],
+        "firmware_cwd": "/tmp/ucas-px4-sitl/build/px4_sitl_default",
+        "ingress_port": 14550,
+        "gateway_port": 39334,
+        "api_url": "http://127.0.0.1:39585",
+        "source": "simulated",
+        "arming_or_control_commands_sent": false,
+        "scope": "passive telemetry pipeline and feed-loss recovery only; not autopilot failsafe",
+        "passed": true,
+        "initial_session": "233faba440b9440d9cad0a234cb11dec",
+        "recovered_session": "87ddf5e013f3441caa3ba58122a54ae0",
+        "loss_effective_heartbeat_age": 3.364516,
+        "counts": {
+          "firmware_datagrams": 721,
+          "UNKNOWN_411": 3,
+          "v2_unsigned_flag": 721,
+          "UNKNOWN_410": 17,
+          "HIGHRES_IMU": 223,
+          "TIMESYNC": 44,
+          "DISTANCE_SENSOR": 44,
+          "LOCAL_POSITION_NED": 125,
+          "ALTITUDE": 42,
+          "ODOMETRY": 125,
+          "VFR_HUD": 42,
+          "EXTENDED_SYS_STATE": 21,
+          "MISSION_CURRENT": 4,
+          "HEARTBEAT": 4,
+          "BATTERY_STATUS": 4,
+          "ESTIMATOR_STATUS": 4,
+          "PING": 4,
+          "SYS_STATUS": 4,
+          "SYSTEM_TIME": 4,
+          "UNKNOWN_8": 4,
+          "UNKNOWN_380": 1,
+          "UNKNOWN_436": 1,
+          "VIBRATION": 1
+        },
+        "gateway_outbound_datagrams": 0
+      },
+      "pcap_gateway_outbound_datagrams": 0,
+      "artifact_sha256": {
+        "firmware-mavlink.raw": "463a87cc3abaf666610aab027c0c889adb4e5fd9636da95b0f5e0b59c4ad8cb2",
+        "tcpdump.log": "6abbb11a25a432ebcd6800e1cfdc0b4c86112fc79ee6b91ee27b9ce81a92b827",
+        "loopback.pcap": "97fc93a6b2997b2fa3d4be35e6764e35eea7379433ca2605ae9ed807d3c06225",
+        "gateway.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gateway.log": "506b47ce31e5b25d35ca61d0bcec4558a257fcbe2a72dacff0890fccfbe052f9",
+        "firmware.log": "273a70c54105afc6e8acd497446edb2b8d21320dfdf3d2ca99110190e1cb27ee",
+        "api-readbacks.json": "36a7ffdde2904f6afe3ca96fb6126f4ee48168d38c0da9799fc83509dfad5554",
+        "firmware-restart.log": "961140599c799e0fb6770b341e774e270fa074acede11da78d1b95569075a5bc",
+        "result.json": "4903531b81c699a6e5d53f9b6306c2d01751619cbff1dafced2316cb322d2a78"
+      },
+      "api_phases": {
+        "initial": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.193084,
+            "battery": 0.193084,
+            "system_status": 0.189084,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "233faba440b9440d9cad0a234cb11dec",
+          "sequence": 0,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "normal": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.15782800000000002,
+            "battery": 0.15782800000000002,
+            "system_status": 0.15382800000000002,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "233faba440b9440d9cad0a234cb11dec",
+          "sequence": 10,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "firmware-stopped": {
+          "connectivity": "stale",
+          "freshness": "stale",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 3.364516,
+            "battery": 3.3635159999999997,
+            "system_status": 3.359516,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "233faba440b9440d9cad0a234cb11dec",
+          "sequence": 17,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "loss-remains-stale": {
+          "connectivity": "stale",
+          "freshness": "stale",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 3.9672469999999995,
+            "battery": 3.966247,
+            "system_status": 3.9622469999999996,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "233faba440b9440d9cad0a234cb11dec",
+          "sequence": 17,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "recovered": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.32426,
+            "battery": 0.32426,
+            "system_status": 0.32426,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "87ddf5e013f3441caa3ba58122a54ae0",
+          "sequence": 18,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        }
+      }
+    },
+    {
+      "family": "ardupilot",
+      "artifact_directory": "artifacts/arducopter-ingress-policy-validation",
+      "firmware_binary_sha256": "0c7e26db576c6fc0c742021e4b1c694a55fc7375bf4041b6a4696c665c53438b",
+      "result": {
+        "family": "ardupilot",
+        "firmware_command": [
+          "/tmp/ucas-ardupilot-sitl/build/sitl/bin/arducopter",
+          "-w",
+          "-M",
+          "quad",
+          "--base-port",
+          "15760",
+          "--serial0=udpclient:127.0.0.1:14581",
+          "--defaults",
+          "/tmp/ucas-ardupilot-sitl/Tools/autotest/default_params/copter.parm,/workspace/ucas-drone-management/scripts/sitl/arducopter-4.7.2-observer.parm"
+        ],
+        "firmware_cwd": "/tmp/ucas-signing-arducopter-work",
+        "ingress_port": 14581,
+        "gateway_port": 54784,
+        "api_url": "http://127.0.0.1:33175",
+        "source": "simulated",
+        "arming_or_control_commands_sent": false,
+        "scope": "passive telemetry pipeline and feed-loss recovery only; not autopilot failsafe",
+        "passed": true,
+        "initial_session": "2497ec79861d42dbb724cb1fac48264b",
+        "recovered_session": "b428967cc7064eaf9b08ee7b017d6f24",
+        "loss_effective_heartbeat_age": 3.708933,
+        "counts": {
+          "firmware_datagrams": 75,
+          "BAD_DATA": 14,
+          "HEARTBEAT": 7,
+          "v2_unsigned_flag": 61,
+          "STATUSTEXT": 5,
+          "UNKNOWN_163": 3,
+          "SYS_STATUS": 3,
+          "POWER_STATUS": 3,
+          "UNKNOWN_152": 3,
+          "NAV_CONTROLLER_OUTPUT": 3,
+          "MISSION_CURRENT": 3,
+          "GPS_RAW_INT": 3,
+          "SYSTEM_TIME": 3,
+          "TERRAIN_REPORT": 3,
+          "VIBRATION": 2,
+          "BATTERY_STATUS": 2,
+          "ATTITUDE": 5,
+          "GLOBAL_POSITION_INT": 5,
+          "UNKNOWN_164": 5,
+          "TERRAIN_REQUEST": 2,
+          "UNKNOWN_193": 1
+        },
+        "gateway_outbound_datagrams": 0
+      },
+      "pcap_gateway_outbound_datagrams": 0,
+      "artifact_sha256": {
+        "firmware-mavlink.raw": "a640fde62f2e8bcf592e21fd3e6daa7d987fae843b51fc40d808d2b2f3a9e400",
+        "tcpdump.log": "30d7e73d8914be4330e096ecf9b8b942689b69e3eeaee4dfb8ff8b06638be7c0",
+        "loopback.pcap": "c3ca382cac6fdb802c624efb4d5b199841884fe5179837b7a23e65d6103db825",
+        "gateway.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gateway.log": "506b47ce31e5b25d35ca61d0bcec4558a257fcbe2a72dacff0890fccfbe052f9",
+        "firmware.log": "097e425c9c6a73630b5e12754291144e864209522a9bfdfe37f195f35b121f8c",
+        "api-readbacks.json": "d6b6cc24cdbea955c64ea5965c6aaaedd35d7315592022dc4fbb680d8dd64dfa",
+        "firmware-restart.log": "60edf9ad40c8f5598406622a53f6d5b88f8e1f19b4cad839dc9cf9ad7af40690",
+        "result.json": "0afecf6971029e0a3a3af91fff1adc1ea0adf863e40f7341e6d4587478d7c2a1"
+      },
+      "api_phases": {
+        "initial": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.485705,
+            "battery": null,
+            "system_status": null,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "2497ec79861d42dbb724cb1fac48264b",
+          "sequence": 0,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "normal": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.502906,
+            "battery": 0.49690599999999996,
+            "system_status": 0.502906,
+            "position": 0.129906,
+            "attitude": 0.129906,
+            "gps": 0.49690599999999996
+          },
+          "session_id": "2497ec79861d42dbb724cb1fac48264b",
+          "sequence": 7,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "firmware-stopped": {
+          "connectivity": "stale",
+          "freshness": "stale",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 3.708933,
+            "battery": 3.702933,
+            "system_status": 3.2079329999999997,
+            "position": 3.335933,
+            "attitude": 3.335933,
+            "gps": 3.203933
+          },
+          "session_id": "2497ec79861d42dbb724cb1fac48264b",
+          "sequence": 12,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "loss-remains-stale": {
+          "connectivity": "stale",
+          "freshness": "stale",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 4.311559,
+            "battery": 4.305559,
+            "system_status": 3.8105589999999996,
+            "position": 3.9385589999999997,
+            "attitude": 3.9385589999999997,
+            "gps": 3.806559
+          },
+          "session_id": "2497ec79861d42dbb724cb1fac48264b",
+          "sequence": 12,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        },
+        "recovered": {
+          "connectivity": "live",
+          "freshness": "fresh",
+          "telemetry_trust": "untrusted",
+          "flight_ready": false,
+          "effective_ages": {
+            "heartbeat": 0.253806,
+            "battery": null,
+            "system_status": null,
+            "position": null,
+            "attitude": null,
+            "gps": null
+          },
+          "session_id": "b428967cc7064eaf9b08ee7b017d6f24",
+          "sequence": 13,
+          "armed": false,
+          "ingress_policy": "unauthenticated"
+        }
+      }
+    }
+  ],
+  "validated_source_sha256": {
+    "services/aircraft_gateway/security.py": "89208cac9408d9e641cc909b52a412f965a822d7666021528022a3377518ac10",
+    "services/aircraft_gateway/runner.py": "1d719b758cca603df397a7851391feddd54a3fd655552d8b185998f30a595689",
+    "services/management-api/publisher_auth.py": "35ba7a90e62cb8c49fc551ecedcdd68641a04e7cec4f0335d3b99abdb3981c96",
+    "services/management-api/app.py": "08bd2c5d87b0712e5ba15eb3484af6efd4a559b14df59be0468e4b403298094b",
+    "services/management-api/persistence.py": "96fb9acf97028d52f223436bbfc44c941ba9be3ed3a22c872d83d4d4737c3002",
+    "services/management-api/telemetry_policy.py": "7be922e6681ac50cb6f0a6e15403a12b5279860b3ffc9b9051973a70ecbc5856",
+    "scripts/validate_passive_pipeline.py": "62d0ca403b3a8753484f7748d5a480dffa1bd8337a342e0a1320ebce5335c4a6",
+    "packages/contracts/v1/telemetry.schema.json": "52c77d680a3814a836dd047dfed2c3a8da4dc34528deede598eac6576d49722b",
+    "requirements-aircraft.txt": "f0acc2a629fab4d3db22fe0f714ff864ecd00abfa1bf4fe303cf4928f667ff7e"
+  }
+}
