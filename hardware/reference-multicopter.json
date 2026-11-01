@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "reference_id": "pixhawk6c-quadrotor-read-only-v1",
+  "status": "reference_only_not_validated",
+  "owner_hardware_confirmed": false,
+  "flight_ready": false,
+  "runtime_consumed": false,
+  "reference_checked_on": "2026-10-22",
+  "vehicle": {
+    "category": "multicopter",
+    "type": "quadrotor",
+    "frame_geometry": null,
+    "propulsion_and_power": null
+  },
+  "flight_controller": {
+    "manufacturer": "Holybro",
+    "model": "Pixhawk 6C",
+    "hardware_revision": null,
+    "serial_port": "TELEM2",
+    "uart": "UART5",
+    "rts_cts_pins_available": true,
+    "companion_device_path": null,
+    "baud": null,
+    "flow_control_policy": null,
+    "wiring_verified": false,
+    "telem2_wiring_reference": {
+      "source_ids": [
+        "holybro_ports"
+      ],
+      "pin_numbering": "Verify connector orientation against the manufacturer diagram for the specific board revision.",
+      "pins": [
+        {
+          "pin": 1,
+          "signal": "VCC",
+          "voltage_v": 5.0
+        },
+        {
+          "pin": 2,
+          "signal": "UART5_TX",
+          "direction": "out",
+          "voltage_v": 3.3
+        },
+        {
+          "pin": 3,
+          "signal": "UART5_RX",
+          "direction": "in",
+          "voltage_v": 3.3
+        },
+        {
+          "pin": 4,
+          "signal": "UART5_CTS",
+          "direction": "in",
+          "voltage_v": 3.3
+        },
+        {
+          "pin": 5,
+          "signal": "UART5_RTS",
+          "direction": "out",
+          "voltage_v": 3.3
+        },
+        {
+          "pin": 6,
+          "signal": "GND",
+          "voltage_v": 0.0
+        }
+      ],
+      "warnings": [
+        "Verify companion UART voltage compatibility and power/current requirements before connecting VCC; never assume the +5 V pin can power an onboard computer.",
+        "Review board supply limits, companion startup/peak demand, back-powering and approved power arrangement; leave VCC unconnected until verified.",
+        "UART signals are 3.3 V, not 5 V logic or RS-232 levels.",
+        "Match TX to RX and common GND; telemetry-only receive wiring does not require companion TX to flight-controller RX.",
+        "Use CTS/RTS only when both sides support and are configured for hardware flow control: controller CTS to companion RTS, controller RTS to companion CTS.",
+        "Otherwise leave CTS/RTS disconnected and explicitly review no-flow-control settings at both endpoints; pin availability does not prove support in the gateway.",
+        "Opening a serial device may change DTR/line states; no physical one-way isolation or electrical validation is established."
+      ]
+    }
+  },
+  "autopilot_alternatives": [
+    {
+      "family": "px4",
+      "product": "PX4",
+      "reference_version": "1.17.0",
+      "upstream_status": "official published non-draft non-prerelease release",
+      "board_target": "px4_fmu-v6c_default",
+      "flight_controller_serial_device": "/dev/ttyS3",
+      "port_role": "TELEM2 documented as default onboard/companion MAVLink port",
+      "gateway_observation_example": [
+        "--connection",
+        "udpin:127.0.0.1:14540",
+        "--aircraft-id",
+        "sitl-x500-001",
+        "--autopilot",
+        "px4",
+        "--system-id",
+        "1",
+        "--component-id",
+        "1",
+        "--source",
+        "simulated",
+        "--stdout",
+        "--max-samples",
+        "10"
+      ],
+      "source_ids": [
+        "px4_board",
+        "px4_release",
+        "px4_artifact",
+        "px4_serial",
+        "px4_mavlink"
+      ],
+      "telem2_profile_example": {
+        "documentation_only": true,
+        "inspected_on_owner_hardware": false,
+        "basis": "Usual PX4 companion-port defaults in upstream main documentation; inspect specific board revision, installed firmware, port ownership and saved parameters.",
+        "parameters": {
+          "MAV_1_CONFIG": "TELEM 2",
+          "MAV_1_MODE": "Onboard",
+          "MAV_1_RATE": 0,
+          "MAV_1_FORWARD": "Disabled",
+          "SER_TEL2_BAUD": 921600
+        },
+        "companion_baud": 921600,
+        "caveats": [
+          "MAV_1_RATE=0 means half the theoretical maximum bytes/second, not serial baud or zero traffic.",
+          "Select the serial port and reboot to expose parameters, then set baud/profile; reboot where required and inspect saved values.",
+          "Match companion/router baud explicitly; hardware, adapter and link capacity may require a different mutually supported rate.",
+          "Inspect MAV_1_FLOW_CTRL against installed firmware and wiring; no RTS/CTS value is selected by this example.",
+          "Gateway CLI exposes --baud but no RTS/CTS flag; firmware settings alone do not establish end-to-end flow-control support.",
+          "MAV_1_FORWARD=Disabled is not physical one-way isolation."
+        ],
+        "source_ids": [
+          "px4_mavlink",
+          "px4_serial"
+        ]
+      }
+    },
+    {
+      "family": "ardupilot",
+      "product": "ArduCopter",
+      "reference_version": "4.7.2",
+      "upstream_status": "stable/official multicopter release",
+      "board_target": "Pixhawk6C",
+      "serial_parameter_prefix": "SERIAL2",
+      "port_role": "SERIAL2 maps to UART5/TELEM2 with RTS/CTS pins",
+      "gateway_observation_example": [
+        "--connection",
+        "udpin:127.0.0.1:14551",
+        "--aircraft-id",
+        "sitl-quad-001",
+        "--autopilot",
+        "ardupilot",
+        "--system-id",
+        "1",
+        "--component-id",
+        "1",
+        "--source",
+        "simulated",
+        "--stdout",
+        "--max-samples",
+        "10"
+      ],
+      "source_ids": [
+        "ardupilot_board",
+        "ardupilot_release",
+        "ardupilot_firmware_version",
+        "ardupilot_telemetry",
+        "ardupilot_serial_options",
+        "ardupilot_parameters"
+      ],
+      "telem2_profile_example": {
+        "documentation_only": true,
+        "inspected_on_owner_hardware": false,
+        "basis": "SERIAL2 maps to UART5/TELEM2 on Pixhawk 6C only; baud is an explicitly chosen illustration, not an asserted firmware default.",
+        "parameters": {
+          "SERIAL2_PROTOCOL": 2,
+          "SERIAL2_BAUD": 115,
+          "BRD_SER2_RTSCTS": 0
+        },
+        "companion_baud": 115200,
+        "caveats": [
+          "SERIAL2_PROTOCOL=2 explicitly selects MAVLink2; general telemetry defaults may be MAVLink1. MAVLink2 alone does not provision or enable signing.",
+          "Official parameter metadata encodes SERIAL2_BAUD=115 as 115200 baud and 921 as 921600 baud; inspect the installed firmware metadata.",
+          "Do not assume ArduCopter baud defaults equal PX4 defaults or the gateway CLI default; set matching rates explicitly at both endpoints.",
+          "BRD_SER2_RTSCTS=0 is the no-flow-control example only; 1 Enabled and 2 Auto require reviewed compatible peer configuration and CTS/RTS wiring.",
+          "Reboot where required by firmware metadata after protocol/flow-control changes and inspect saved values.",
+          "Logical serial numbering is board-specific; stream indices do not necessarily match SERIALx numbers.",
+          "The receiver requires active firmware-side streams and exposes no RTS/CTS configuration flag."
+        ],
+        "source_ids": [
+          "ardupilot_board",
+          "ardupilot_telemetry",
+          "ardupilot_serial_options",
+          "ardupilot_parameters"
+        ]
+      }
+    }
+  ],
+  "safety": {
+    "gateway_mavlink_transmit": false,
+    "automatic_parameter_application": false,
+    "firmware_installation_performed": false,
+    "signatures_verified_by_gateway": false,
+    "system_and_component_ids_are_placeholders": true,
+    "simulator_or_router_start_required_separately": true
+  },
+  "validation": {
+    "sitl": "not_run",
+    "bench": "not_run",
+    "hil": "not_run",
+    "flight": "not_run"
+  },
+  "sources": {
+    "px4_board": "https://docs.px4.io/main/en/flight_controller/pixhawk6c",
+    "px4_release": "https://github.com/PX4/PX4-Autopilot/releases/tag/v1.17.0",
+    "px4_artifact": "https://github.com/PX4/PX4-Autopilot/releases/download/v1.17.0/px4_fmu-v6c_default.px4",
+    "px4_serial": "https://docs.px4.io/main/en/peripherals/serial_configuration",
+    "ardupilot_board": "https://ardupilot.org/copter/docs/common-holybro-pixhawk6C.html",
+    "ardupilot_release": "https://discuss.ardupilot.org/t/copter-4-7-2-released/145800",
+    "ardupilot_firmware_version": "https://firmware.ardupilot.org/Copter/stable/Pixhawk6C/firmware-version.txt",
+    "px4_mavlink": "https://docs.px4.io/main/en/peripherals/mavlink_peripherals",
+    "ardupilot_telemetry": "https://ardupilot.org/copter/docs/common-telemetry-port-setup.html",
+    "ardupilot_serial_options": "https://ardupilot.org/copter/docs/common-serial-options.html",
+    "ardupilot_parameters": "https://ardupilot.org/copter/docs/parameters.html",
+    "holybro_ports": "https://docs.holybro.com/autopilot/pixhawk-6c/pixhawk-6c-ports"
+  },
+  "reference_scope": "Cross-stack Pixhawk 6C quadrotor example, not confirmed owner hardware; inspect against the specific board revision and installed firmware. No hardware changes or safety certification."
+}
