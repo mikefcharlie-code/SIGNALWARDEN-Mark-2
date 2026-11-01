@@ -1,0 +1,36 @@
+{
+  "name": "ucas-management-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "licenses:check": "node scripts/library-notices.mjs --check"
+  },
+  "dependencies": {
+    "@turf/boolean-intersects": "7.4.0",
+    "@turf/distance": "7.4.0",
+    "@turf/helpers": "7.4.0",
+    "@vitejs/plugin-react": "4.7.0",
+    "geotiff": "3.0.5",
+    "h3-js": "4.5.0",
+    "proj4": "2.22.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "satellite.js": "6.0.2",
+    "three": "0.186.1",
+    "typescript": "5.9.3",
+    "uplot": "1.6.32",
+    "vite": "6.4.4"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0"
+  }
+}

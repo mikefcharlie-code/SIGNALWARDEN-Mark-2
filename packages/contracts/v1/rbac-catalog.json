@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS RBAC catalog v1",
+  "schema_version": "1.0",
+  "permissions": [
+    {"id": "aircraft.read", "description": "List and view assigned aircraft identity and lifecycle"},
+    {"id": "telemetry.latest.read", "description": "Read current state and freshness for assigned aircraft"},
+    {"id": "telemetry.history.read", "description": "Read bounded historical telemetry"},
+    {"id": "telemetry.stream.read", "description": "Subscribe to live telemetry for assigned aircraft and source"},
+    {"id": "evidence.read", "description": "Read evidence and provenance references"},
+    {"id": "maintenance.read", "description": "Read maintenance records"},
+    {"id": "maintenance.write", "description": "Create and update maintenance records"},
+    {"id": "operations.annotation.write", "description": "Add operational notes and annotations"},
+    {"id": "incident.read", "description": "Read incident records"},
+    {"id": "incident.write", "description": "Create and update incident records"},
+    {"id": "users.read", "description": "View non-secret user directory fields"},
+    {"id": "users.invite", "description": "Invite a user into the organization"},
+    {"id": "users.suspend", "description": "Suspend or reinstate a user account"},
+    {"id": "roles.read", "description": "View role definitions and permission descriptions"},
+    {"id": "assignments.read", "description": "View role assignments and effective access"},
+    {"id": "assignments.write", "description": "Grant, update, expire, or revoke assignments"},
+    {"id": "audit.access.read", "description": "Read access-policy and authentication audit events"},
+    {"id": "system.configuration.write", "description": "Change reviewed management-system configuration; never aircraft-control configuration"}
+  ],
+  "roles": [
+    {
+      "id": "telemetry-viewer",
+      "display_name": "Telemetry Viewer",
+      "immutable": true,
+      "permissions": ["aircraft.read", "telemetry.latest.read", "telemetry.history.read", "telemetry.stream.read", "evidence.read", "maintenance.read"]
+    },
+    {
+      "id": "drone-operator",
+      "display_name": "Drone Operator",
+      "immutable": true,
+      "permissions": ["aircraft.read", "telemetry.latest.read", "telemetry.history.read", "telemetry.stream.read", "evidence.read", "maintenance.read", "maintenance.write", "operations.annotation.write", "incident.read", "incident.write"]
+    },
+    {
+      "id": "access-administrator",
+      "display_name": "Access Administrator",
+      "immutable": true,
+      "permissions": ["users.read", "users.invite", "users.suspend", "roles.read", "assignments.read", "assignments.write", "audit.access.read"]
+    },
+    {
+      "id": "system-administrator",
+      "display_name": "System Administrator",
+      "immutable": true,
+      "permissions": ["users.read", "users.invite", "users.suspend", "roles.read", "assignments.read", "assignments.write", "audit.access.read", "system.configuration.write"]
+    }
+  ],
+  "forbidden_permission_prefixes": ["aircraft.command.", "mission.write", "autonomy.authorize", "device.credentials.read"]
+}

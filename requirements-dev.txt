@@ -1,0 +1,9 @@
+jsonschema[format]==4.23.0
+pytest>=8.3,<9
+psycopg[binary]>=3.2,<4
+websockets>=13,<16
+PyJWT>=2.9,<3
+pillow==11.3.0
+numpy==2.2.6
+imageio==2.37.0
+imageio-ffmpeg==0.6.0

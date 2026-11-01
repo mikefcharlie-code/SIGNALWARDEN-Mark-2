@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "model_id": "warden-nav-synthetic-linear-v1",
+  "artifact_file": "warden-nav.onnx",
+  "sha256": "f482bef16df871e090f9844cf9dfe7b9bd1559d7625c0483f808c0cfcd63ead0",
+  "size_bytes": 1489,
+  "calibration_file": "calibration.json",
+  "calibration_sha256": "9be4f31f24bd65a35f5a63a391c56772fa1c968fb4b8514b4d66b31d88af871c",
+  "calibration_size_bytes": 6592,
+  "runtime": "onnxruntime-cpu",
+  "runtime_package": "onnxruntime==1.31.1",
+  "format": "onnx",
+  "license": "NOASSERTION",
+  "distribution": "local-only",
+  "source_url": "local://warden-nav-synthetic",
+  "weights_in_git": false,
+  "automatic_download": false,
+  "synthetic_only": true,
+  "architecture": "43-feature linear softmax head; separate deterministic residual baseline; local CPU ONNX only",
+  "training": {
+    "data_source": "seeded-project-synthetic-scenarios-only",
+    "train_scenarios": 10,
+    "training_seed_range": [0, 23],
+    "calibration_seed_range": [20000, 20049],
+    "evaluation_seed_range": [10000, 10019],
+    "airframe_classes": ["multicopter-light", "multicopter-heavy", "fixed-wing-lab"],
+    "training_windows": 720,
+    "nominal_calibration_windows": 300,
+    "evaluation_windows": 600,
+    "external_ai_used": false,
+    "private_or_public_operational_data_used": false
+  },
+  "metrics_label": "synthetic/SITL-development evidence only; not operational validation",
+  "synthetic_evaluation": {
+    "dataset": "seeded-project-synthetic-only",
+    "status": "development-evidence-not-operational-validation",
+    "evaluation_window_count": 600,
+    "baseline_thresholds": {
+      "true_positive": 466,
+      "false_positive": 0,
+      "false_negative": 14,
+      "true_negative": 120,
+      "precision": 1.0,
+      "recall": 0.970833,
+      "f1": 0.985201,
+      "coverage": 1.0
+    },
+    "learned_head": {
+      "true_positive": 396,
+      "false_positive": 0,
+      "false_negative": 84,
+      "true_negative": 120,
+      "precision": 1.0,
+      "recall": 0.825,
+      "f1": 0.90411,
+      "coverage": 1.0
+    },
+    "learned_pattern_accuracy_when_anomaly_detected": 0.954545,
+    "baseline_false_alerts_per_nominal_flight_hour": 0.0,
+    "learned_false_alerts_per_nominal_flight_hour": 0.0,
+    "synthetic_hard_negative_false_alerts": 0,
+    "synthetic_ood_abstentions": 0,
+    "learned_confusion_matrix": {
+      "jamming_like_pattern": {
+        "abstain": 0,
+        "jamming_like_pattern": 60,
+        "nominal": 0,
+        "sensor_estimator_glitch": 0,
+        "spoofing_like_pattern": 0
+      },
+      "nominal": {
+        "abstain": 0,
+        "jamming_like_pattern": 0,
+        "nominal": 120,
+        "sensor_estimator_glitch": 0,
+        "spoofing_like_pattern": 0
+      },
+      "sensor_estimator_glitch": {
+        "abstain": 0,
+        "jamming_like_pattern": 0,
+        "nominal": 42,
+        "sensor_estimator_glitch": 182,
+        "spoofing_like_pattern": 16
+      },
+      "spoofing_like_pattern": {
+        "abstain": 0,
+        "jamming_like_pattern": 0,
+        "nominal": 42,
+        "sensor_estimator_glitch": 2,
+        "spoofing_like_pattern": 136
+      }
+    },
+    "limitations": [
+      "Seeded synthetic telemetry only; not live, flight, SITL, or operational validation.",
+      "Pattern labels describe telemetry resemblance, never RF source, intent, location, or ground truth position.",
+      "Synthetic scenario families and thresholds are not representative or license-reviewed field data.",
+      "The learned head has lower synthetic anomaly recall than the deterministic baseline."
+    ]
+  }
+}

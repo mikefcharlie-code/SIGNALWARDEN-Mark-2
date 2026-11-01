@@ -1,0 +1,50 @@
+name: Foundation checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts-and-simulator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
+            requirements-aircraft.txt
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt -r requirements-aircraft.txt
+      - name: Run Docker-free Python test suite
+        run: pytest -q
+
+  management-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/management-web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.12.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: apps/management-web/pnpm-lock.yaml
+      - name: Install frontend dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Test fleet explorer utilities
+        run: pnpm test
+      - name: Typecheck management UI
+        run: pnpm typecheck
+      - name: Build management UI
+        run: pnpm build
