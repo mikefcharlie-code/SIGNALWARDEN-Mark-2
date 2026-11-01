@@ -1,0 +1,43 @@
+SignalWarden AI — Public SAR imagery source and licensing notices
+
+Source: Copernicus Sentinel-1 GRD_HD metadata and provider browse images retrieved through NASA's Alaska Satellite Facility Distributed Active Archive Center (ASF DAAC).
+ASF Search API: https://api.daac.asf.alaska.edu/services/search/param
+API reference: https://docs.asf.alaska.edu/api/keywords/
+ASF data access: https://www.earthdata.nasa.gov/data/tools/asf-searchapi
+Full product access: https://docs.asf.alaska.edu/asf_search/downloading/
+
+Data terms (not a software license): Legal notice on the use of Copernicus Sentinel Data and Service Information.
+https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice
+Official terms reference: https://dataspace.copernicus.eu/terms-and-conditions
+
+The legal notice provides free, full and open access and permits lawful reproduction, distribution, communication to the public, adaptation, modification, and combination. It does not provide express or implied warranties, including quality or suitability for any purpose; conditions, waiver of damage claims, and possible access limitations remain as stated in the official notice. Do not assume other content on provider portals has the Sentinel data license.
+
+Required source attribution is displayed per acquisition year:
+"Copernicus Sentinel data [Year]" for Sentinel data.
+"Contains modified Copernicus Sentinel data [Year]" where adapted/modified.
+This application uses the latter notice for reduced-resolution provider-generated browse imagery, followed by "provider browse image and metadata retrieved from ASF DAAC". The actual acquisition year comes from the source timestamp, not the retrieval year. SignalWarden AI does not claim ownership of Sentinel imagery, imply NASA/ASF copyright over underlying Copernicus data, or imply provider endorsement.
+
+Access distinction: public catalog searches and reduced-resolution browse previews require no embedded login or API key. Full scientific product downloads from ASF require a free NASA Earthdata Login account and separate authorized tooling; this application does not download full products. Provider access conditions may change and failures are shown rather than bypassed.
+
+Browse delivery: ASF's public catalog currently points to datapool.asf.alaska.edu/BROWSE/{SA,SB,SC,SD}/<Sentinel-1 product>.jpg. A disabled-by-default local relay follows only validated redirects to sentinel1.asf.alaska.edu and the specifically verified ASF CloudFront delivery distribution and image-bucket path. Provider-issued short-lived delivery query strings remain internal to one request; they are not credentials embedded in source code, stored, logged, or returned to the browser. Unknown redirect hosts/paths fail. No general-purpose URL proxy is exposed. The server requires UCAS_PUBLIC_SAR_ENABLED=1 as well as the explicit browser opt-in and Preview action.
+
+No new third-party software dependency is added by the SAR feature. Existing runtime/development versions are exact-pinned in package.json and pnpm-lock.yaml. Existing software notices remain at /worldview-software-notices.txt, /offline-library-notices.txt, and /worldview-local-layers-notices.txt. Data terms above are separate from those software licenses.
+
+Interpretation: these are actual provider browse images, not generated/synthetic evidence, not live video, not calibrated full-resolution data, not verified ground truth, and not georeferenced raster overlays. The local map renders catalog footprints only. Speckle, viewing geometry, shadow/layover, polarization, processing, acquisition scheduling, and archive latency affect interpretation. No aircraft command or autonomous decision path is connected.
+
+ADDITIONAL INDEPENDENT SOURCE: UMBRA OPEN DATA
+Provider/attribution party: Umbra Lab Inc (Umbra Space).
+Official program: https://umbra.space/open-data/
+Dataset access/license statement: https://registry.opendata.aws/umbra-open-data/
+Data license specified by the registry and checked STAC item: Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
+Verified anonymous HTTPS bucket REST origin: https://umbra-open-data-catalog.s3.us-west-2.amazonaws.com/
+
+The dataset-level registry explicitly names CC BY 4.0, and the inspected public STAC item independently declares CC-BY-4.0. Umbra's open-data page alone says only Creative Commons. The registry's Umbra open-license link currently resolves to generic website Terms of Use, not the CC data-license text; that mismatch remains disclosed and is not represented as a verified matching copy of the data license. The ordinary vendor metadata sidecar may omit a per-object license; the UI labels the dataset-level registry evidence rather than inventing a license field.
+
+Attribution displayed: Umbra Lab Inc — CC BY 4.0, with access date, original metadata/data object links, source collect/task IDs, and separate acquisition times. The preview is a locally decoded, reduced-resolution overview of actual source GeoTIFF pixels with a documented grayscale/logarithmic contrast stretch; this display modification is identified, not presented as unchanged calibrated data. Source file data is not generated, replaced, or uploaded. No endorsement is implied. CC BY requires appropriate credit, a license link, and indication of changes, and prohibits imposing additional legal/technical restrictions on licensed freedoms. Warranties and other applicable rights remain as in the legal code; this notice is not legal advice.
+
+The supplied HTTP S3 website is not used by the app. Only the independently verified HTTPS S3 REST origin is allowed. Public searches are bounded, manually requested directory listings of actual object keys, not an invented STAC search service. The checked historical STAC index has empty asset links, so those are not guessed or silently repaired. Full scientific products can be hundreds of megabytes or gigabytes. Preview never falls back to downloading the full file, an alternative provider, or synthetic pixels; missing/unsupported safe overviews fail visibly. Explicit original-object links are separate potentially large downloads. No AWS account/API key is embedded or needed for the verified public objects.
+
+Source-file ground resolution, preview dimensions, acquisition time, metadata lifecycle time, object last-modification, processing time, and publication time are different facts. Unknown fields remain unknown. All imagery retains the same speckle, geometry, processing and dataset-latency limitations, with no ground-truth or present-condition guarantee. Source choice does not authorize aircraft commands or autonomous decisions.

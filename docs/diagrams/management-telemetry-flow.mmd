@@ -1,0 +1,34 @@
+flowchart LR
+    SIM["Synthetic simulator<br/>M1 deterministic"]
+    ADAPTER["Read-only aircraft adapter<br/>M2 reviewed lab path"]
+    INGEST["Telemetry ingestion service<br/>authenticate • stamp receipt<br/>validate • normalize • dedupe<br/>order-check • classify"]
+    HISTORY[("Telemetry history<br/>accepted samples + outcomes")]
+    LATEST[("Latest-state projection<br/>one current view per aircraft")]
+    API["Management API<br/>versioned queries • authz<br/>freshness projection • audit"]
+    UI["Management UI<br/>fleet • detail • history<br/>maintenance • data status"]
+    INVENTORY[("Aircraft inventory<br/>source registrations")]
+    MAINT[("Maintenance + audit<br/>human-managed records")]
+    OPS["Operators / maintainers"]
+
+    SIM -->|synthetic telemetry v1| INGEST
+    ADAPTER -->|normalized read-only telemetry v1| INGEST
+    INGEST -->|accepted samples + outcomes| HISTORY
+    INGEST -->|current sample if ordering rule permits| LATEST
+    HISTORY --> API
+    LATEST --> API
+    INVENTORY <--> API
+    MAINT <--> API
+    API -->|HTTPS JSON| UI
+    UI -->|reviewed record actions| API
+    OPS --> UI
+
+    classDef source fill:#eef2ff,stroke:#4f46e5,color:#111827
+    classDef service fill:#ecfdf5,stroke:#059669,color:#111827
+    classDef store fill:#fff7ed,stroke:#ea580c,color:#111827
+    classDef client fill:#fdf2f8,stroke:#db2777,color:#111827
+    class SIM,ADAPTER source
+    class INGEST,API service
+    class HISTORY,LATEST,INVENTORY,MAINT store
+    class UI,OPS client
+
+    %% No management-to-aircraft command edge exists by design.

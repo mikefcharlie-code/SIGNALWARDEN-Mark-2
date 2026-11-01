@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS telemetry v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "aircraft_id",
+    "timestamp",
+    "received_at",
+    "sequence",
+    "source",
+    "health"
+  ],
+  "properties": {
+    "ingress_security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "telemetry_trust", "flight_ready", "counters"],
+      "properties": {
+        "policy": {"enum": ["required-signed", "secure-transport", "unauthenticated"]},
+        "telemetry_trust": {"enum": ["signature-verified", "transport-asserted", "untrusted"]},
+        "flight_ready": {"const": false},
+        "counters": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"policy": {"const": "unauthenticated"}}},
+          "then": {"properties": {"telemetry_trust": {"const": "untrusted"}}}
+        },
+        {
+          "if": {"properties": {"policy": {"const": "secure-transport"}}},
+          "then": {"properties": {"telemetry_trust": {"const": "transport-asserted"}}}
+        },
+        {
+          "if": {"properties": {"policy": {"const": "required-signed"}}},
+          "then": {"properties": {"telemetry_trust": {"enum": ["signature-verified", "untrusted"]}}}
+        }
+      ],
+      "description": "Gateway assertion, not independent aircraft identity or readiness proof. Transport-asserted requires an operator-reviewed secure ingress deployment. Missing metadata is untrusted."
+    },
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
+    },
+    "aircraft_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "enum": [
+        "simulated",
+        "aircraft"
+      ]
+    },
+    "health": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "battery_voltage_v",
+        "battery_percent",
+        "link_quality_percent"
+      ],
+      "properties": {
+        "battery_voltage_v": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "battery_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "link_quality_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "temperature_c": {
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "nominal",
+            "warning",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "autopilot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "system_id",
+        "component_id",
+        "vehicle_type",
+        "armed",
+        "base_mode",
+        "custom_mode",
+        "system_status",
+        "heartbeat_age_seconds"
+      ],
+      "properties": {
+        "family": {
+          "enum": [
+            "px4",
+            "ardupilot"
+          ]
+        },
+        "system_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "component_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "vehicle_type": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "armed": {
+          "type": "boolean"
+        },
+        "base_mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "custom_mode": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "system_status": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "heartbeat_age_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "latitude_deg",
+        "longitude_deg",
+        "altitude_msl_m",
+        "relative_altitude_m",
+        "vx_m_s",
+        "vy_m_s",
+        "vz_m_s",
+        "heading_deg",
+        "age_seconds"
+      ],
+      "properties": {
+        "latitude_deg": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude_deg": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "altitude_msl_m": {
+          "type": "number"
+        },
+        "relative_altitude_m": {
+          "type": "number"
+        },
+        "vx_m_s": {
+          "type": "number"
+        },
+        "vy_m_s": {
+          "type": "number"
+        },
+        "vz_m_s": {
+          "type": "number"
+        },
+        "heading_deg": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 359.99
+        },
+        "age_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "attitude": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "roll_rad",
+        "pitch_rad",
+        "yaw_rad",
+        "age_seconds"
+      ],
+      "properties": {
+        "roll_rad": {
+          "type": "number"
+        },
+        "pitch_rad": {
+          "type": "number"
+        },
+        "yaw_rad": {
+          "type": "number"
+        },
+        "age_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "gps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fix_type",
+        "satellites_visible",
+        "age_seconds"
+      ],
+      "properties": {
+        "fix_type": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "satellites_visible": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 254
+        },
+        "age_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$"
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heartbeat_timeout_seconds",
+        "field_timeout_seconds",
+        "battery_age_seconds",
+        "system_status_age_seconds"
+      ],
+      "properties": {
+        "heartbeat_timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "field_timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "battery_age_seconds": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "system_status_age_seconds": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      },
+      "description": "Gateway-observation ages at snapshot and configured expiry deadlines, not authenticated aircraft measurement time. Missing metadata means connectivity/field freshness is unknown."
+    }
+  },
+  "description": "Read-only observation. Aircraft health may be null when unknown or stale; no control authority. Position is an estimate, not a navigation-validity assertion.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.0"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "health": {
+            "properties": {
+              "battery_voltage_v": {
+                "type": "number"
+              },
+              "battery_percent": {
+                "type": "number"
+              },
+              "link_quality_percent": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "autopilot"
+              ]
+            },
+            {
+              "required": [
+                "position"
+              ]
+            },
+            {
+              "required": [
+                "attitude"
+              ]
+            },
+            {
+              "required": [
+                "gps"
+              ]
+            },
+            {
+              "required": [
+                "session_id"
+              ]
+            },
+            {
+              "required": [
+                "observation"
+              ]
+            },
+            {
+              "required": [
+                "ingress_security"
+              ]
+            }
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "autopilot",
+          "session_id"
+        ]
+      }
+    }
+  ]
+}
