@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "model_id": "warden-nav-multimodal-v2",
+  "status": "experimental",
+  "artifact_file": "warden-nav-mm.onnx",
+  "sha256": "7df8ab0e916a281b76d899a280805d12e11c025193d15501b40ca11e8cc1222e",
+  "size_bytes": 279780,
+  "calibration_file": "calibration.json",
+  "calibration_sha256": "692b3b8e91d1f9d12545094974ddf00aea1b414c50c959dd5cde5576cf5ab444",
+  "calibration_size_bytes": 4045,
+  "runtime": "onnxruntime-cpu",
+  "runtime_package": "onnxruntime==1.31.1",
+  "dependencies": ["numpy==2.2.6", "pyulog==1.3.0"],
+  "format": "onnx",
+  "onnx_opset": 17,
+  "inputs": {
+    "features": [null, 34],
+    "modality_mask": [null, 5]
+  },
+  "outputs": {
+    "logits": [null, 4]
+  },
+  "window_seconds": 30,
+  "stride_seconds": 5,
+  "modalities": ["gnss", "inertial", "baro", "mag", "estimator"],
+  "classes": ["nominal", "jamming_like_pattern", "spoofing_like_pattern", "sensor_estimator_glitch"],
+  "ood_limit_max_standardized_feature": 1248.278564453125,
+  "ood_limit_note": "Supplied calibration value; unusually high and not independently validated as an effective OOD screen.",
+  "license": "NOASSERTION; model and training-data reuse/redistribution rights have not been established",
+  "distribution": "local-only",
+  "source_url": "local://warden-nav-multimodal-v2",
+  "weights_in_git": false,
+  "automatic_download": false,
+  "offline_review_only": true,
+  "advisory_only": true,
+  "architecture": "Five per-modality MLP experts (GNSS, inertial, barometer, magnetometer, estimator) combined by summing logits for present modalities; 5-fold ensemble; 38,520 parameters; ONNX opset 17; normalization and missing-value handling are encoded in the supplied graph per its accompanying metadata.",
+  "training_provenance": {
+    "reported_sources": [
+      "100 PX4 Flight Review logs used for training, according to the supplied model note",
+      "12 UAV Attack Dataset simulated logs used for training, according to the supplied model note",
+      "UAV Attack Dataset live logs reserved as a small held-out test set, according to the supplied model note"
+    ],
+    "reported_training_windows": 13867,
+    "data_rights_status": "unresolved; no explicit reuse license was identified for the IEEE DataPort dataset or individual Flight Review uploads",
+    "raw_training_data_in_repository": false,
+    "metrics_status": "owner-reported from the supplied bundle; not independently reproduced or validated in this change"
+  },
+  "evaluation_summary": {
+    "held_out_real_nominal": "29 flights, 988 windows, 24 false alerts (2.4%) as reported",
+    "live_test_set_1": "90 nominal windows with 0 false alerts; 5/14 attack windows detected and 4/14 correctly typed as reported",
+    "live_spoofing": "1/4 attack windows detected and 0/4 correctly typed as reported; detected spoofing patterns were labeled jamming-like",
+    "held_out_simulated": "501 nominal windows with 0 false alerts; 6/6 simulated spoofing windows detected and typed as reported",
+    "validation_limit": "only three live attack flights and 14 live attack windows; some nominal labels were assumed rather than verified"
+  },
+  "hardware": {
+    "inference": "CPU-only ONNX Runtime; no GPU is required by this local review path",
+    "model_file_bytes": 279780,
+    "parameter_count": 38520,
+    "latency_or_minimum_ram": "not supplied or independently benchmarked"
+  },
+  "safety_boundary": {
+    "live_telemetry": false,
+    "navigation_solution_or_position_correction": false,
+    "mission_planning_or_upload": false,
+    "vehicle_control_or_commands": false,
+    "effector_or_targeting_functionality": false,
+    "coordinate_free_serialized_output": true
+  },
+  "report": "docs/validation/warden-nav-v2-multimodal.md"
+}

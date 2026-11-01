@@ -1,0 +1,14 @@
+.worldview .weather-panel button { margin: 4px 4px 4px 0; }
+.worldview .weather-panel select { margin-left: 4px; }
+.worldview .weather-table { width: 100%; border-collapse: collapse; font-size: 11px; margin: 6px 0; }
+.worldview .weather-table th,
+.worldview .weather-table td { padding: 2px 4px; text-align: right; border-bottom: 1px solid rgba(153, 210, 216, 0.15); white-space: nowrap; }
+.worldview .weather-table th:first-child,
+.worldview .weather-table td:first-child { text-align: left; }
+.worldview .weather-table caption { text-align: left; caption-side: top; }
+.worldview .weather-status.weather-failed b,
+.worldview .weather-status.weather-not_configured b,
+.worldview .weather-status.weather-disabled b { color: #ff9d7a; }
+.worldview .weather-status.weather-stale b,
+.worldview .weather-status.weather-throttled b { color: #ffd27a; }
+.worldview .weather-status.weather-live b { color: #8ff0b0; }

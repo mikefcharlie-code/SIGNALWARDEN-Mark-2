@@ -1,0 +1,11 @@
+.worldview .space-panel fieldset { border: 1px solid rgba(127, 255, 212, 0.18); margin: 8px 0; padding: 6px 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.worldview .space-panel legend { font-size: 0.72rem; letter-spacing: 0.06em; opacity: 0.8; }
+.worldview .space-panel label { display: inline-flex; gap: 4px; align-items: center; font-size: 0.75rem; }
+.worldview .space-panel input[type="number"] { width: 4.5em; }
+.worldview .space-panel textarea { width: 100%; min-height: 3.2em; font-family: monospace; font-size: 0.7rem; }
+.worldview .space-panel .space-toggle { display: flex; font-size: 0.75rem; }
+.worldview .space-panel .space-pass small { display: block; }
+.worldview .space-panel .space-visible > b { color: #7fffd4; }
+.worldview .space-panel .space-error { color: #ffb38a; }
+.worldview .space-panel .space-failed, .worldview .space-panel .space-disabled, .worldview .space-panel .space-not_configured { border-left: 2px solid #ffb38a; padding-left: 4px; }
+.worldview .space-panel .space-stale { border-left: 2px solid #ffd27f; padding-left: 4px; }

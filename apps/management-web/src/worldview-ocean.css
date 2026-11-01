@@ -1,0 +1,18 @@
+.wv-ocean { margin: 16px 0 24px; padding: 22px; border: 1px solid #2f6a8a; border-radius: 8px; background: #0b1b28; color: #e3f1fb; font: 13px/1.6 system-ui, sans-serif; }
+.wv-ocean h2 { font-size: 21px; margin-top: 0; }
+.wv-ocean h2 small { display: block; color: #6ec3f0; font-size: 11px; letter-spacing: .1em; }
+.wv-ocean h3 { font-size: 14px; margin: 0 0 6px; }
+.wv-ocean p, .wv-ocean li, .wv-ocean td { overflow-wrap: anywhere; color: #cfe3f1; }
+.wv-ocean .oc-nav { border-left: 3px solid #f0c36a; padding-left: 8px; color: #f6e2b5; }
+.wv-ocean .fine { font-size: 12px; color: #a9c4d6; }
+.wv-ocean .oc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 10px; }
+.wv-ocean .oc-card { border: 1px solid #284e66; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 6px; }
+.wv-ocean button { align-self: flex-start; }
+.wv-ocean select { max-width: 100%; }
+.wv-ocean .oc-error, .wv-ocean .oc-failed, .wv-ocean .oc-disabled, .wv-ocean .oc-status.disabled { color: #ff8f8f; }
+.wv-ocean .oc-stale, .wv-ocean .oc-throttled { color: #f0c36a; }
+.wv-ocean .oc-message { font-weight: 600; }
+.wv-ocean .oc-results { padding-left: 18px; }
+.wv-ocean .oc-tides { width: 100%; border-collapse: collapse; font-size: 12px; }
+.wv-ocean .oc-tides th, .wv-ocean .oc-tides td { border-bottom: 1px solid #284e66; padding: 4px 6px; text-align: left; vertical-align: top; }
+.wv-ocean .oc-tides caption { text-align: left; font-weight: 600; padding: 4px 0; }

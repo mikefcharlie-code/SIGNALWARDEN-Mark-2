@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "model_id": "ground-nav-egomotion-nvidia-v1",
+  "artifact_file": "ground-nav-egomotion.onnx",
+  "size_bytes": 914359,
+  "sha256": "f0d825222bfcefc1e4c670da5124dc6083832c15229c31ab249c192f613de562",
+  "source": "user-provided ground-nav-egomotion bundle; training provenance is owner-reported and not independently verified",
+  "training_data": "NVIDIA PhysicalAI-Autonomous-Vehicles egomotion labels; no dataset files are included",
+  "license": "NOASSERTION for the model artifact; NVIDIA Autonomous Vehicle Dataset License Agreement applies to the stated training source; trained-model rights remain unresolved",
+  "license_url": "https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA_Autonomous_Vehicle_Dataset_License_Agreement.pdf",
+  "distribution": "local-only",
+  "weights_in_git": false,
+  "automatic_download": false,
+  "runtime": {
+    "package": "onnxruntime-gpu==1.26.0",
+    "execution_provider": "CUDAExecutionProvider",
+    "cuda": "12.8-compatible driver/runtime required",
+    "cudnn": "9.x required",
+    "cpu_ep_fallback": false
+  },
+  "cpu_baseline_fallback": {
+    "baseline_id": "constant-turn-rate-acceleration-cpu-v1",
+    "enabled_by_default": false,
+    "opt_in_flag": "--allow-cpu-baseline-fallback",
+    "implementation": "standard-library math only; separate from ONNX Runtime",
+    "uses_model_weights": false,
+    "model_ran_on_cpu": false,
+    "uncertainty": "not available"
+  },
+  "vehicle_scope": "ground_vehicle_offline_review_only",
+  "input": {
+    "shape_without_batch": [20, 9],
+    "sample_rate_hz": 10,
+    "feature_columns": ["vbx", "vby", "yaw_rate", "abx", "aby", "curvature", "pitch", "roll", "vz"],
+    "csv_timestamp_column": "timestamp_s",
+    "timestamp_column_is_model_input": false
+  },
+  "output": {
+    "trajectory_shape_without_batch": [30, 3],
+    "trajectory_columns": ["x_m", "y_m", "yaw_delta_rad"],
+    "uncertainty_shape_without_batch": [30, 2],
+    "uncertainty_columns": ["sigma_x_m", "sigma_y_m"],
+    "step_seconds": 0.1,
+    "frame": "vehicle frame at the end of the supplied history; not a global coordinate or corrected current pose"
+  },
+  "required_operator_attestations": [
+    "the input is a ground-vehicle feature history with reviewed provenance",
+    "use is authorized for internal autonomous-vehicle/ADAS development using NVIDIA technology",
+    "the operator has rights to use this trained model artifact"
+  ],
+  "limitations": [
+    "The model has no supplied OOD detector; input-domain validation is not established.",
+    "Model-supplied position sigma is not an independently validated confidence or safety bound.",
+    "The bundle states that it has not been validated for closed-loop control or vehicle-in-the-loop use.",
+    "The model sees no road or future control input and cannot anticipate a turn that has not begun.",
+    "This repository path is a standalone offline ground-vehicle review only; no UAV, live navigation, planning, control, mission, or effector integration is permitted."
+  ]
+}

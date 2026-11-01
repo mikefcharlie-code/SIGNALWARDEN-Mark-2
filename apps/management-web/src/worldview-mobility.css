@@ -1,0 +1,15 @@
+.worldview .mobility-panel button { margin: 4px 4px 4px 0; }
+.worldview .mobility-panel select,
+.worldview .mobility-panel input[type="text"],
+.worldview .mobility-panel input:not([type]) { margin-left: 4px; max-width: 220px; }
+.worldview .mobility-panel .link-button { background: none; border: 0; padding: 0; margin: 0; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }
+.worldview .mobility-items { list-style: none; margin: 4px 0; padding: 0; font-size: 11px; }
+.worldview .mobility-items li { padding: 1px 0; border-bottom: 1px solid rgba(153, 210, 216, 0.12); }
+.worldview .mobility-items li.mobility-stale { opacity: 0.7; }
+.worldview .mobility-thumb { display: block; max-width: 256px; max-height: 192px; margin: 6px 0; border: 1px solid rgba(153, 210, 216, 0.3); }
+.worldview .mobility-status.mobility-failed b,
+.worldview .mobility-status.mobility-not_configured b,
+.worldview .mobility-status.mobility-disabled b { color: #ff9d7a; }
+.worldview .mobility-status.mobility-stale b,
+.worldview .mobility-status.mobility-throttled b { color: #ffd27a; }
+.worldview .mobility-status.mobility-live b { color: #8ff0b0; }

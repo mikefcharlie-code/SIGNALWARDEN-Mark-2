@@ -1,0 +1,134 @@
+.worldview {
+  overflow-x: hidden;
+}
+
+/* Provider controls live beside the globe instead of consuming stage height. */
+.worldview .wv-provider-dock {
+  position: fixed;
+  z-index: 20;
+  right: 24px;
+  top: 90px;
+  width: min(400px, calc(100vw - 280px));
+  max-height: calc(100dvh - 174px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(70, 212, 193, 0.35);
+  background: rgba(5, 16, 22, 0.96);
+  box-shadow: 18px 20px 45px rgba(0, 0, 0, 0.34);
+}
+
+.worldview .wv-provider-dock[hidden] { display: none; }
+.worldview .wv-provider-dock input,
+.worldview .wv-provider-dock select,
+.worldview .wv-provider-dock fieldset { min-width: 0; max-width: 100%; }
+
+.worldview .wv-provider-dock-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.worldview .wv-provider-toggles,
+.worldview .wv-provider-panels {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.worldview .wv-provider-toggles {
+  flex: 0 0 auto;
+  max-height: 31dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 3px;
+}
+
+.worldview .wv-provider-panels {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 3px;
+}
+
+.worldview .wv-provider-dock button {
+  margin: 0;
+  padding: 8px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.worldview .wv-provider-dock button,
+.worldview .wv-left > button {
+  border: 1px solid rgba(110, 177, 183, 0.6);
+  background: #15343e;
+  color: #d9ecec;
+  font: inherit;
+  cursor: pointer;
+}
+.worldview .wv-provider-dock button:focus-visible { outline: 2px solid #46d4c1; outline-offset: 2px; }
+
+.worldview .wv-provider-panels > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.worldview .wv-provider-panels [hidden] {
+  display: none;
+}
+
+/* Keep the physical observation target in view while surrounding content grows. */
+.worldview .wv-stage {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  min-width: 0;
+  grid-template-rows: clamp(390px, 68vh, 720px) auto;
+}
+
+.worldview .wv-stage .globe-slot {
+  min-height: clamp(390px, 68vh, 720px);
+}
+
+@media (max-width: 900px) {
+  .worldview .wv-provider-dock {
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: auto;
+    max-height: min(70dvh, 620px);
+  }
+
+  .worldview .wv-provider-toggles {
+    max-height: 24dvh;
+  }
+
+  .worldview .wv-stage {
+    position: relative;
+    top: auto;
+    grid-template-rows: clamp(360px, 55vh, 480px) auto;
+  }
+  .worldview .wv-stage .globe-slot { min-height: 0; }
+}
+
+@media (max-width: 620px) {
+  .worldview .wv-provider-dock {
+    max-height: 62dvh;
+    padding: 9px;
+  }
+
+  .worldview .wv-provider-toggles {
+    max-height: 20dvh;
+  }
+
+  .worldview .wv-stage .globe-slot {
+    min-height: 360px;
+  }
+}

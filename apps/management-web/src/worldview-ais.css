@@ -1,0 +1,20 @@
+.wv-ais { margin: 16px 0 24px; padding: 22px; border: 1px solid #4f6f86; border-radius: 8px; background: #0a1c29; color: #e4eef4; font: 13px/1.6 system-ui, sans-serif; }
+.wv-ais h2 { font-size: 21px; margin-top: 0; }
+.wv-ais h2 small { display: block; color: #e4b663; font-size: 11px; letter-spacing: .1em; }
+.wv-ais p { color: #bccfdb; overflow-wrap: anywhere; }
+.wv-ais .ais-opt-in { display: flex; gap: 10px; font-weight: 700; padding: 12px; border: 1px solid #4f6f86; }
+.wv-ais .ais-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 12px 0; }
+.wv-ais .ais-controls label { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.wv-ais select, .wv-ais button { padding: 9px; border: 1px solid #56778c; border-radius: 4px; background: #15303f; color: #edf6fa; font: inherit; max-width: 100%; }
+.wv-ais button { cursor: pointer; }
+.wv-ais button:disabled, .wv-ais select:disabled { opacity: .45; cursor: not-allowed; }
+.wv-ais [role=status] { border-left: 3px solid #55a9c9; padding: 12px; background: #11303d; }
+.wv-ais .ais-error, .wv-ais .ais-warning { border-left: 3px solid #e4b663; padding: 12px; color: #f8d19a; background: #342f25; }
+.wv-ais .ais-disclosure { border-left: 3px solid #e4b663; padding: 8px 12px; }
+.wv-ais .ais-status-list { padding-left: 18px; }
+.wv-ais .ais-status-list .ais-error, .wv-ais .ais-status-list .ais-not_configured, .wv-ais .ais-status-list .ais-stale { color: #f8d19a; background: none; border: 0; padding: 0; }
+.wv-ais .ais-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.wv-ais .ais-table th, .wv-ais .ais-table td { text-align: left; padding: 4px 6px; border-bottom: 1px solid #23465a; }
+.wv-ais .ais-stale-row { color: #f8d19a; }
+.wv-ais a { color: #91cfe0; }
+@media (max-width: 700px) { .wv-ais { padding: 12px; } .wv-ais .ais-table { display: block; overflow-x: auto; } }
