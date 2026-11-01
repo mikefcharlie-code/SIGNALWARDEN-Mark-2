@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "aircraft_id": "sim-ucas-001",
+  "display_name": "Synthetic UCAS 001",
+  "lifecycle_status": "planned",
+  "hardware_revision": "simulation-only"
+}
