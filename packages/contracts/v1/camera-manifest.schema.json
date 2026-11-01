@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UCAS camera manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "aircraft_id", "source", "generated_at", "cameras"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "aircraft_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$" },
+    "source": { "enum": ["simulated", "lab-adapter", "aircraft-gateway"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "cameras": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["camera_id", "label", "position", "media_kind", "state", "freshness", "signal_percent", "manifest_url"],
+        "properties": {
+          "camera_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$" },
+          "label": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "position": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "media_kind": { "enum": ["eo", "ir", "depth", "multispectral"] },
+          "state": { "enum": ["live", "degraded", "stale", "suspended"] },
+          "freshness": { "type": "string", "format": "date-time" },
+          "signal_percent": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "resolution": { "type": "string", "maxLength": 32 },
+          "fps": { "type": "number", "exclusiveMinimum": 0, "maximum": 240 },
+          "manifest_url": { "type": "string", "format": "uri-reference", "pattern": "^(?!.*(?:token|secret|password|key)=)" }
+        }
+      }
+    }
+  }
+}
