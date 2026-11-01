@@ -1,0 +1,5 @@
+# Optional durable-storage dependencies for the Management API.
+# The local reference implementation remains dependency-light and uses memory by default.
+psycopg[binary]>=3.2,<4
+websockets>=13,<16
+PyJWT>=2.9,<3
