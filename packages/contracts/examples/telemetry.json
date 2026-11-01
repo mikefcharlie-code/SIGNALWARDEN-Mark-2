@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "aircraft_id": "sim-ucas-001",
+  "timestamp": "2026-01-01T00:00:00Z",
+  "received_at": "2026-01-01T00:00:00Z",
+  "sequence": 0,
+  "source": "simulated",
+  "health": {
+    "battery_voltage_v": 12.4,
+    "battery_percent": 95,
+    "link_quality_percent": 100,
+    "temperature_c": 24,
+    "status": "nominal"
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "family": "px4",
+  "firmware_command": [
+    "/tmp/ucas-px4-sitl/build/px4_sitl_default/bin/px4",
+    "-d",
+    "-s",
+    "/tmp/ucas-px4-v1.17-exact.rcS",
+    "/tmp/ucas-px4-sitl/build/px4_sitl_default/etc",
+    "-w",
+    "/tmp/ucas-px4-v1.17-exact-work2"
+  ],
+  "firmware_cwd": "/tmp/ucas-px4-sitl/build/px4_sitl_default",
+  "ingress_port": 14550,
+  "gateway_port": 45455,
+  "api_url": "http://127.0.0.1:46595",
+  "source": "simulated",
+  "arming_or_control_commands_sent": false,
+  "scope": "passive telemetry pipeline and feed-loss recovery only; not autopilot failsafe",
+  "passed": true,
+  "initial_session": "b5e30897709a43fa81922722856c3b6a",
+  "recovered_session": "c7870fb29b81410c8e9b4b5414908fe9",
+  "loss_effective_heartbeat_age": 3.2217469999999997,
+  "counts": {
+    "firmware_datagrams": 658,
+    "UNKNOWN_411": 3,
+    "UNKNOWN_410": 17,
+    "HIGHRES_IMU": 203,
+    "TIMESYNC": 40,
+    "DISTANCE_SENSOR": 40,
+    "LOCAL_POSITION_NED": 112,
+    "ALTITUDE": 38,
+    "ODOMETRY": 112,
+    "VFR_HUD": 38,
+    "EXTENDED_SYS_STATE": 20,
+    "MISSION_CURRENT": 4,
+    "HEARTBEAT": 4,
+    "BATTERY_STATUS": 4,
+    "ESTIMATOR_STATUS": 4,
+    "PING": 4,
+    "SYS_STATUS": 4,
+    "SYSTEM_TIME": 4,
+    "UNKNOWN_8": 4,
+    "UNKNOWN_380": 1,
+    "UNKNOWN_436": 1,
+    "VIBRATION": 1
+  },
+  "gateway_outbound_datagrams": 0,
+  "release_tag": "v1.17.0",
+  "source_commit": "d6f12ad1c4f70ad3230afd7d86e971421e02fef4",
+  "binary_sha256": "c9bd20a03da4f17b37aff294047242fe339ca7b26d8c46943b636ede07eadc73",
+  "captured_heartbeat_states": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "all_captured_heartbeats_disarmed": true,
+  "pcap_verified_gateway_source_packets": 0,
+  "artifacts_sha256": {
+    "api-readbacks.json": "0658b0589729980cc0c59b88738d4ca43b8cae75f6fafd75ef7d086290b1c9e8",
+    "firmware-mavlink.raw": "7bc9b369c4b0d5eb4512e20f688669d1793497a273b7273966f93dbb6285b52c",
+    "firmware-restart.log": "218ac21f5a4e47d61d7903053853d862213bd556548b56436208bbc5681a6cc9",
+    "firmware.log": "a79a043f4976273a0cb3e190eeb7b308c5f28a23f8f2cad885c9ea6434427d76",
+    "gateway.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gateway.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "loopback.pcap": "b4c7fb73b75fbc6de117a95d054e71cf7bba03bf2aad1f00d400bd632a544ee0",
+    "result.json": "b5b6f8f658d59395917d7ebde8cbb7422201cbe5e45ce1f4ea6e60790ee3a794",
+    "tcpdump.log": "880483c5de422c8d7cd0f7a38d60b8b583991b62e4b7e0f7a50dd0b3ef22e713"
+  },
+  "representative_api_readbacks": [
+    {
+      "phase": "initial",
+      "view": {
+        "aircraft_id": "px4-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "b5e30897709a43fa81922722856c3b6a",
+          "aircraft_id": "px4-passive-validation",
+          "timestamp": "2026-10-22T11:25:54.514147Z",
+          "received_at": "2026-10-22T11:25:54.516556Z",
+          "sequence": 0,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 16.2,
+            "battery_percent": 99,
+            "link_quality_percent": null,
+            "status": "unknown"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 0.041,
+            "system_status_age_seconds": 0.04
+          },
+          "autopilot": {
+            "family": "px4",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 0,
+            "armed": false,
+            "base_mode": 29,
+            "custom_mode": 50593792,
+            "system_status": 0,
+            "heartbeat_age_seconds": 0.041
+          },
+          "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+          "event_key": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17:simulated:px4-passive-validation:b5e30897709a43fa81922722856c3b6a:0:2026-10-22T11:25:54.514147Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:25:54.514147Z",
+        "received_at": "2026-10-22T11:25:54.516556Z",
+        "source": "simulated",
+        "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 0.057809,
+          "battery": 0.057809,
+          "system_status": 0.056809,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "fresh",
+          "system_status": "fresh",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 0.016809,
+        "last_accepted_sequence": 0,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "normal",
+      "view": {
+        "aircraft_id": "px4-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "b5e30897709a43fa81922722856c3b6a",
+          "aircraft_id": "px4-passive-validation",
+          "timestamp": "2026-10-22T11:25:56.352057Z",
+          "received_at": "2026-10-22T11:25:56.353973Z",
+          "sequence": 9,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 16.2,
+            "battery_percent": 99,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 0.858,
+            "system_status_age_seconds": 0.858
+          },
+          "autopilot": {
+            "family": "px4",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 0,
+            "armed": false,
+            "base_mode": 29,
+            "custom_mode": 50593792,
+            "system_status": 0,
+            "heartbeat_age_seconds": 0.858
+          },
+          "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+          "event_key": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17:simulated:px4-passive-validation:b5e30897709a43fa81922722856c3b6a:9:2026-10-22T11:25:56.352057Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:25:56.352057Z",
+        "received_at": "2026-10-22T11:25:56.353973Z",
+        "source": "simulated",
+        "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 1.03938,
+          "battery": 1.03938,
+          "system_status": 1.03938,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "fresh",
+          "system_status": "fresh",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 0.18138,
+        "last_accepted_sequence": 9,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "firmware-stopped",
+      "view": {
+        "aircraft_id": "px4-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "b5e30897709a43fa81922722856c3b6a",
+          "aircraft_id": "px4-passive-validation",
+          "timestamp": "2026-10-22T11:25:58.282222Z",
+          "received_at": "2026-10-22T11:25:58.284628Z",
+          "sequence": 16,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 16.2,
+            "battery_percent": 99,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 1.767,
+            "system_status_age_seconds": 1.766
+          },
+          "autopilot": {
+            "family": "px4",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 0,
+            "armed": false,
+            "base_mode": 29,
+            "custom_mode": 50593792,
+            "system_status": 0,
+            "heartbeat_age_seconds": 1.767
+          },
+          "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+          "event_key": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17:simulated:px4-passive-validation:b5e30897709a43fa81922722856c3b6a:16:2026-10-22T11:25:58.282222Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:25:58.282222Z",
+        "received_at": "2026-10-22T11:25:58.284628Z",
+        "source": "simulated",
+        "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+        "snapshot_freshness": "fresh",
+        "freshness": "stale",
+        "connectivity": "stale",
+        "effective_ages": {
+          "heartbeat": 3.2217469999999997,
+          "battery": 3.2217469999999997,
+          "system_status": 3.2207470000000002,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "stale",
+          "system_status": "stale",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 1.454747,
+        "last_accepted_sequence": 16,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "loss-remains-stale",
+      "view": {
+        "aircraft_id": "px4-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "b5e30897709a43fa81922722856c3b6a",
+          "aircraft_id": "px4-passive-validation",
+          "timestamp": "2026-10-22T11:25:58.282222Z",
+          "received_at": "2026-10-22T11:25:58.284628Z",
+          "sequence": 16,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 16.2,
+            "battery_percent": 99,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 1.767,
+            "system_status_age_seconds": 1.766
+          },
+          "autopilot": {
+            "family": "px4",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 0,
+            "armed": false,
+            "base_mode": 29,
+            "custom_mode": 50593792,
+            "system_status": 0,
+            "heartbeat_age_seconds": 1.767
+          },
+          "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+          "event_key": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17:simulated:px4-passive-validation:b5e30897709a43fa81922722856c3b6a:16:2026-10-22T11:25:58.282222Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:25:58.282222Z",
+        "received_at": "2026-10-22T11:25:58.284628Z",
+        "source": "simulated",
+        "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+        "snapshot_freshness": "fresh",
+        "freshness": "stale",
+        "connectivity": "stale",
+        "effective_ages": {
+          "heartbeat": 3.824456,
+          "battery": 3.824456,
+          "system_status": 3.823456,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "stale",
+          "system_status": "stale",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 2.057456,
+        "last_accepted_sequence": 16,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "recovered",
+      "view": {
+        "aircraft_id": "px4-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "c7870fb29b81410c8e9b4b5414908fe9",
+          "aircraft_id": "px4-passive-validation",
+          "timestamp": "2026-10-22T11:26:01.571451Z",
+          "received_at": "2026-10-22T11:26:01.573457Z",
+          "sequence": 17,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 16.2,
+            "battery_percent": 99,
+            "link_quality_percent": null,
+            "status": "unknown"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 0.02,
+            "system_status_age_seconds": 0.017
+          },
+          "autopilot": {
+            "family": "px4",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 0,
+            "armed": false,
+            "base_mode": 29,
+            "custom_mode": 50593792,
+            "system_status": 0,
+            "heartbeat_age_seconds": 0.021
+          },
+          "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+          "event_key": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17:simulated:px4-passive-validation:c7870fb29b81410c8e9b4b5414908fe9:17:2026-10-22T11:26:01.571451Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:26:01.571451Z",
+        "received_at": "2026-10-22T11:26:01.573457Z",
+        "source": "simulated",
+        "source_id": "mavlink-bdd228d7dcea42e9ad2f8e2419819d17",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 0.061198,
+          "battery": 0.060198,
+          "system_status": 0.057198,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "fresh",
+          "system_status": "fresh",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 0.040198,
+        "last_accepted_sequence": 17,
+        "last_ingestion_status": "accepted"
+      }
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "llm": {
+      "repo_id": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "license": "apache-2.0",
+      "pipeline": "AutoModelForCausalLM",
+      "github": "https://github.com/QwenLM/Qwen3",
+      "resources": {
+        "free_disk_gb": 8,
+        "ram_gb": 6,
+        "vram_gb": 3,
+        "download_bytes": 1519207673,
+        "estimates": true
+      },
+      "notes": "CPU float32 needs about 3 GB for weights alone. Short 2048-token input only; plan 6 GB free RAM. GPU optional.",
+      "files": [
+        {
+          "path": "LICENSE",
+          "size": 11343,
+          "git_blob_sha1": "6634c8cc3133b3848ec74b9f275acaaa1ea618ab"
+        },
+        {
+          "path": "README.md",
+          "size": 13965,
+          "git_blob_sha1": "a50b19e76f5274f9ec99f5a5d99873dca5bff25e"
+        },
+        {
+          "path": "config.json",
+          "size": 726,
+          "git_blob_sha1": "f5c3703b78ae2a478ae15b247e9f855e0ce2107b"
+        },
+        {
+          "path": "generation_config.json",
+          "size": 239,
+          "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+        },
+        {
+          "path": "model.safetensors",
+          "size": 1503300328,
+          "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 9732,
+          "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92"
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        }
+      ],
+      "source_url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "runtime": "transformers"
+    },
+    "image-generation": {
+      "repo_id": "segmind/SSD-1B",
+      "revision": "60987f37e94cd59c36b1cba832b9f97b57395a10",
+      "license": "apache-2.0",
+      "pipeline": "StableDiffusionXLPipeline",
+      "variant": "fp16",
+      "github": "https://github.com/segmind/SSD-1B",
+      "resources": {
+        "free_disk_gb": 14,
+        "ram_gb": 16,
+        "vram_gb": 8,
+        "download_bytes": 4468840573,
+        "estimates": true
+      },
+      "notes": "Publisher declares Apache-2.0. Distilled from SDXL and other teachers; their provenance is not a blanket Apache grant for every upstream asset. CPU fp32 very slow; plan16GB free RAM. GPU8GB or more recommended;1024px can need more.",
+      "files": [
+        {
+          "path": "README.md",
+          "size": 10772,
+          "git_blob_sha1": "b1cacae0faae2aa635228b1cd1ea59ec4993ef5a"
+        },
+        {
+          "path": "model_index.json",
+          "size": 577,
+          "git_blob_sha1": "547822297d77f010d2ca87615fe67b6e585eb40a"
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "size": 474,
+          "git_blob_sha1": "003c45eccdab236b7a35d12516f3a960a53ea3bc"
+        },
+        {
+          "path": "text_encoder/config.json",
+          "size": 560,
+          "git_blob_sha1": "848fc7cd1e0f11b451c64e2a31ce73fc12f2ae65"
+        },
+        {
+          "path": "text_encoder/model.fp16.safetensors",
+          "size": 246144864,
+          "sha256": "5487ea0eee9c9a9bff8abd097908d4deff3ae1fa87b3b67397f8b9538139d447"
+        },
+        {
+          "path": "text_encoder_2/config.json",
+          "size": 570,
+          "git_blob_sha1": "f6aa15cd32ced05793c21ec5c1b3db01cc08fa9b"
+        },
+        {
+          "path": "text_encoder_2/model.fp16.safetensors",
+          "size": 1389382880,
+          "sha256": "d3df577f6e3799c8e1bd9b40e30133710e02e8e25d0ce48cdcc790e7dfe12d6d"
+        },
+        {
+          "path": "tokenizer/merges.txt",
+          "size": 524619,
+          "git_blob_sha1": "76e821f1b6f0a9709293c3b6b51ed90980b3166b"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size": 472,
+          "git_blob_sha1": "2c2130b544c0c5a72d5d00da071ba130a9800fb2"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size": 737,
+          "git_blob_sha1": "2e8612a429492973fe60635b3f44a28b065cfac0"
+        },
+        {
+          "path": "tokenizer/vocab.json",
+          "size": 1059962,
+          "git_blob_sha1": "469be27c5c010538f845f518c4f5e8574c78f7c8"
+        },
+        {
+          "path": "tokenizer_2/merges.txt",
+          "size": 524619,
+          "git_blob_sha1": "76e821f1b6f0a9709293c3b6b51ed90980b3166b"
+        },
+        {
+          "path": "tokenizer_2/special_tokens_map.json",
+          "size": 460,
+          "git_blob_sha1": "ae0c5be6f35217e51c4c000fd325d8de0294e99c"
+        },
+        {
+          "path": "tokenizer_2/tokenizer_config.json",
+          "size": 725,
+          "git_blob_sha1": "a8438e020c4497a429240d6b89e0bf9a6e2ffa92"
+        },
+        {
+          "path": "tokenizer_2/vocab.json",
+          "size": 1059962,
+          "git_blob_sha1": "469be27c5c010538f845f518c4f5e8574c78f7c8"
+        },
+        {
+          "path": "unet/config.json",
+          "size": 1768,
+          "git_blob_sha1": "59e8af9f881d72a9e3f76bcec94355c23dd949dc"
+        },
+        {
+          "path": "unet/diffusion_pytorch_model.fp16.safetensors",
+          "size": 2662790608,
+          "sha256": "40d8ea9159f3e875278dacc7879442d58c45850cf13c62f5e26681061c51829a"
+        },
+        {
+          "path": "vae/config.json",
+          "size": 602,
+          "git_blob_sha1": "0600cbb509250f4219b8fa7987fc5320ec9fe45b"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.fp16.safetensors",
+          "size": 167335342,
+          "sha256": "6353737672c94b96174cb590f711eac6edf2fcce5b6e91aa9d73c5adc589ee48"
+        }
+      ],
+      "source_url": "https://huggingface.co/segmind/SSD-1B",
+      "runtime": "diffusers"
+    },
+    "video-generation": {
+      "repo_id": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+      "revision": "0fad780a534b6463e45facd96134c9f345acfa5b",
+      "license": "apache-2.0",
+      "pipeline": "WanPipeline",
+      "github": "https://github.com/Wan-Video/Wan2.1",
+      "resources": {
+        "free_disk_gb": 42,
+        "ram_gb": 48,
+        "vram_gb": 16,
+        "download_bytes": 28928905975,
+        "estimates": true
+      },
+      "notes": "Official native runtime benchmark reports 8.19GB VRAM with offload/t5_cpu; not a guarantee for this Diffusers runtime. Plan16GB+ VRAM,48GB available host RAM,64GB installed recommended with model CPU offload. Full weights28.9GB including22.7GB T5. CUDA required by this runner; no practical CPU generation path.",
+      "files": [
+        {
+          "path": "README.md",
+          "size": 18116,
+          "git_blob_sha1": "2f8fe9a78013851be7e69056de08f3dc9c2a4607"
+        },
+        {
+          "path": "model_index.json",
+          "size": 400,
+          "git_blob_sha1": "5939d0bf16bfab26f95f149dc29abf898ed5056c"
+        },
+        {
+          "path": "scheduler/scheduler_config.json",
+          "size": 751,
+          "git_blob_sha1": "7c6d4f1916fe490af29216f633d38cfa3028fd66"
+        },
+        {
+          "path": "text_encoder/config.json",
+          "size": 854,
+          "git_blob_sha1": "2fd01c57dddd8ae386d518c69c087c8ba8c73804"
+        },
+        {
+          "path": "text_encoder/model-00001-of-00005.safetensors",
+          "size": 4972389712,
+          "sha256": "c0ef3a140898e228a3520c9adec60743d2e8e5b3d229651bb37f1a3921919f99"
+        },
+        {
+          "path": "text_encoder/model-00002-of-00005.safetensors",
+          "size": 4899225672,
+          "sha256": "481c7b2b39771c44df6dd8d13ee12ed072d731b4a650bd092885d4d52db229ad"
+        },
+        {
+          "path": "text_encoder/model-00003-of-00005.safetensors",
+          "size": 4966309504,
+          "sha256": "f93148bcc04052a169e1e49bfcf6125df6cf9bf243cb9c627da75266cf8e35c3"
+        },
+        {
+          "path": "text_encoder/model-00004-of-00005.safetensors",
+          "size": 4999880704,
+          "sha256": "a451792c739c05bca4606190cc2dd16731411bac03b4cf6aacc5767321f857c9"
+        },
+        {
+          "path": "text_encoder/model-00005-of-00005.safetensors",
+          "size": 2885866152,
+          "sha256": "7e76e18d224531b8197a46231cb53daf7f2f6ca707130252becf933026ac4eea"
+        },
+        {
+          "path": "text_encoder/model.safetensors.index.json",
+          "size": 22476,
+          "git_blob_sha1": "60ece61b46ecb3e6a5b705ea304bc97535317c2a"
+        },
+        {
+          "path": "tokenizer/special_tokens_map.json",
+          "size": 7079,
+          "git_blob_sha1": "2ed25bf989a28d20b5d4b5822fbc24666d12a6f7"
+        },
+        {
+          "path": "tokenizer/spiece.model",
+          "size": 4548313,
+          "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458"
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "size": 16837459,
+          "sha256": "20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef"
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "size": 61758,
+          "git_blob_sha1": "09d434f9457238f697f4c208aab47f58caa15bfe"
+        },
+        {
+          "path": "transformer/config.json",
+          "size": 465,
+          "git_blob_sha1": "2e681186e90383b3aed964707f753a16f567cd9c"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+          "size": 4998781576,
+          "sha256": "6d011927dbd2cc8afe53d57abab04a8fd86f615d83324770d985fb058ece3a24"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+          "size": 677289072,
+          "sha256": "b92ec2309b1f239af6f746431815a881afcc938abb26a4f08d9a2fd6c892f872"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+          "size": 73296,
+          "git_blob_sha1": "4c3f3f2e2471afe16b3be59ff8f7c1552421c37e"
+        },
+        {
+          "path": "vae/config.json",
+          "size": 724,
+          "git_blob_sha1": "fe988ee53511225fb2fd0a01004d6e19524df75f"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "size": 507591892,
+          "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+        }
+      ],
+      "source_url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+      "runtime": "diffusers"
+    },
+    "image-classification": {
+      "repo_id": "microsoft/resnet-18",
+      "revision": "65a5785d9156231087c481e0c7dd33a5ff6f7e3e",
+      "license": "apache-2.0",
+      "pipeline": "AutoModelForImageClassification",
+      "github": "https://github.com/KaimingHe/deep-residual-networks",
+      "resources": {
+        "free_disk_gb": 4,
+        "ram_gb": 2,
+        "vram_gb": 1,
+        "download_bytes": 46884396,
+        "estimates": true
+      },
+      "notes": "HF checkpoint card says Apache-2.0; original ResNet source is separately MIT. 11.7M parameters, CPU supported, GPU optional. ImageNet labels not validated for drone observations.",
+      "files": [
+        {
+          "path": "README.md",
+          "size": 2258,
+          "git_blob_sha1": "1c9882ecd1f5d53d254aae2792b290e707929f8d"
+        },
+        {
+          "path": "config.json",
+          "size": 69548,
+          "git_blob_sha1": "be9ec1cb232f596559a0c780dedcf3d42fe11613"
+        },
+        {
+          "path": "model.safetensors",
+          "size": 46812324,
+          "sha256": "1cf00ee468998c23d084361b02cffadabacb5074105564c596b8079f77ecb126"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 266,
+          "git_blob_sha1": "9a46cca81138ce49069d63f688ae5750882df07e"
+        }
+      ],
+      "source_url": "https://huggingface.co/microsoft/resnet-18",
+      "runtime": "transformers"
+    },
+    "video-classification": {
+      "repo_id": "microsoft/xclip-base-patch32",
+      "revision": "a2e27a78a2b5d802e894b8a1ef14f3a8ce490963",
+      "license": "mit",
+      "pipeline": "XCLIPModel",
+      "github": "https://github.com/microsoft/VideoX/tree/master/X-CLIP",
+      "resources": {
+        "free_disk_gb": 6,
+        "ram_gb": 6,
+        "vram_gb": 3,
+        "download_bytes": 790034990,
+        "estimates": true
+      },
+      "notes": "8 RGB frames224px, zero-shot matching among supplied text candidates. Normalized similarity is not calibrated confidence. CPU supported; synthetic fixture tests plumbing, not accuracy.",
+      "files": [
+        {
+          "path": "README.md",
+          "size": 2728,
+          "git_blob_sha1": "1dd6b175d0d611567c9cff0b69b0d46a1015f471"
+        },
+        {
+          "path": "config.json",
+          "size": 4718,
+          "git_blob_sha1": "ef8020d0497747b69e8e53ae3cdc71f802456ba9"
+        },
+        {
+          "path": "merges.txt",
+          "size": 524657,
+          "git_blob_sha1": "bbfec752c9a675946c6dce106def6f35c882dcc2"
+        },
+        {
+          "path": "model.safetensors",
+          "size": 786414772,
+          "sha256": "abf286e8cdd0612761c3e42d3a55eca998382dfa67a04a0f3fdcdfa4f150cdbb"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 309,
+          "git_blob_sha1": "27df8f8829f369f756e45d46cf6edc9e28644f8f"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 472,
+          "git_blob_sha1": "2c2130b544c0c5a72d5d00da071ba130a9800fb2"
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 2224041,
+          "git_blob_sha1": "e78ebf79cfbf29cce01b99ab66d31decc0a66998"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 965,
+          "git_blob_sha1": "48ab851d29803087ed74ee47944de8d687d3676d"
+        },
+        {
+          "path": "vocab.json",
+          "size": 862328,
+          "git_blob_sha1": "182766ce89b439768edadda342519f33802f5364"
+        }
+      ],
+      "source_url": "https://huggingface.co/microsoft/xclip-base-patch32",
+      "runtime": "transformers"
+    }
+  }
+}

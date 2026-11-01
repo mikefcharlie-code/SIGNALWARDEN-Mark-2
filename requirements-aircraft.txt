@@ -1,0 +1,4 @@
+# Opt-in read-only aircraft gateway; not required by the reference API.
+# Signing-hook/framing behavior is security-sensitive; review before upgrades.
+pymavlink==2.4.50
+pyserial>=3.5,<4
