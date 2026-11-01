@@ -1,0 +1,470 @@
+{
+  "family": "ardupilot",
+  "firmware_command": [
+    "/tmp/ucas-ardupilot-sitl/build/sitl/bin/arducopter",
+    "-w",
+    "-M",
+    "quad",
+    "--base-port",
+    "15760",
+    "--serial0=udpclient:127.0.0.1:14581",
+    "--defaults",
+    "/tmp/ucas-ardupilot-sitl/Tools/autotest/default_params/copter.parm,/tmp/ucas-ardupilot-4.7.2-observer.parm"
+  ],
+  "firmware_cwd": "/tmp/ucas-arducopter-4.7.2-api-run",
+  "ingress_port": 14581,
+  "gateway_port": 52083,
+  "api_url": "http://127.0.0.1:41019",
+  "source": "simulated",
+  "arming_or_control_commands_sent": false,
+  "scope": "passive telemetry pipeline and feed-loss recovery only; not autopilot failsafe",
+  "passed": true,
+  "initial_session": "7c9f9f1876204e5780456c7083288a47",
+  "recovered_session": "9d6ed6105d3444938f3abd55f194cd59",
+  "loss_effective_heartbeat_age": 3.704333,
+  "counts": {
+    "firmware_datagrams": 70,
+    "BAD_DATA": 14,
+    "HEARTBEAT": 7,
+    "STATUSTEXT": 5,
+    "UNKNOWN_163": 3,
+    "SYS_STATUS": 3,
+    "POWER_STATUS": 3,
+    "UNKNOWN_152": 3,
+    "NAV_CONTROLLER_OUTPUT": 3,
+    "MISSION_CURRENT": 3,
+    "GPS_RAW_INT": 2,
+    "SYSTEM_TIME": 2,
+    "TERRAIN_REPORT": 2,
+    "VIBRATION": 2,
+    "BATTERY_STATUS": 2,
+    "ATTITUDE": 5,
+    "GLOBAL_POSITION_INT": 5,
+    "UNKNOWN_164": 5,
+    "TERRAIN_REQUEST": 1
+  },
+  "gateway_outbound_datagrams": 0,
+  "release_tag": "Copter-4.7.2",
+  "source_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "binary_sha256": "0c7e26db576c6fc0c742021e4b1c694a55fc7375bf4041b6a4696c665c53438b",
+  "captured_heartbeat_states": [
+    1,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1
+  ],
+  "all_captured_heartbeats_disarmed": true,
+  "pcap_verified_gateway_source_packets": 0,
+  "artifacts_sha256": {
+    "api-readbacks.json": "35fe65fd3c7d81a666cab0b86e0c6717af8bf3dae0e956c34542cc2bde2c18cd",
+    "firmware-mavlink.raw": "c3686527ad2a219ae1484ee4c77f82d1df8fae511ceb1338b40ff1b198a77bab",
+    "firmware-restart.log": "0dd02ad066cb94798826a0b2f33416a6edcb9a402186f1eef327ff676a35f1c4",
+    "firmware.log": "aeb0c1287c4bc3318d9191a842f65e0a5b8d4b4fc3d0fbe52f8b4a46ff5eabcf",
+    "gateway.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gateway.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "loopback.pcap": "193574350f7a39ec76080c779d0820f39b49485bb1887f260e89996ff1a1d5f0",
+    "result.json": "811d243180c7877ded026ea7a000865a617e79318382b6dde9689548a0a66f27",
+    "tcpdump.log": "6fc73f0f9a6d978d5392994bdf3784734bf8b3377aefd257aefc0697f13b51e2"
+  },
+  "representative_api_readbacks": [
+    {
+      "phase": "initial",
+      "view": {
+        "aircraft_id": "ardupilot-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "7c9f9f1876204e5780456c7083288a47",
+          "aircraft_id": "ardupilot-passive-validation",
+          "timestamp": "2026-10-22T11:23:33.938627Z",
+          "received_at": "2026-10-22T11:23:33.941058Z",
+          "sequence": 0,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": null,
+            "battery_percent": null,
+            "link_quality_percent": null,
+            "status": "unknown"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": null,
+            "system_status_age_seconds": null
+          },
+          "autopilot": {
+            "family": "ardupilot",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 2,
+            "armed": false,
+            "base_mode": 89,
+            "custom_mode": 0,
+            "system_status": 1,
+            "heartbeat_age_seconds": 0.251
+          },
+          "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+          "event_key": "mavlink-6916c20594ad4c108c22008bcb8a1e4c:simulated:ardupilot-passive-validation:7c9f9f1876204e5780456c7083288a47:0:2026-10-22T11:23:33.938627Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:23:33.938627Z",
+        "received_at": "2026-10-22T11:23:33.941058Z",
+        "source": "simulated",
+        "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 0.486894,
+          "battery": null,
+          "system_status": null,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "missing",
+          "system_status": "unknown",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 0.235894,
+        "last_accepted_sequence": 0,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "normal",
+      "view": {
+        "aircraft_id": "ardupilot-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "7c9f9f1876204e5780456c7083288a47",
+          "aircraft_id": "ardupilot-passive-validation",
+          "timestamp": "2026-10-22T11:23:36.045260Z",
+          "received_at": "2026-10-22T11:23:36.047480Z",
+          "sequence": 7,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 12.6,
+            "battery_percent": 100,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 0.362,
+            "system_status_age_seconds": 0.368
+          },
+          "autopilot": {
+            "family": "ardupilot",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 2,
+            "armed": false,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "heartbeat_age_seconds": 0.368
+          },
+          "position": {
+            "latitude_deg": 0.0,
+            "longitude_deg": 0.0,
+            "altitude_msl_m": 0.0,
+            "relative_altitude_m": 0.0,
+            "vx_m_s": 0.0,
+            "vy_m_s": 0.0,
+            "vz_m_s": 0.0,
+            "heading_deg": 340.19,
+            "age_seconds": 0.0
+          },
+          "attitude": {
+            "roll_rad": 0.00012487360800150782,
+            "pitch_rad": -0.00010437146556796506,
+            "yaw_rad": -0.3457859456539154,
+            "age_seconds": 0.0
+          },
+          "gps": {
+            "fix_type": 0,
+            "satellites_visible": 0,
+            "age_seconds": 0.367
+          },
+          "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+          "event_key": "mavlink-6916c20594ad4c108c22008bcb8a1e4c:simulated:ardupilot-passive-validation:7c9f9f1876204e5780456c7083288a47:7:2026-10-22T11:23:36.045260Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:23:36.045260Z",
+        "received_at": "2026-10-22T11:23:36.047480Z",
+        "source": "simulated",
+        "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 0.499446,
+          "battery": 0.493446,
+          "system_status": 0.499446,
+          "position": 0.131446,
+          "attitude": 0.131446,
+          "gps": 0.498446
+        },
+        "field_freshness": {
+          "battery": "fresh",
+          "system_status": "fresh",
+          "position": "fresh",
+          "attitude": "fresh",
+          "gps": "fresh"
+        },
+        "age_seconds": 0.131446,
+        "last_accepted_sequence": 7,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "firmware-stopped",
+      "view": {
+        "aircraft_id": "ardupilot-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "7c9f9f1876204e5780456c7083288a47",
+          "aircraft_id": "ardupilot-passive-validation",
+          "timestamp": "2026-10-22T11:23:37.432053Z",
+          "received_at": "2026-10-22T11:23:37.434254Z",
+          "sequence": 12,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 12.6,
+            "battery_percent": 100,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 1.748,
+            "system_status_age_seconds": 1.259
+          },
+          "autopilot": {
+            "family": "ardupilot",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 2,
+            "armed": false,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "heartbeat_age_seconds": 1.754
+          },
+          "position": {
+            "latitude_deg": 0.0,
+            "longitude_deg": 0.0,
+            "altitude_msl_m": 0.0,
+            "relative_altitude_m": 0.0,
+            "vx_m_s": 0.0,
+            "vy_m_s": 0.0,
+            "vz_m_s": 0.0,
+            "heading_deg": 340.19,
+            "age_seconds": 1.387
+          },
+          "attitude": {
+            "roll_rad": 0.00012487360800150782,
+            "pitch_rad": -0.00010437146556796506,
+            "yaw_rad": -0.3457859456539154,
+            "age_seconds": 1.387
+          },
+          "gps": {
+            "fix_type": 0,
+            "satellites_visible": 0,
+            "age_seconds": 1.754
+          },
+          "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+          "event_key": "mavlink-6916c20594ad4c108c22008bcb8a1e4c:simulated:ardupilot-passive-validation:7c9f9f1876204e5780456c7083288a47:12:2026-10-22T11:23:37.432053Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:23:37.432053Z",
+        "received_at": "2026-10-22T11:23:37.434254Z",
+        "source": "simulated",
+        "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+        "snapshot_freshness": "fresh",
+        "freshness": "stale",
+        "connectivity": "stale",
+        "effective_ages": {
+          "heartbeat": 3.704333,
+          "battery": 3.698333,
+          "system_status": 3.209333,
+          "position": 3.337333,
+          "attitude": 3.337333,
+          "gps": 3.704333
+        },
+        "field_freshness": {
+          "battery": "stale",
+          "system_status": "stale",
+          "position": "stale",
+          "attitude": "stale",
+          "gps": "stale"
+        },
+        "age_seconds": 1.950333,
+        "last_accepted_sequence": 12,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "loss-remains-stale",
+      "view": {
+        "aircraft_id": "ardupilot-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "7c9f9f1876204e5780456c7083288a47",
+          "aircraft_id": "ardupilot-passive-validation",
+          "timestamp": "2026-10-22T11:23:37.432053Z",
+          "received_at": "2026-10-22T11:23:37.434254Z",
+          "sequence": 12,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": 12.6,
+            "battery_percent": 100,
+            "link_quality_percent": null,
+            "status": "warning"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": 1.748,
+            "system_status_age_seconds": 1.259
+          },
+          "autopilot": {
+            "family": "ardupilot",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 2,
+            "armed": false,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "heartbeat_age_seconds": 1.754
+          },
+          "position": {
+            "latitude_deg": 0.0,
+            "longitude_deg": 0.0,
+            "altitude_msl_m": 0.0,
+            "relative_altitude_m": 0.0,
+            "vx_m_s": 0.0,
+            "vy_m_s": 0.0,
+            "vz_m_s": 0.0,
+            "heading_deg": 340.19,
+            "age_seconds": 1.387
+          },
+          "attitude": {
+            "roll_rad": 0.00012487360800150782,
+            "pitch_rad": -0.00010437146556796506,
+            "yaw_rad": -0.3457859456539154,
+            "age_seconds": 1.387
+          },
+          "gps": {
+            "fix_type": 0,
+            "satellites_visible": 0,
+            "age_seconds": 1.754
+          },
+          "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+          "event_key": "mavlink-6916c20594ad4c108c22008bcb8a1e4c:simulated:ardupilot-passive-validation:7c9f9f1876204e5780456c7083288a47:12:2026-10-22T11:23:37.432053Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:23:37.432053Z",
+        "received_at": "2026-10-22T11:23:37.434254Z",
+        "source": "simulated",
+        "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+        "snapshot_freshness": "fresh",
+        "freshness": "stale",
+        "connectivity": "stale",
+        "effective_ages": {
+          "heartbeat": 4.3072669999999995,
+          "battery": 4.301267,
+          "system_status": 3.812267,
+          "position": 3.940267,
+          "attitude": 3.940267,
+          "gps": 4.3072669999999995
+        },
+        "field_freshness": {
+          "battery": "stale",
+          "system_status": "stale",
+          "position": "stale",
+          "attitude": "stale",
+          "gps": "stale"
+        },
+        "age_seconds": 2.553267,
+        "last_accepted_sequence": 12,
+        "last_ingestion_status": "accepted"
+      }
+    },
+    {
+      "phase": "recovered",
+      "view": {
+        "aircraft_id": "ardupilot-passive-validation",
+        "sample": {
+          "schema_version": "1.1",
+          "session_id": "9d6ed6105d3444938f3abd55f194cd59",
+          "aircraft_id": "ardupilot-passive-validation",
+          "timestamp": "2026-10-22T11:23:40.999466Z",
+          "received_at": "2026-10-22T11:23:41.001454Z",
+          "sequence": 13,
+          "source": "simulated",
+          "health": {
+            "battery_voltage_v": null,
+            "battery_percent": null,
+            "link_quality_percent": null,
+            "status": "unknown"
+          },
+          "observation": {
+            "heartbeat_timeout_seconds": 2.0,
+            "field_timeout_seconds": 2.0,
+            "battery_age_seconds": null,
+            "system_status_age_seconds": null
+          },
+          "autopilot": {
+            "family": "ardupilot",
+            "system_id": 1,
+            "component_id": 1,
+            "vehicle_type": 2,
+            "armed": false,
+            "base_mode": 89,
+            "custom_mode": 0,
+            "system_status": 1,
+            "heartbeat_age_seconds": 0.0
+          },
+          "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+          "event_key": "mavlink-6916c20594ad4c108c22008bcb8a1e4c:simulated:ardupilot-passive-validation:9d6ed6105d3444938f3abd55f194cd59:13:2026-10-22T11:23:40.999466Z",
+          "ingestion_status": "accepted"
+        },
+        "sampled_at": "2026-10-22T11:23:40.999466Z",
+        "received_at": "2026-10-22T11:23:41.001454Z",
+        "source": "simulated",
+        "source_id": "mavlink-6916c20594ad4c108c22008bcb8a1e4c",
+        "snapshot_freshness": "fresh",
+        "freshness": "fresh",
+        "connectivity": "live",
+        "effective_ages": {
+          "heartbeat": 0.255669,
+          "battery": null,
+          "system_status": null,
+          "position": null,
+          "attitude": null,
+          "gps": null
+        },
+        "field_freshness": {
+          "battery": "missing",
+          "system_status": "unknown",
+          "position": "missing",
+          "attitude": "missing",
+          "gps": "missing"
+        },
+        "age_seconds": 0.255669,
+        "last_accepted_sequence": 13,
+        "last_ingestion_status": "accepted"
+      }
+    }
+  ]
+}
