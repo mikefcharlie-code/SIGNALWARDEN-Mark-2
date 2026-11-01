@@ -1,0 +1,1950 @@
+{
+  "baseCommit": "e5184e72f2aed2d8c4fb8c338c23888e3932f14f",
+  "snapshots": [
+    {
+      "archive": "SIGNALWARDEN-worldview-live-integrations.zip",
+      "fileCount": 399,
+      "unchangedFromMain": 302,
+      "addedCount": 56,
+      "modifiedCount": 41,
+      "mainOnlyCount": 63,
+      "mainOnlyLost": [],
+      "files": [
+        {
+          "path": ".gitignore",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "7b525e3bfe36242748f39b3ebdd164693d2aa21eaf526659422db61cd30e4e08",
+          "currentSha256": "0ecaf0c64bd6b5d288b19c854e5a8fd6bba797a4cfc36b22b890619214de6e8f",
+          "decisionReason": "Retain newer main exclusions and local-model/odometry artifact boundaries; snapshot replacement would regress them."
+        },
+        {
+          "path": "README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e9cd9f3f6ca3630c73a7b76230239f9c12603514508180f1b11e9a06e0101185",
+          "currentSha256": "6b06a5d0a1bfb16928378bf7d035c7418d5f267473d2b7cdcfbec1d82553283d",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/EvidenceCopilot.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "bcac60e28a17d07416f210b6eaf189c60aeadf0ca539545ec5e7974b1e685307",
+          "currentSha256": "f6598b4c265efef75e96f4e081f39598d8475dcf9445d528058b8e7e58e36220",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/Observations.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "d73598b4bb9013c879ff857081c160da1bd189a693fed288fa08aa9d94572870",
+          "currentSha256": "fcf3f6970b2e69d9ea403925011110e720f9f973e5cdc7f3289978cc776c06d2",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/Reports.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "2107ee847b49585921cb67178ce9d23f0da1de0665859b1690ec984544e6755e",
+          "currentSha256": "0c8f1e4d28028e07ae90aea0583732f5453a1ebf853f0c8397e300e0ab526e4d",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/TelemetryInspector.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "863c328eec045c9ed268f93bfd0f0055c932667578e452df6c93ca8e322022f9",
+          "currentSha256": "74cbd8ab839595e1fc710b9c1485a734008308bd94a54702a3b267335add3978",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/WorldGlobe.tsx",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "d5ce3580a13a2416fdecc85e9372a4472a67af0ad7fb8fb62429bd37c9929172",
+          "currentSha256": "a03a625122493c339dbc7b3d9304058828963316211a9fecff5c05b034066f02",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldView.tsx",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7c5b295c32b9e65edf123f686369c8a54d2b3c191007db76d6d8aad419a6c45c",
+          "currentSha256": "b1a4ad509b526e2bbfec906325d89209c0a9fb7a60ee73b483e0c43592910c07",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewAis.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "a5fe3d1d96d0639a917f357f90258af6b90d69b4e0b628b0bda7c62e20ac783b",
+          "currentSha256": "683e269b1ab76caef07f400a63bc5f498a5370995033e646db90fba7e48b60c3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewBasemap.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7e4cd35f8b66cd1dfd8598ca02430dba8c814f2fd72526aa3c457f1b6cdb4efb",
+          "currentSha256": "06814c11f7421b2139034b2e317387ca1a2cc1155695e3539e283290fdf2e29e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewHazards.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "2a93ef2f49284366a4f83b602cbe23f88dfd8825a43465586929c968e4024e1c",
+          "currentSha256": "7da70f330b36799e95ea4014f86ea13646bbcd03d5698ba62076f41582b3eba9",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewMobility.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "87f065bf8b3dfd1ee6802d01c137ec60e9e631778f5ff3cf6466afca24348b17",
+          "currentSha256": "5714971c1d24d352ed934b2c3e9b9eeab1c665cf5a93cd2d228097832f6ff0b4",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewPublicTraffic.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7004030df7ce74dd98280ccb8e69b1991277e2cb18e50ea093a6a84359fdd46d",
+          "currentSha256": "1c47a7d4f46aab2e8cc88c58680244ffd4307d9f90819d9ba4e1ca64e3de419f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewSpace.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "1559c48834074114afae902a48da848d46226bf38a9ec0cc7db2153de386520e",
+          "currentSha256": "79f655856a50783173a83ad0e4e8488e1fce8f06c4da766ba979277da4685bb9",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewWeather.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "ca5d0a8721f4fb0358c163913dfe930036ed891eabc94377507e43557dcfe4a9",
+          "currentSha256": "3d76bfd75a5636e224af6570ca6e71806e73769e504dc7232ad49e1288ca691c",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/local-ai-inference.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "1ca3271b13951e401a85ce1ae568b4c883aa1abaa9a9de7ca034a30a0ee76946",
+          "currentSha256": "c4ba3e7593792af1c53f296146bea7f06ae4b4940e29e4eb13b784b54f61458e",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "apps/management-web/src/observation-network.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "da89b1f20f0b92e23a88452d27c80352c0c6ae867b9fb6f6ab3762d799388de8",
+          "currentSha256": "6e538e954ae88e1c6756a9680995efff6e4241b3ee12758c22e9c02e89414d7a",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/observation-state.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "20552a4f21271f6bdeac99a21a738c02f9499bb7fd7f2a27e5537dcf2cf652d6",
+          "currentSha256": "2990d0f907181b8d60f4911048c30380054bb3147a73435fad55b8a4b8922945",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/report-utils.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "bc634a7c2ebab6f1e53fd60cae1d4090e554d6f47619645816f668ef93d31441",
+          "currentSha256": "18eeb7ca54d979bf2f6bddbed3f3c8a9bb7d604abfd9a3803c5fdb79ee7b52e1",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/telemetry-inspector.css",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "dd523c770ba06aac779fd84f04d018fafdcc32929fa3bd20ba0f778282de741a",
+          "currentSha256": "03f04a745fafc9d4197fd9d059bcee392bf9b159051605481c7bd753aefd13b4",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ais.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "62fed6ca3064d002af794cccb59a8411253a5b64af9fc8005daf28c5cbfdafb5",
+          "currentSha256": "62fed6ca3064d002af794cccb59a8411253a5b64af9fc8005daf28c5cbfdafb5",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ais.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "405bdc0b41aea631532bb8895e656161a4968e9b596b6baf7cff662605b83384",
+          "currentSha256": "2ae1ab927cafc597a9621779d7e5c6ca8b1d7cab6ff9f291978179420bb01467",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap-globe.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "403f00b06b3a5230f7065e4081a9d53705277d1c7d2601d817c8f111ac960648",
+          "currentSha256": "d0b4d45f39248d87ef97c3b2f5a0cd94ba94a293b1ad1277968b43f27aeb5512",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "9927198f459f3bedfd4f8bb941569659451dd43ca0af392ccddea67307726912",
+          "currentSha256": "9927198f459f3bedfd4f8bb941569659451dd43ca0af392ccddea67307726912",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "4839e9581de7cce6d4862cbb7792c6c9d6ac11761555a28d7dceb8b0a97813f5",
+          "currentSha256": "e03490911a6155429cfdc2deb47e39807fa57940d164089edf095d4eaa1c4d5e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-core.ts",
+          "sourceKind": "modified",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7c893e06d5ae75b91f60d9a55d46bf43f5a0ac4b1276ba55f3ab1d9cb40328ea",
+          "currentSha256": "7c893e06d5ae75b91f60d9a55d46bf43f5a0ac4b1276ba55f3ab1d9cb40328ea",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-globe-imagery.ts",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7869823b28865e72588c2f29160f457b25e0be268539296be961a5a5d41f1258",
+          "currentSha256": "a2be5a7114a32bd7e52a20648d93fdf11f1641b66d60f07a904031326ba3f3ca",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-hazards.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "97f165c50d89662369ee0aefb3ed52757c81f8c9e3f07dd61f96f96dd694b748",
+          "currentSha256": "97f165c50d89662369ee0aefb3ed52757c81f8c9e3f07dd61f96f96dd694b748",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-hazards.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "529d09211fc2680a67e7e7bcbc114ea5572cef73f56b888b122381cd66b10fd9",
+          "currentSha256": "40ffa6a3891d656ec2294ab41442ee87c470f716e896aa94e4b93951f8996021",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-mobility.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "bd5cf1338542d8579f645e0374d71ba73bd8635601cf188f878be3ea6f015652",
+          "currentSha256": "bd5cf1338542d8579f645e0374d71ba73bd8635601cf188f878be3ea6f015652",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-mobility.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "828367c31594534270bd4419f92fbf24e35122b1f383c08fccb8a3e384b9a2ce",
+          "currentSha256": "8b887862137f9c573b1674c9865c86ee016062da4dafeddeaf4f2932500d0b87",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-public-traffic.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "869261ee5995770702af94dee589b4c01971974fdbfa3c259033a3fbe1ee8a80",
+          "currentSha256": "869261ee5995770702af94dee589b4c01971974fdbfa3c259033a3fbe1ee8a80",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-public-traffic.ts",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "80e0a2270708cd35de03d3e9d2785a3c9c90e91ad88282d5c67c4135a4fa9275",
+          "currentSha256": "80e0a2270708cd35de03d3e9d2785a3c9c90e91ad88282d5c67c4135a4fa9275",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space-feeds.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "f5724f3067984ba090dd2606dab4820f985d841743b573c66af695fc0405aa5b",
+          "currentSha256": "17a1217808cc7d8608558b691fa91c01869fa5fc6f460356df38d7ae2fd12732",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space-visibility.ts",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b13961e29d45796f136e61cab4d9d666814b71b408ea979aed68a79c96bd9bbd",
+          "currentSha256": "b13961e29d45796f136e61cab4d9d666814b71b408ea979aed68a79c96bd9bbd",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "5eb07465f5abe2297a2fadfe629346d6d2412381be078af499f399501be8efa8",
+          "currentSha256": "5eb07465f5abe2297a2fadfe629346d6d2412381be078af499f399501be8efa8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-weather.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "a4fbfed7ce9ab23820450b0049c949a0219294750ad6a2a2054fcd0d4403c19c",
+          "currentSha256": "a4fbfed7ce9ab23820450b0049c949a0219294750ad6a2a2054fcd0d4403c19c",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-weather.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "5e7c96fe57f7be3779b0aae9b07e86dbfefc1e33f4e70d0c0606702c1aec5bb0",
+          "currentSha256": "d2d6f4c1d1b5bd712485334dfcfbcd3d4527d352f340a36bd1b9475b752ca4a2",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview.css",
+          "sourceKind": "modified",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "1b34d857a5d7b03e7c3232d87d19ca861001488a97dcc606af636132a44c2125",
+          "currentSha256": "1b34d857a5d7b03e7c3232d87d19ca861001488a97dcc606af636132a44c2125",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/observation-network.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "c9e45d28013fb0967f44534afa0876e9abc366f950e3552c0a55849190aff519",
+          "currentSha256": "96bca2f0e78261ce01a39322241aa3a506aa4aee76bc59c7e25574a139739b39",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/observation-state.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "d976163a0a4b0ce3efe2143592be1ec78efe88b1f7c9bd5641bb70dcb88fa2d7",
+          "currentSha256": "579ec95b28e8f183fd51b7e443172f008eebed686abd5aa0a02dfa443e852801",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/report-utils.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "5ffd10f5695d9d79934f3c0308aa8a8b8894a88a66f7c416b36af9cdbe210699",
+          "currentSha256": "c89d2aeb101f8c10f874ae22315328ae503198e1b8eb0eca7eff626c739c62a8",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-ais.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "167db05543be386d0bf996bb2210f9883796e0a1914ba57ebcd5d568448d1a69",
+          "currentSha256": "632e0970b42e21b68e9bf9a9e77122556339f4657de1694882c24accc589fa2f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-basemap.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "05f5a6c0ba5bcf0161810d2dce99e94476ee97a66956cee9ba917f4db3dec5af",
+          "currentSha256": "dd2caa55558e00db429537c9c4d9a2129ed015f7e87ea036a5523555e2e9c699",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-hazards.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "309c0554747548db08ff2baddf76e1a0bc0e3e25f5434cafa41ecfc11fb495c4",
+          "currentSha256": "1636cd52c819a99bc0a5bdf23710c6472c6c4d18de18eddd1b65b2f12051ae98",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-mobility.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "ab5526db4d3eeb4e28aac699bbd8bb55d89e90cc961658d907e194206ecb23cf",
+          "currentSha256": "059f6b93b5f9c81cf018c7b40a95ca0e8b981e4604ad7958408691a25f9226e3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-public-traffic.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "0b2ec0695f27ed8d29681daafe681d85cfe29966a3acc4748eea9fa285947c17",
+          "currentSha256": "17c0e0c4ea820ae5061206c802c75415aa0f60eac81dac71cfadd9c776f5f250",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-space-feeds.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "829731e05f13d1cb0a103b0f4454fcce224b87b371a07b1a6a9423c2e502619f",
+          "currentSha256": "c1752a0c029df0381a07200f7b3f2405b790935b44809cd63f0f5d89c9dffd64",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-space-visibility.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "9aae450a2c20e636708c9068bc9dc5860024b90bc35700744c77f6d9a3e2af21",
+          "currentSha256": "9aae450a2c20e636708c9068bc9dc5860024b90bc35700744c77f6d9a3e2af21",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-weather.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "08704cf63396645cba3e2971e943e9cde7c8d5a867b61d27bccb581089564165",
+          "currentSha256": "ec513a42f08d20db22a013381dc3c15dcca149b99b6a59ee82df29a8a1358c43",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/vite.config.ts",
+          "sourceKind": "modified",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "d25e338cf535da4c9faa4ed00b0d4df81c150a4d78682b296ebb3f0338fa73d5",
+          "currentSha256": "d25e338cf535da4c9faa4ed00b0d4df81c150a4d78682b296ebb3f0338fa73d5",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "configs/local-ai-models.json",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "f3ff1c9aa549e90bb4a6007f12a0418d32ca6547b21c242bb32dcfcb6e7fc9b0",
+          "currentSha256": "f0a4069afb9bf4177e734ad6df65060abb6570880a55584be78440cc97b2e454",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "docs/README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "92bb6b5ce41aa7ecf43b242d2325ba455dc4cd4d834af6a10cc2a6a82be3569e",
+          "currentSha256": "7d038bf405f0c8bb6ae862894a5d9899513a8cc7713c16af9270f44e05b0140b",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/decisions/README.md",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "456ca9b35a98f6e097f0037871747ab89f9d1be5b674b2d326e08ef34d694a12",
+          "currentSha256": "d354f7c55942568aae7a0d334513963204b435de8bb1c462ce76ebe2e9e62977",
+          "decisionReason": "Retain newer main documentation and decision navigation, including advisory-only Warden-NAV and preserved ground-odometry capabilities."
+        },
+        {
+          "path": "docs/gods-eye-capability-coverage.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "48df6fbb05b0342cfd2d2c4ea190f1a9d0ce16a4eba4b50b5f11d3bd4fccb958",
+          "currentSha256": "dc7854aaa3393ca759a928536588e65ab505828c957e7e66b47a93f372adf2f3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/local-ai-setup.md",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "4fbcf82f868d8112bdebed8240c2cf84ef502690bf98f2cc87679710d5cb4e21",
+          "currentSha256": "334e86f3839e4550f3c4e382ba44fc1156e921dc3a9205a2c8a7ebe5c802dfb8",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "docs/worldview-ais.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "dea87162f7b978a00a5d03666913a9c0aeba417d7136d01bfbf377605647a97b",
+          "currentSha256": "dea87162f7b978a00a5d03666913a9c0aeba417d7136d01bfbf377605647a97b",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-data-sources.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "f453f4163d69d787603df99a33b9d07ec9d2086d1af719d763126473516fba41",
+          "currentSha256": "9bb7847d53086fdf8a95cfd4aad529d377a6a28e4dc013b50c3edbbd52016c2b",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-hazards.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b67ed39e49c278b3ba0d28f61f9293329aae60546abefbb24b1c31087666ee38",
+          "currentSha256": "b67ed39e49c278b3ba0d28f61f9293329aae60546abefbb24b1c31087666ee38",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-imagery-basemaps.md",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "99f7c49a2a12215f973e1b2ff4f853a4f9939da4de23f25bacf8eb1302e66c68",
+          "currentSha256": "92bb2462898a89e9ed2c52fe6cab2ebc54174a9ced7e14c1927f8be6cf3b8c6f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-mobility.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e5c31871257c62d307551aabacf9b332127519c5e74fcc7bb2994bf103a5bb4e",
+          "currentSha256": "e5c31871257c62d307551aabacf9b332127519c5e74fcc7bb2994bf103a5bb4e",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-public-traffic.md",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e995a08cbf4ab27c9d6eead32abaccb1d9db47dd53c3e14a8d12079003ade5bf",
+          "currentSha256": "3ead3b0e495038915efe633944e2b1aeca0fdff597f98f62b06e6f5b0b1dc709",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-space.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "ffe7abdc79adc7b8fb9f05802dbc9e32842f4847e1f65a4616217c9050ce05ed",
+          "currentSha256": "ffe7abdc79adc7b8fb9f05802dbc9e32842f4847e1f65a4616217c9050ce05ed",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-weather.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e8c9dfebf6148dde33fc41ea72a7c9d3ce62af5dafde7d0c9137e9ad1ac043e9",
+          "currentSha256": "e8c9dfebf6148dde33fc41ea72a7c9d3ce62af5dafde7d0c9137e9ad1ac043e9",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "packages/contracts/v1/operational-event.schema.json",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "442547b87329bb746ea29771038624eec6edfc04f67fb8413bc2408b06df6651",
+          "currentSha256": "c6826f87d0bf449f812d4c0bd81788cfbfd7abdba3a55ccc7854768843d769f5",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "scripts/local_ai_infer.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "3cc32dde2f679a53e82eb97606b83a186ee5394b35cce73a3e02ad10616744df",
+          "currentSha256": "a6acfa9564093f281adca063ffb259f9d74cd9afadf25c856f32073f5d7ad82c",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "scripts/local_ai_run.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "fc887fae24a88bb9c37be742c43b8a8c7bc3b573c495059d54c6bbff02b40918",
+          "currentSha256": "5f58210d9c1720a16ef283fabf80228ac4ce94373f20e92385e0117cf60e07f1",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "scripts/local_ai_setup.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "5b7cb10d5d01b364ba709dd5fa8c6b7da3a858433f32b4b69222e033bf1a6494",
+          "currentSha256": "5c66d87b5d98bbbabbb57f1de5aa5625c3c1e8ee795f4054946b1b703e8b0191",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "services/lattice_readonly/evidence.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "25f1c1805353c65b4ea10d530518d5d5b429b0a6f404735e84e1e455cc5c9e6d",
+          "currentSha256": "2548b6beeaaba95874087bb5ea59891a6a7147974be684a82573777a9c77c408",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "services/lattice_readonly/reports.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "20fa84741ad86e41a481b9e01d4fd363adace7b622df47fc363da0fd2e3ebf30",
+          "currentSha256": "cb38a663cb8efb807cf00817e2bf99a18275279cc61889396144f5af3ea70676",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "services/management-api/README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "4b62133537d76903f60189d91fcfacf4e7257bd71b344ac475d3c8332a3b7cfc",
+          "currentSha256": "eb4d12de73af8df33d1237edb6ef1507cb93717529026a59e2de5ba52ff63dc3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/ais_nmea.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e9092d50230f41a0088aed0222a522f342baf51fa4307cdc7a9f6d0aa76eca9e",
+          "currentSha256": "e9092d50230f41a0088aed0222a522f342baf51fa4307cdc7a9f6d0aa76eca9e",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/ais_vessels.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "3163018bad5e68e9b26c7824a45f240c5c18f65abc5a392611693c2a66e9aba5",
+          "currentSha256": "009e4c6b48a2e094291b2e2f1b74bf6534b562cabb7fe46e8cb2f50aa2caae0f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/app.py",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "d1cf672f4ec6090738285641aa269e0466120c5797e3ea0e8f6109f2ca0d4625",
+          "currentSha256": "7cfb15e826240473af1d2260e8e1a2301ca27c5339ad477445133348d360b62e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/basemap_relay.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e65d926db51d98bd140c260372f7d76c6ca07cd16c42074d1f5a76b0ff7385f0",
+          "currentSha256": "fa47d5c848feb08e7afa94573daff0b6a6332aaf8e65af3a5286623ac5f3cf0f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/gtfs_realtime_lite.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7c5148d5f4bd981d1711f81d123593e91015360e0653596e227a98ec51cd051c",
+          "currentSha256": "7c5148d5f4bd981d1711f81d123593e91015360e0653596e227a98ec51cd051c",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/hazard_feeds.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "03b2e6adbb00c1fba54ce74f263f6b5018430a086f2b2768d80024c5c375eac8",
+          "currentSha256": "03b2e6adbb00c1fba54ce74f263f6b5018430a086f2b2768d80024c5c375eac8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/local_ai_inference.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "f0769dedfea6dbfb087ec6f707f2bffced8c845ef360e12bc74eddf8e576dd18",
+          "currentSha256": "fae304c2884fac79d2d84382a6f435e2f117cefcfe29f2e4e50d7071872e944b",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "services/management-api/persistence.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "96fb9acf97028d52f223436bbfc44c941ba9be3ed3a22c872d83d4d4737c3002",
+          "currentSha256": "76206e4531b33626d5e477d97c5737a7102d1d62b7aced382b16dfeddefcab31",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "services/management-api/public_traffic.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "9aa91dd0302f7b2a5ce64126c3e0557716a92e11cab54fb8011e69c11dbb32d8",
+          "currentSha256": "3c4502f7b29d31de52802ab64a2846b7c14f4761c7dba2e4807f1d7cf03bd9b3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/space_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "1a0f891a8b8f031ae75afe5155c06e3140fc3e82697226201bec0721e82223f8",
+          "currentSha256": "1a0f891a8b8f031ae75afe5155c06e3140fc3e82697226201bec0721e82223f8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/worldview_mobility.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "862de09cdd8200c947e295df3b94810fbc63ff79fb5df1d8710b52f2a3a0cbb2",
+          "currentSha256": "f376acf52e4e4e9ba224460f878552029c704979c160e5e5a3ee2cae35739a59",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/worldview_mobility_parsers.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7788ed3db8ccd671ebfcb45759abdc79680a3406095ece2225d79cc6b0cf53c3",
+          "currentSha256": "7788ed3db8ccd671ebfcb45759abdc79680a3406095ece2225d79cc6b0cf53c3",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/worldview_weather.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "de96d397583dd2afec8d06bc1627111ae38d048ac95a26f1fcada03f129504a1",
+          "currentSha256": "3fbe332c1fd02cf2c675578aeb25f81e0f9c510f547c30a93a3047757f075928",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_ais_nmea.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "c0a19713c1c690cb102d434d174326217edfb0991a689022733ce0f6927b1746",
+          "currentSha256": "c0a19713c1c690cb102d434d174326217edfb0991a689022733ce0f6927b1746",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_ais_vessels.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "9fe79cf73e39783a1788a3f636c82ca4dbc08c35c1cabdfaa2cfaad1d2f639b1",
+          "currentSha256": "dbfe8aeea3024329f1a1aaa75aa92a2c1c59dec811c1c3d585eb28c7e5c92f19",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_basemap_relay.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "882eacd8859347074a08fccecbd5f0a54474dbccf958d94c6a94112c30fd5331",
+          "currentSha256": "e4e1de0034f58d90c1255849daf0bc7283c39f924bb84dd7b3692e58cad7904c",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_contracts.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "c0aede88d8886574b5e0e9e2909395929d05a268dd539115cc78dbd6d53b57cc",
+          "currentSha256": "3f67aa6a4fb653dcfd92f20a61ee8b2bd0559c16dd1d8baa6e7c445575f30aa9",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "tests/test_hazard_feeds.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e8c43ca432b867dc8525050153e4e76396dc5d871ea83c671b921499a45de647",
+          "currentSha256": "e8c43ca432b867dc8525050153e4e76396dc5d871ea83c671b921499a45de647",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_local_ai_inference_api.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "a5ab505226a5d7496734f75da4db1113f550f14a96b70332425d161430fc1904",
+          "currentSha256": "a1e703943903f9725930b52347577c18ab1edd6335d3f680645b2970d2e04e20",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "tests/test_local_ai_setup.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "259501fa2adaeac12587af654834f297f58c44cb08cc9afb1199d4e1b2e5fd4f",
+          "currentSha256": "ad28f5f0f2458d7a03d8faff38aee5c35efacae44971daf57d3a0fdf761fb082",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "tests/test_management_api.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "0df8e4892c21af1a814ef1acda4b47b30de15b9eff474b0b2b0b86ae765a5814",
+          "currentSha256": "8e62df75d5f6034734244e1fb8403afc047810c43de6aea166859183070b693b",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "tests/test_persistence_design.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "e401d05203147bff350cb72be7e83a07363ecab99327dd60c918848916cbb372",
+          "currentSha256": "4bfd8adfd44a99b720237113b3c430ff4008cfb4e74dfd44bd29575e367ab828",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "tests/test_public_traffic.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "0adc2ac385604a23958042a970fd2db08f5ed54c5800ef9f6996313d86d314dc",
+          "currentSha256": "dab495a817f63e936c0f3a143a29e30bb09c151ec9ac59e7360715709da48089",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_space_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b28f0bc753aa091848e55028e6b6f756a55626b9231ae00db8aa481716bad6b3",
+          "currentSha256": "b28f0bc753aa091848e55028e6b6f756a55626b9231ae00db8aa481716bad6b3",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_worldview_mobility.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "20a52c7b601b5c0a9808d7f4d160012a80a921b1347a771a0c421db3be2e8c1b",
+          "currentSha256": "f559e5a34d5cb385807d9244b1e60d3ff7bc10cb9cbbc9fb13ae18d7775e6a94",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_worldview_weather.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "729bb902972179daeba44934f91fdf9b2a9d83a5b1d2953f086831dfe3fcc3e6",
+          "currentSha256": "1779745ad56c9ef23a4d37f0662614e5e8936a31c440d795efea55c560590ecb",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        }
+      ],
+      "mainOnlyPreservedPaths": [
+        "THIRD_PARTY_NOTICES-ground-odometry.txt",
+        "apps/management-web/src/WardenNavDemoPanel.tsx",
+        "apps/management-web/src/WardenThDemoPanel.tsx",
+        "configs/ground-ego-motion-artifact.json",
+        "configs/warden-model-status.json",
+        "configs/warden-nav-artifact.json",
+        "configs/warden-nav-mm-artifact.json",
+        "configs/warden-th-artifact.json",
+        "configs/warden-th.yaml",
+        "docs/decisions/0006-warden-advisory-integration.md",
+        "docs/decisions/0007-navigation-integrity-model.md",
+        "docs/ground-vehicle-odometry.md",
+        "docs/validation/ground-nav-egomotion-review.md",
+        "docs/validation/warden-nav-v2-multimodal.md",
+        "docs/warden-model-integration.md",
+        "docs/warden-th-dependency-audit.md",
+        "docs/warden-th-model.md",
+        "requirements-ai/ground-ego-motion-nvidia.txt",
+        "requirements-ai/navigation-integrity-multimodal.txt",
+        "requirements-ai/navigation-integrity-training.txt",
+        "requirements-ai/navigation-integrity.txt",
+        "requirements-ai/telemetry-health-training.txt",
+        "requirements-ai/telemetry-health.txt",
+        "requirements-ground-odometry.in",
+        "requirements-ground-odometry.txt",
+        "scripts/ground_ego_motion_review.py",
+        "scripts/ground_vehicle_odometry.py",
+        "scripts/warden_nav_mm_review.py",
+        "scripts/warden_nav_train.py",
+        "scripts/warden_th_train.py",
+        "services/ground_ego_motion/baseline.py",
+        "services/ground_ego_motion/model.py",
+        "services/ground_vehicle_odometry/__init__.py",
+        "services/ground_vehicle_odometry/core.py",
+        "services/warden_nav/__init__.py",
+        "services/warden_nav/baseline.py",
+        "services/warden_nav/demo.py",
+        "services/warden_nav/events.py",
+        "services/warden_nav/features.py",
+        "services/warden_nav/model.py",
+        "services/warden_nav/multimodal/__init__.py",
+        "services/warden_nav/multimodal/features.py",
+        "services/warden_nav/multimodal/model.py",
+        "services/warden_nav/multimodal/streams.py",
+        "services/warden_nav/residuals.py",
+        "services/warden_nav/window.py",
+        "services/warden_status.py",
+        "services/warden_th/__init__.py",
+        "services/warden_th/baseline.py",
+        "services/warden_th/demo.py",
+        "services/warden_th/events.py",
+        "services/warden_th/features.py",
+        "services/warden_th/model.py",
+        "services/warden_th/window.py",
+        "services/warden_trust/__init__.py",
+        "services/warden_trust/rules.py",
+        "simulation/fault_injection.py",
+        "simulation/nav_scenarios.py",
+        "tests/test_ground_ego_motion_review.py",
+        "tests/test_ground_vehicle_odometry.py",
+        "tests/test_warden_models.py",
+        "tests/test_warden_nav_multimodal_review.py",
+        "tests/test_warden_nav_pipeline.py"
+      ]
+    },
+    {
+      "archive": "SIGNALWARDEN-worldview-live-integrations-950adb6.zip",
+      "fileCount": 424,
+      "unchangedFromMain": 302,
+      "addedCount": 81,
+      "modifiedCount": 41,
+      "mainOnlyCount": 63,
+      "mainOnlyLost": [],
+      "files": [
+        {
+          "path": ".gitignore",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "7b525e3bfe36242748f39b3ebdd164693d2aa21eaf526659422db61cd30e4e08",
+          "currentSha256": "0ecaf0c64bd6b5d288b19c854e5a8fd6bba797a4cfc36b22b890619214de6e8f",
+          "decisionReason": "Retain newer main exclusions and local-model/odometry artifact boundaries; snapshot replacement would regress them."
+        },
+        {
+          "path": "README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "a42a3634f229a75eec2e1ea97df9607902fdb9b131fc70ffe7e57e6874ccef1e",
+          "currentSha256": "6b06a5d0a1bfb16928378bf7d035c7418d5f267473d2b7cdcfbec1d82553283d",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/EvidenceCopilot.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "bcac60e28a17d07416f210b6eaf189c60aeadf0ca539545ec5e7974b1e685307",
+          "currentSha256": "f6598b4c265efef75e96f4e081f39598d8475dcf9445d528058b8e7e58e36220",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/Observations.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "d73598b4bb9013c879ff857081c160da1bd189a693fed288fa08aa9d94572870",
+          "currentSha256": "fcf3f6970b2e69d9ea403925011110e720f9f973e5cdc7f3289978cc776c06d2",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/Reports.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "2107ee847b49585921cb67178ce9d23f0da1de0665859b1690ec984544e6755e",
+          "currentSha256": "0c8f1e4d28028e07ae90aea0583732f5453a1ebf853f0c8397e300e0ab526e4d",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/TelemetryInspector.tsx",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "863c328eec045c9ed268f93bfd0f0055c932667578e452df6c93ca8e322022f9",
+          "currentSha256": "74cbd8ab839595e1fc710b9c1485a734008308bd94a54702a3b267335add3978",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/WorldGlobe.tsx",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "b4d1f1f3ffa869e7d86190035916ab946ec0c958c76d0df956e0b4c021169414",
+          "currentSha256": "a03a625122493c339dbc7b3d9304058828963316211a9fecff5c05b034066f02",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldView.tsx",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "11d3ac0d17549255af7e27a617e1da1dbcc2b710f08fccfe8e340a437fde8258",
+          "currentSha256": "b1a4ad509b526e2bbfec906325d89209c0a9fb7a60ee73b483e0c43592910c07",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewAis.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "a5fe3d1d96d0639a917f357f90258af6b90d69b4e0b628b0bda7c62e20ac783b",
+          "currentSha256": "683e269b1ab76caef07f400a63bc5f498a5370995033e646db90fba7e48b60c3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewBasemap.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7e4cd35f8b66cd1dfd8598ca02430dba8c814f2fd72526aa3c457f1b6cdb4efb",
+          "currentSha256": "06814c11f7421b2139034b2e317387ca1a2cc1155695e3539e283290fdf2e29e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewHazards.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "2a93ef2f49284366a4f83b602cbe23f88dfd8825a43465586929c968e4024e1c",
+          "currentSha256": "7da70f330b36799e95ea4014f86ea13646bbcd03d5698ba62076f41582b3eba9",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewLiveMaps.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "8b9e1faa03ed165e8bbd79ddab72df402380e078420d99a58d0571c29cfe8443",
+          "currentSha256": "fc5822dd32945b42d4db63ce3b9d0088bea1f4d1d66eb91a5d2ac2a689045851",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewMobility.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "87f065bf8b3dfd1ee6802d01c137ec60e9e631778f5ff3cf6466afca24348b17",
+          "currentSha256": "5714971c1d24d352ed934b2c3e9b9eeab1c665cf5a93cd2d228097832f6ff0b4",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewOcean.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "f0af261f406ebd18ab7dd8159560af9c7b881ef2963091a4faafd5dfe98adca2",
+          "currentSha256": "667591ff74c08cb2f357e10efc8e86394f47154169fc765b261d2ab78daa83e4",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewPublicTraffic.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7004030df7ce74dd98280ccb8e69b1991277e2cb18e50ea093a6a84359fdd46d",
+          "currentSha256": "1c47a7d4f46aab2e8cc88c58680244ffd4307d9f90819d9ba4e1ca64e3de419f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewSpace.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "1559c48834074114afae902a48da848d46226bf38a9ec0cc7db2153de386520e",
+          "currentSha256": "79f655856a50783173a83ad0e4e8488e1fce8f06c4da766ba979277da4685bb9",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewWeather.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "ca5d0a8721f4fb0358c163913dfe930036ed891eabc94377507e43557dcfe4a9",
+          "currentSha256": "3d76bfd75a5636e224af6570ca6e71806e73769e504dc7232ad49e1288ca691c",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/WorldViewWindAir.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "ca7d283ffab945ecc943e337ce38ec661970e018599cef813716943d449de034",
+          "currentSha256": "713e1f616d6e087ec31350247cf6efdf7acfbb8fb802ff0b728909f6d6827e16",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/local-ai-inference.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "1ca3271b13951e401a85ce1ae568b4c883aa1abaa9a9de7ca034a30a0ee76946",
+          "currentSha256": "c4ba3e7593792af1c53f296146bea7f06ae4b4940e29e4eb13b784b54f61458e",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "apps/management-web/src/observation-network.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "da89b1f20f0b92e23a88452d27c80352c0c6ae867b9fb6f6ab3762d799388de8",
+          "currentSha256": "6e538e954ae88e1c6756a9680995efff6e4241b3ee12758c22e9c02e89414d7a",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/observation-state.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "20552a4f21271f6bdeac99a21a738c02f9499bb7fd7f2a27e5537dcf2cf652d6",
+          "currentSha256": "2990d0f907181b8d60f4911048c30380054bb3147a73435fad55b8a4b8922945",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/report-utils.ts",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "bc634a7c2ebab6f1e53fd60cae1d4090e554d6f47619645816f668ef93d31441",
+          "currentSha256": "18eeb7ca54d979bf2f6bddbed3f3c8a9bb7d604abfd9a3803c5fdb79ee7b52e1",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/telemetry-inspector.css",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "dd523c770ba06aac779fd84f04d018fafdcc32929fa3bd20ba0f778282de741a",
+          "currentSha256": "03f04a745fafc9d4197fd9d059bcee392bf9b159051605481c7bd753aefd13b4",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/src/worldview-airgrid.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7b8afb4d4a3ce48f6eaacbfaac317361065cb78de570d2003fc1fe99b4401af1",
+          "currentSha256": "5d39be503755d7c9ea8a3167d8a27402d4961a8d6d614f66fe0265a885bb80ac",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ais.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "62fed6ca3064d002af794cccb59a8411253a5b64af9fc8005daf28c5cbfdafb5",
+          "currentSha256": "62fed6ca3064d002af794cccb59a8411253a5b64af9fc8005daf28c5cbfdafb5",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ais.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "405bdc0b41aea631532bb8895e656161a4968e9b596b6baf7cff662605b83384",
+          "currentSha256": "2ae1ab927cafc597a9621779d7e5c6ca8b1d7cab6ff9f291978179420bb01467",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap-globe.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "403f00b06b3a5230f7065e4081a9d53705277d1c7d2601d817c8f111ac960648",
+          "currentSha256": "d0b4d45f39248d87ef97c3b2f5a0cd94ba94a293b1ad1277968b43f27aeb5512",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "9927198f459f3bedfd4f8bb941569659451dd43ca0af392ccddea67307726912",
+          "currentSha256": "9927198f459f3bedfd4f8bb941569659451dd43ca0af392ccddea67307726912",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-basemap.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "4839e9581de7cce6d4862cbb7792c6c9d6ac11761555a28d7dceb8b0a97813f5",
+          "currentSha256": "e03490911a6155429cfdc2deb47e39807fa57940d164089edf095d4eaa1c4d5e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-core.ts",
+          "sourceKind": "modified",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7c893e06d5ae75b91f60d9a55d46bf43f5a0ac4b1276ba55f3ab1d9cb40328ea",
+          "currentSha256": "7c893e06d5ae75b91f60d9a55d46bf43f5a0ac4b1276ba55f3ab1d9cb40328ea",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-globe-imagery.ts",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "7869823b28865e72588c2f29160f457b25e0be268539296be961a5a5d41f1258",
+          "currentSha256": "a2be5a7114a32bd7e52a20648d93fdf11f1641b66d60f07a904031326ba3f3ca",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-hazards.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "97f165c50d89662369ee0aefb3ed52757c81f8c9e3f07dd61f96f96dd694b748",
+          "currentSha256": "97f165c50d89662369ee0aefb3ed52757c81f8c9e3f07dd61f96f96dd694b748",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-hazards.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "529d09211fc2680a67e7e7bcbc114ea5572cef73f56b888b122381cd66b10fd9",
+          "currentSha256": "40ffa6a3891d656ec2294ab41442ee87c470f716e896aa94e4b93951f8996021",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-livemaps-globe.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "c50a9c5d7ec8673e1a65285266e96d7b3c3a0a5151db54cef438a6c5d7beac02",
+          "currentSha256": "e352d6bb30e05756efd60097140532aa388a089a12aa87af7213a45ee141fe01",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-livemaps.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "8b725376883b8ec43e8f884caf3e8009e85447ae4dad89d881accb323aa65a5d",
+          "currentSha256": "8b725376883b8ec43e8f884caf3e8009e85447ae4dad89d881accb323aa65a5d",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-livemaps.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "97217462722a7993497334a53d85cea11276dfc29259ca565938d09ae42fe55d",
+          "currentSha256": "c6a173e5135d0e27c8ab19df4d8997c143848729b74ca372e2c21d682185f497",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-mobility.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "bd5cf1338542d8579f645e0374d71ba73bd8635601cf188f878be3ea6f015652",
+          "currentSha256": "bd5cf1338542d8579f645e0374d71ba73bd8635601cf188f878be3ea6f015652",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-mobility.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "828367c31594534270bd4419f92fbf24e35122b1f383c08fccb8a3e384b9a2ce",
+          "currentSha256": "8b887862137f9c573b1674c9865c86ee016062da4dafeddeaf4f2932500d0b87",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ocean-globe.tsx",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e79dbe28f6cb7ae0e6a34f01960d4715fe6880df99852c4147946f52ae0e81ae",
+          "currentSha256": "6df63e51f9ca34974022c9eeb879bd6fd712911c697298c35c849bf6e9ca6e63",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ocean.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "11de973089bfbe67ea355c4c76465af6b187a26b17725e258b01aeff485f7e6d",
+          "currentSha256": "11de973089bfbe67ea355c4c76465af6b187a26b17725e258b01aeff485f7e6d",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-ocean.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "43fd26c669cb31b96e2302369e8a951954207ca7f7d786ca9d444775970f7265",
+          "currentSha256": "8cf0fbc8f69282cef1dfba6691fed1531d0cdac7b8e625352ca1c964f9b64321",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-public-traffic.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "869261ee5995770702af94dee589b4c01971974fdbfa3c259033a3fbe1ee8a80",
+          "currentSha256": "869261ee5995770702af94dee589b4c01971974fdbfa3c259033a3fbe1ee8a80",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-public-traffic.ts",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "80e0a2270708cd35de03d3e9d2785a3c9c90e91ad88282d5c67c4135a4fa9275",
+          "currentSha256": "80e0a2270708cd35de03d3e9d2785a3c9c90e91ad88282d5c67c4135a4fa9275",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space-feeds.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "f5724f3067984ba090dd2606dab4820f985d841743b573c66af695fc0405aa5b",
+          "currentSha256": "17a1217808cc7d8608558b691fa91c01869fa5fc6f460356df38d7ae2fd12732",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space-visibility.ts",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b13961e29d45796f136e61cab4d9d666814b71b408ea979aed68a79c96bd9bbd",
+          "currentSha256": "b13961e29d45796f136e61cab4d9d666814b71b408ea979aed68a79c96bd9bbd",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-space.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "5eb07465f5abe2297a2fadfe629346d6d2412381be078af499f399501be8efa8",
+          "currentSha256": "5eb07465f5abe2297a2fadfe629346d6d2412381be078af499f399501be8efa8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-weather.css",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "a4fbfed7ce9ab23820450b0049c949a0219294750ad6a2a2054fcd0d4403c19c",
+          "currentSha256": "a4fbfed7ce9ab23820450b0049c949a0219294750ad6a2a2054fcd0d4403c19c",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-weather.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "5e7c96fe57f7be3779b0aae9b07e86dbfefc1e33f4e70d0c0606702c1aec5bb0",
+          "currentSha256": "d2d6f4c1d1b5bd712485334dfcfbcd3d4527d352f340a36bd1b9475b752ca4a2",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview-windair-globe.tsx",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "a907d2b42ee26a67c744675ed8fecbaef009f6b36903370f5db7224a599fee66",
+          "currentSha256": "a907d2b42ee26a67c744675ed8fecbaef009f6b36903370f5db7224a599fee66",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/src/worldview-windfield.ts",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "444ef017272710590f8101c0c77869d75886c35583b0c1a1c869438b05ab54f4",
+          "currentSha256": "fe5f7567f042e87234a769fb36bd338832a82a2a4c02497fe38b8f26273ed2cb",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/src/worldview.css",
+          "sourceKind": "modified",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "1b34d857a5d7b03e7c3232d87d19ca861001488a97dcc606af636132a44c2125",
+          "currentSha256": "1b34d857a5d7b03e7c3232d87d19ca861001488a97dcc606af636132a44c2125",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/fixtures/livemaps/README.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "1cf594c53563ef70a9cac27b6fceafda73196a4b50eeacf6fb0c13305460bf1a",
+          "currentSha256": "1cf594c53563ef70a9cac27b6fceafda73196a4b50eeacf6fb0c13305460bf1a",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/fixtures/livemaps/gibs-describe-domains.xml",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "4b4884bd8b40f8cbe01e31f2321b832180784ba9e9427d4d578f3badd6dda05c",
+          "currentSha256": "4b4884bd8b40f8cbe01e31f2321b832180784ba9e9427d4d578f3badd6dda05c",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/fixtures/livemaps/iem-radar-list.json",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "f3f81204c52ef1016df82888ac9979be62dca21f418f9bc80ed51e1b30feb273",
+          "currentSha256": "f3f81204c52ef1016df82888ac9979be62dca21f418f9bc80ed51e1b30feb273",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/fixtures/livemaps/rainviewer-weather-maps.json",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "24ea4c9a64711e5b6684040cd01d0aac51befff6997853b1aaf2588ef5796fab",
+          "currentSha256": "24ea4c9a64711e5b6684040cd01d0aac51befff6997853b1aaf2588ef5796fab",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/observation-network.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "c9e45d28013fb0967f44534afa0876e9abc366f950e3552c0a55849190aff519",
+          "currentSha256": "96bca2f0e78261ce01a39322241aa3a506aa4aee76bc59c7e25574a139739b39",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/observation-state.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "d976163a0a4b0ce3efe2143592be1ec78efe88b1f7c9bd5641bb70dcb88fa2d7",
+          "currentSha256": "579ec95b28e8f183fd51b7e443172f008eebed686abd5aa0a02dfa443e852801",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/report-utils.test.mjs",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "5ffd10f5695d9d79934f3c0308aa8a8b8894a88a66f7c416b36af9cdbe210699",
+          "currentSha256": "c89d2aeb101f8c10f874ae22315328ae503198e1b8eb0eca7eff626c739c62a8",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-ais.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "167db05543be386d0bf996bb2210f9883796e0a1914ba57ebcd5d568448d1a69",
+          "currentSha256": "632e0970b42e21b68e9bf9a9e77122556339f4657de1694882c24accc589fa2f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-basemap.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "05f5a6c0ba5bcf0161810d2dce99e94476ee97a66956cee9ba917f4db3dec5af",
+          "currentSha256": "dd2caa55558e00db429537c9c4d9a2129ed015f7e87ea036a5523555e2e9c699",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-hazards.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "309c0554747548db08ff2baddf76e1a0bc0e3e25f5434cafa41ecfc11fb495c4",
+          "currentSha256": "1636cd52c819a99bc0a5bdf23710c6472c6c4d18de18eddd1b65b2f12051ae98",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-livemaps.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "28a2868fb374fadd382483c6f339505e362b26a177efffd9beb8f2dc0f99df3c",
+          "currentSha256": "de22598965179cc80c1b3876c53774b7a4a984813b90fc41a2528a405f55eca4",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-mobility.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "ab5526db4d3eeb4e28aac699bbd8bb55d89e90cc961658d907e194206ecb23cf",
+          "currentSha256": "059f6b93b5f9c81cf018c7b40a95ca0e8b981e4604ad7958408691a25f9226e3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-ocean.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "277bf310ebede96f378c389bac13f59332c1195ca6731a080a5ea28325acfaa9",
+          "currentSha256": "6ae254b3c8f854cb47d512b9d93f5bb5b6ff919071c0cd3282a7e3873d2e7f0a",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-public-traffic.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "0b2ec0695f27ed8d29681daafe681d85cfe29966a3acc4748eea9fa285947c17",
+          "currentSha256": "17c0e0c4ea820ae5061206c802c75415aa0f60eac81dac71cfadd9c776f5f250",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-space-feeds.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "829731e05f13d1cb0a103b0f4454fcce224b87b371a07b1a6a9423c2e502619f",
+          "currentSha256": "c1752a0c029df0381a07200f7b3f2405b790935b44809cd63f0f5d89c9dffd64",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-space-visibility.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "9aae450a2c20e636708c9068bc9dc5860024b90bc35700744c77f6d9a3e2af21",
+          "currentSha256": "9aae450a2c20e636708c9068bc9dc5860024b90bc35700744c77f6d9a3e2af21",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-weather.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "08704cf63396645cba3e2971e943e9cde7c8d5a867b61d27bccb581089564165",
+          "currentSha256": "ec513a42f08d20db22a013381dc3c15dcca149b99b6a59ee82df29a8a1358c43",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/tests/worldview-windair.test.mjs",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "f1fc59f9968073ba7a6f43d0814884c796c85307dca7e8eb11475db0a7f553a9",
+          "currentSha256": "1db3280a1e855b845a2835ec3c86c30d9bada338855ccad71946d9dbb3e7588f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "apps/management-web/vite.config.ts",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "5069cd775860f4ea74ca09f5884629d084ab332c15afefd04b05c3651b4b0916",
+          "currentSha256": "d25e338cf535da4c9faa4ed00b0d4df81c150a4d78682b296ebb3f0338fa73d5",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "configs/local-ai-models.json",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "f3ff1c9aa549e90bb4a6007f12a0418d32ca6547b21c242bb32dcfcb6e7fc9b0",
+          "currentSha256": "f0a4069afb9bf4177e734ad6df65060abb6570880a55584be78440cc97b2e454",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "docs/README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "92bb6b5ce41aa7ecf43b242d2325ba455dc4cd4d834af6a10cc2a6a82be3569e",
+          "currentSha256": "7d038bf405f0c8bb6ae862894a5d9899513a8cc7713c16af9270f44e05b0140b",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/decisions/README.md",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "456ca9b35a98f6e097f0037871747ab89f9d1be5b674b2d326e08ef34d694a12",
+          "currentSha256": "d354f7c55942568aae7a0d334513963204b435de8bb1c462ce76ebe2e9e62977",
+          "decisionReason": "Retain newer main documentation and decision navigation, including advisory-only Warden-NAV and preserved ground-odometry capabilities."
+        },
+        {
+          "path": "docs/gods-eye-capability-coverage.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "5f6871f2b76b66b9e3833ff920201ea4239bdb70ebfe2a791c5f28a0fcc64495",
+          "currentSha256": "dc7854aaa3393ca759a928536588e65ab505828c957e7e66b47a93f372adf2f3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/local-ai-setup.md",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "4fbcf82f868d8112bdebed8240c2cf84ef502690bf98f2cc87679710d5cb4e21",
+          "currentSha256": "334e86f3839e4550f3c4e382ba44fc1156e921dc3a9205a2c8a7ebe5c802dfb8",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "docs/worldview-ais.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "dea87162f7b978a00a5d03666913a9c0aeba417d7136d01bfbf377605647a97b",
+          "currentSha256": "dea87162f7b978a00a5d03666913a9c0aeba417d7136d01bfbf377605647a97b",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-data-sources.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "52ae5c8e813b6180d6bb6b9315fe68c5c82784fdc63de150fdc7a0b6d9000c02",
+          "currentSha256": "9bb7847d53086fdf8a95cfd4aad529d377a6a28e4dc013b50c3edbbd52016c2b",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-hazards.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b67ed39e49c278b3ba0d28f61f9293329aae60546abefbb24b1c31087666ee38",
+          "currentSha256": "b67ed39e49c278b3ba0d28f61f9293329aae60546abefbb24b1c31087666ee38",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-imagery-basemaps.md",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "99f7c49a2a12215f973e1b2ff4f853a4f9939da4de23f25bacf8eb1302e66c68",
+          "currentSha256": "92bb2462898a89e9ed2c52fe6cab2ebc54174a9ced7e14c1927f8be6cf3b8c6f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-livemaps.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "560c13d50b7e0d7596f609225c9cf2cf92501e8b5b5eba8d50a1d36f976a3f1a",
+          "currentSha256": "560c13d50b7e0d7596f609225c9cf2cf92501e8b5b5eba8d50a1d36f976a3f1a",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-mobility.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e5c31871257c62d307551aabacf9b332127519c5e74fcc7bb2994bf103a5bb4e",
+          "currentSha256": "e5c31871257c62d307551aabacf9b332127519c5e74fcc7bb2994bf103a5bb4e",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-ocean.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "9e30d12d5fa6a2f15bbfa3b2de493b3bacfb4601e1ea72129ac81bd211edae83",
+          "currentSha256": "9e30d12d5fa6a2f15bbfa3b2de493b3bacfb4601e1ea72129ac81bd211edae83",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-public-traffic.md",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e995a08cbf4ab27c9d6eead32abaccb1d9db47dd53c3e14a8d12079003ade5bf",
+          "currentSha256": "3ead3b0e495038915efe633944e2b1aeca0fdff597f98f62b06e6f5b0b1dc709",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "docs/worldview-space.md",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "ffe7abdc79adc7b8fb9f05802dbc9e32842f4847e1f65a4616217c9050ce05ed",
+          "currentSha256": "ffe7abdc79adc7b8fb9f05802dbc9e32842f4847e1f65a4616217c9050ce05ed",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "docs/worldview-weather.md",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "fb1b6998f6ad677b781635e3cbe6a58ff9cf3634380c4660607a27d140589284",
+          "currentSha256": "e8c9dfebf6148dde33fc41ea72a7c9d3ce62af5dafde7d0c9137e9ad1ac043e9",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "packages/contracts/v1/operational-event.schema.json",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "442547b87329bb746ea29771038624eec6edfc04f67fb8413bc2408b06df6651",
+          "currentSha256": "c6826f87d0bf449f812d4c0bd81788cfbfd7abdba3a55ccc7854768843d769f5",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "scripts/local_ai_infer.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "3cc32dde2f679a53e82eb97606b83a186ee5394b35cce73a3e02ad10616744df",
+          "currentSha256": "a6acfa9564093f281adca063ffb259f9d74cd9afadf25c856f32073f5d7ad82c",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "scripts/local_ai_run.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "fc887fae24a88bb9c37be742c43b8a8c7bc3b573c495059d54c6bbff02b40918",
+          "currentSha256": "5f58210d9c1720a16ef283fabf80228ac4ce94373f20e92385e0117cf60e07f1",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "scripts/local_ai_setup.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "5b7cb10d5d01b364ba709dd5fa8c6b7da3a858433f32b4b69222e033bf1a6494",
+          "currentSha256": "5c66d87b5d98bbbabbb57f1de5aa5625c3c1e8ee795f4054946b1b703e8b0191",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "services/lattice_readonly/evidence.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "25f1c1805353c65b4ea10d530518d5d5b429b0a6f404735e84e1e455cc5c9e6d",
+          "currentSha256": "2548b6beeaaba95874087bb5ea59891a6a7147974be684a82573777a9c77c408",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "services/lattice_readonly/reports.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "20fa84741ad86e41a481b9e01d4fd363adace7b622df47fc363da0fd2e3ebf30",
+          "currentSha256": "cb38a663cb8efb807cf00817e2bf99a18275279cc61889396144f5af3ea70676",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "services/management-api/README.md",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "9a46306d4a953c5f6890460178f2f0758aaf535d00ae87af9a4db5685671c791",
+          "currentSha256": "eb4d12de73af8df33d1237edb6ef1507cb93717529026a59e2de5ba52ff63dc3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/ais_nmea.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e9092d50230f41a0088aed0222a522f342baf51fa4307cdc7a9f6d0aa76eca9e",
+          "currentSha256": "e9092d50230f41a0088aed0222a522f342baf51fa4307cdc7a9f6d0aa76eca9e",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/ais_vessels.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "3163018bad5e68e9b26c7824a45f240c5c18f65abc5a392611693c2a66e9aba5",
+          "currentSha256": "009e4c6b48a2e094291b2e2f1b74bf6534b562cabb7fe46e8cb2f50aa2caae0f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/app.py",
+          "sourceKind": "modified",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "95b7c732ad988f2badf4b6ae15879b6fa27e5c50325e36161cb5e754d0c03fdf",
+          "currentSha256": "7cfb15e826240473af1d2260e8e1a2301ca27c5339ad477445133348d360b62e",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/basemap_relay.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "e65d926db51d98bd140c260372f7d76c6ca07cd16c42074d1f5a76b0ff7385f0",
+          "currentSha256": "fa47d5c848feb08e7afa94573daff0b6a6332aaf8e65af3a5286623ac5f3cf0f",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/gtfs_realtime_lite.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7c5148d5f4bd981d1711f81d123593e91015360e0653596e227a98ec51cd051c",
+          "currentSha256": "7c5148d5f4bd981d1711f81d123593e91015360e0653596e227a98ec51cd051c",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/hazard_feeds.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "03b2e6adbb00c1fba54ce74f263f6b5018430a086f2b2768d80024c5c375eac8",
+          "currentSha256": "03b2e6adbb00c1fba54ce74f263f6b5018430a086f2b2768d80024c5c375eac8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/local_ai_inference.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "f0769dedfea6dbfb087ec6f707f2bffced8c845ef360e12bc74eddf8e576dd18",
+          "currentSha256": "fae304c2884fac79d2d84382a6f435e2f117cefcfe29f2e4e50d7071872e944b",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "services/management-api/ocean_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "c099d349268f59a5695640e6312143408591ddabf2d8ddb04d45b23b2fb2e194",
+          "currentSha256": "c099d349268f59a5695640e6312143408591ddabf2d8ddb04d45b23b2fb2e194",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/persistence.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "96fb9acf97028d52f223436bbfc44c941ba9be3ed3a22c872d83d4d4737c3002",
+          "currentSha256": "76206e4531b33626d5e477d97c5737a7102d1d62b7aced382b16dfeddefcab31",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "services/management-api/public_traffic.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "9aa91dd0302f7b2a5ce64126c3e0557716a92e11cab54fb8011e69c11dbb32d8",
+          "currentSha256": "3c4502f7b29d31de52802ab64a2846b7c14f4761c7dba2e4807f1d7cf03bd9b3",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/space_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "1a0f891a8b8f031ae75afe5155c06e3140fc3e82697226201bec0721e82223f8",
+          "currentSha256": "1a0f891a8b8f031ae75afe5155c06e3140fc3e82697226201bec0721e82223f8",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/worldview_mobility.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "862de09cdd8200c947e295df3b94810fbc63ff79fb5df1d8710b52f2a3a0cbb2",
+          "currentSha256": "f376acf52e4e4e9ba224460f878552029c704979c160e5e5a3ee2cae35739a59",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/worldview_mobility_parsers.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "7788ed3db8ccd671ebfcb45759abdc79680a3406095ece2225d79cc6b0cf53c3",
+          "currentSha256": "7788ed3db8ccd671ebfcb45759abdc79680a3406095ece2225d79cc6b0cf53c3",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "services/management-api/worldview_weather.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "de96d397583dd2afec8d06bc1627111ae38d048ac95a26f1fcada03f129504a1",
+          "currentSha256": "3fbe332c1fd02cf2c675578aeb25f81e0f9c510f547c30a93a3047757f075928",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "services/management-api/worldview_windair.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "ddb1168b9d1d754de61d0f1b96571763df9fa7de5a6d65f73b740144e43bc9b3",
+          "currentSha256": "ddb1168b9d1d754de61d0f1b96571763df9fa7de5a6d65f73b740144e43bc9b3",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_ais_nmea.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "c0a19713c1c690cb102d434d174326217edfb0991a689022733ce0f6927b1746",
+          "currentSha256": "c0a19713c1c690cb102d434d174326217edfb0991a689022733ce0f6927b1746",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_ais_vessels.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "9fe79cf73e39783a1788a3f636c82ca4dbc08c35c1cabdfaa2cfaad1d2f639b1",
+          "currentSha256": "dbfe8aeea3024329f1a1aaa75aa92a2c1c59dec811c1c3d585eb28c7e5c92f19",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_basemap_relay.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "882eacd8859347074a08fccecbd5f0a54474dbccf958d94c6a94112c30fd5331",
+          "currentSha256": "e4e1de0034f58d90c1255849daf0bc7283c39f924bb84dd7b3692e58cad7904c",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_contracts.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "c0aede88d8886574b5e0e9e2909395929d05a268dd539115cc78dbd6d53b57cc",
+          "currentSha256": "3f67aa6a4fb653dcfd92f20a61ee8b2bd0559c16dd1d8baa6e7c445575f30aa9",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "tests/test_hazard_feeds.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "e8c43ca432b867dc8525050153e4e76396dc5d871ea83c671b921499a45de647",
+          "currentSha256": "e8c43ca432b867dc8525050153e4e76396dc5d871ea83c671b921499a45de647",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_local_ai_inference_api.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "a5ab505226a5d7496734f75da4db1113f550f14a96b70332425d161430fc1904",
+          "currentSha256": "a1e703943903f9725930b52347577c18ab1edd6335d3f680645b2970d2e04e20",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "tests/test_local_ai_setup.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "259501fa2adaeac12587af654834f297f58c44cb08cc9afb1199d4e1b2e5fd4f",
+          "currentSha256": "ad28f5f0f2458d7a03d8faff38aee5c35efacae44971daf57d3a0fdf761fb082",
+          "decisionReason": "Retain newer main local-model verification, setup and offline/credential safeguards; older snapshot removes them."
+        },
+        {
+          "path": "tests/test_management_api.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "0df8e4892c21af1a814ef1acda4b47b30de15b9eff474b0b2b0b86ae765a5814",
+          "currentSha256": "8e62df75d5f6034734244e1fb8403afc047810c43de6aea166859183070b693b",
+          "decisionReason": "Retain newer main observation/evidence, report, telemetry or contract behavior and corresponding tests; snapshot removes newer safeguards rather than adding compatible World View behavior."
+        },
+        {
+          "path": "tests/test_ocean_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "cd6637077c18b43297ee3902890a725d8721fbacd9deba9cc135c23e686dc3e6",
+          "currentSha256": "cd6637077c18b43297ee3902890a725d8721fbacd9deba9cc135c23e686dc3e6",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_persistence_design.py",
+          "sourceKind": "modified",
+          "integrationState": "preserved-newer-main",
+          "sourceSha256": "e401d05203147bff350cb72be7e83a07363ecab99327dd60c918848916cbb372",
+          "currentSha256": "4bfd8adfd44a99b720237113b3c430ff4008cfb4e74dfd44bd29575e367ab828",
+          "decisionReason": "Retain newer main bounded persistence/history and operational-event contract safeguards; snapshot is an older rollback, not an independent addition."
+        },
+        {
+          "path": "tests/test_public_traffic.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "0adc2ac385604a23958042a970fd2db08f5ed54c5800ef9f6996313d86d314dc",
+          "currentSha256": "dab495a817f63e936c0f3a143a29e30bb09c151ec9ac59e7360715709da48089",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_space_relay.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "b28f0bc753aa091848e55028e6b6f756a55626b9231ae00db8aa481716bad6b3",
+          "currentSha256": "b28f0bc753aa091848e55028e6b6f756a55626b9231ae00db8aa481716bad6b3",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        },
+        {
+          "path": "tests/test_worldview_mobility.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "20a52c7b601b5c0a9808d7f4d160012a80a921b1347a771a0c421db3be2e8c1b",
+          "currentSha256": "f559e5a34d5cb385807d9244b1e60d3ff7bc10cb9cbbc9fb13ae18d7775e6a94",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_worldview_weather.py",
+          "sourceKind": "added",
+          "integrationState": "integrated-or-safety-reworked",
+          "sourceSha256": "729bb902972179daeba44934f91fdf9b2a9d83a5b1d2953f086831dfe3fcc3e6",
+          "currentSha256": "1779745ad56c9ef23a4d37f0662614e5e8936a31c440d795efea55c560590ecb",
+          "decisionReason": "Integrated without overwriting newer main; source modified for current interfaces, safety, truthful freshness, attribution/licensing, viewport gating or regression coverage. See worldview-port-audit.md and the PR diff."
+        },
+        {
+          "path": "tests/test_worldview_windair.py",
+          "sourceKind": "added",
+          "integrationState": "exact-source-port",
+          "sourceSha256": "936141da611022ea137f90e1812e5787797fad24a252d33e8ee88bcbc5573d82",
+          "currentSha256": "936141da611022ea137f90e1812e5787797fad24a252d33e8ee88bcbc5573d82",
+          "decisionReason": "Compatible snapshot addition retained; provider behavior is subject to the shared opt-in, licensing, freshness and read-only boundaries documented in worldview-port-audit.md."
+        }
+      ],
+      "mainOnlyPreservedPaths": [
+        "THIRD_PARTY_NOTICES-ground-odometry.txt",
+        "apps/management-web/src/WardenNavDemoPanel.tsx",
+        "apps/management-web/src/WardenThDemoPanel.tsx",
+        "configs/ground-ego-motion-artifact.json",
+        "configs/warden-model-status.json",
+        "configs/warden-nav-artifact.json",
+        "configs/warden-nav-mm-artifact.json",
+        "configs/warden-th-artifact.json",
+        "configs/warden-th.yaml",
+        "docs/decisions/0006-warden-advisory-integration.md",
+        "docs/decisions/0007-navigation-integrity-model.md",
+        "docs/ground-vehicle-odometry.md",
+        "docs/validation/ground-nav-egomotion-review.md",
+        "docs/validation/warden-nav-v2-multimodal.md",
+        "docs/warden-model-integration.md",
+        "docs/warden-th-dependency-audit.md",
+        "docs/warden-th-model.md",
+        "requirements-ai/ground-ego-motion-nvidia.txt",
+        "requirements-ai/navigation-integrity-multimodal.txt",
+        "requirements-ai/navigation-integrity-training.txt",
+        "requirements-ai/navigation-integrity.txt",
+        "requirements-ai/telemetry-health-training.txt",
+        "requirements-ai/telemetry-health.txt",
+        "requirements-ground-odometry.in",
+        "requirements-ground-odometry.txt",
+        "scripts/ground_ego_motion_review.py",
+        "scripts/ground_vehicle_odometry.py",
+        "scripts/warden_nav_mm_review.py",
+        "scripts/warden_nav_train.py",
+        "scripts/warden_th_train.py",
+        "services/ground_ego_motion/baseline.py",
+        "services/ground_ego_motion/model.py",
+        "services/ground_vehicle_odometry/__init__.py",
+        "services/ground_vehicle_odometry/core.py",
+        "services/warden_nav/__init__.py",
+        "services/warden_nav/baseline.py",
+        "services/warden_nav/demo.py",
+        "services/warden_nav/events.py",
+        "services/warden_nav/features.py",
+        "services/warden_nav/model.py",
+        "services/warden_nav/multimodal/__init__.py",
+        "services/warden_nav/multimodal/features.py",
+        "services/warden_nav/multimodal/model.py",
+        "services/warden_nav/multimodal/streams.py",
+        "services/warden_nav/residuals.py",
+        "services/warden_nav/window.py",
+        "services/warden_status.py",
+        "services/warden_th/__init__.py",
+        "services/warden_th/baseline.py",
+        "services/warden_th/demo.py",
+        "services/warden_th/events.py",
+        "services/warden_th/features.py",
+        "services/warden_th/model.py",
+        "services/warden_th/window.py",
+        "services/warden_trust/__init__.py",
+        "services/warden_trust/rules.py",
+        "simulation/fault_injection.py",
+        "simulation/nav_scenarios.py",
+        "tests/test_ground_ego_motion_review.py",
+        "tests/test_ground_vehicle_odometry.py",
+        "tests/test_warden_models.py",
+        "tests/test_warden_nav_multimodal_review.py",
+        "tests/test_warden_nav_pipeline.py"
+      ]
+    }
+  ],
+  "updateDelta": {
+    "added": [
+      "apps/management-web/src/WorldViewLiveMaps.tsx",
+      "apps/management-web/src/WorldViewOcean.tsx",
+      "apps/management-web/src/WorldViewWindAir.tsx",
+      "apps/management-web/src/worldview-airgrid.ts",
+      "apps/management-web/src/worldview-livemaps-globe.tsx",
+      "apps/management-web/src/worldview-livemaps.css",
+      "apps/management-web/src/worldview-livemaps.ts",
+      "apps/management-web/src/worldview-ocean-globe.tsx",
+      "apps/management-web/src/worldview-ocean.css",
+      "apps/management-web/src/worldview-ocean.ts",
+      "apps/management-web/src/worldview-windair-globe.tsx",
+      "apps/management-web/src/worldview-windfield.ts",
+      "apps/management-web/tests/fixtures/livemaps/README.md",
+      "apps/management-web/tests/fixtures/livemaps/gibs-describe-domains.xml",
+      "apps/management-web/tests/fixtures/livemaps/iem-radar-list.json",
+      "apps/management-web/tests/fixtures/livemaps/rainviewer-weather-maps.json",
+      "apps/management-web/tests/worldview-livemaps.test.mjs",
+      "apps/management-web/tests/worldview-ocean.test.mjs",
+      "apps/management-web/tests/worldview-windair.test.mjs",
+      "docs/worldview-livemaps.md",
+      "docs/worldview-ocean.md",
+      "services/management-api/ocean_relay.py",
+      "services/management-api/worldview_windair.py",
+      "tests/test_ocean_relay.py",
+      "tests/test_worldview_windair.py"
+    ],
+    "removed": [],
+    "modified": [
+      "README.md",
+      "apps/management-web/src/WorldGlobe.tsx",
+      "apps/management-web/src/WorldView.tsx",
+      "apps/management-web/vite.config.ts",
+      "docs/gods-eye-capability-coverage.md",
+      "docs/worldview-data-sources.md",
+      "docs/worldview-weather.md",
+      "services/management-api/README.md",
+      "services/management-api/app.py"
+    ]
+  }
+}

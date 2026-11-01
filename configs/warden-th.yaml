@@ -1,0 +1,72 @@
+schema_version: 1
+model_id: warden-th
+stage: synthetic-development
+advisory_only: true
+external_inference: disabled
+automatic_weight_download: false
+window:
+  seconds: 120
+  sample_rate_hz: 2
+  steps: 240
+  stride_seconds: 5
+  minimum_field_presence: 0.60
+  channels:
+    - health.battery_voltage_v
+    - health.battery_percent
+    - health.temperature_c
+    - health.link_quality_percent
+    - autopilot.heartbeat_age_seconds
+    - sequence
+    - gps.fix_type
+    - gps.satellites_visible
+    - position.age_seconds
+    - position.relative_altitude_m
+    - position.vx_m_s
+    - position.vy_m_s
+    - position.vz_m_s
+    - attitude.roll_rad
+    - attitude.pitch_rad
+    - attitude.yaw_rad
+    - attitude.age_seconds
+    - autopilot.armed
+    - autopilot.base_mode
+    - autopilot.custom_mode
+    - autopilot.system_status
+    - observation.battery_age_seconds
+    - observation.system_status_age_seconds
+  derived:
+    - power.dv_dt
+    - power.voltage_sag_vs_vertical_speed
+    - power.percent_voltage_residual
+    - link.sequence_gap
+    - link.duplicate_late_ratio
+    - link.heartbeat_jitter_seconds
+    - navigation.position_jump_m
+    - navigation.velocity_position_residual_m_s
+    - navigation.altitude_rate_residual_m_s
+    - attitude.rate_magnitude_rad_s
+    - attitude.high_frequency_energy
+    - attitude.heading_yaw_residual_rad
+    - autopilot.mode_change
+    - autopilot.status_transition
+baseline_thresholds:
+  note: "Synthetic-development rules only; not calibrated for aircraft or flight use."
+  voltage_sag_v_per_s: -0.012
+  temperature_ramp_c_per_s: 0.025
+  link_quality_percent: 70
+  heartbeat_age_seconds: 2.0
+  gps_position_jump_m_per_step: 10.0
+  attitude_rate_rad_s: 0.65
+  unexpected_mode_change: true
+model:
+  architecture: "compact one-hidden-layer multi-head MLP"
+  input_features: 198
+  hidden_units: 16
+  anomaly_heads: [power, link, navigation, attitude, autopilot]
+  endurance_quantiles: [0.1, 0.5, 0.9]
+  runtime: onnxruntime-cpu
+  weights_in_git: false
+validation:
+  training_data: synthetic-only
+  field_validated: false
+  evaluation_targets_are_not_certified: true

@@ -1,0 +1,99 @@
+THIRD-PARTY NOTICES — OPTIONAL GROUND-VEHICLE ODOMETRY
+
+This optional tool installs the official KISS-ICP Python wheel and its pinned
+runtime dependency closure from requirements-ground-odometry.txt. This repository
+does not vendor or redistribute those package artifacts. Their exact locked
+versions, hashes, and upstream package URLs are recorded below and in the lock.
+License identifiers/declarations below were checked against the installed
+wheel metadata and/or the named upstream license files. Retain the upstream
+notices when redistributing the corresponding package artifacts.
+
+KISS-ICP 1.3.0 (MIT)
+Source and release: https://github.com/PRBonn/kiss-icp/tree/v1.3.0
+The wheel contains kiss_icp-1.3.0.dist-info/licenses/LICENSE. The release's
+MIT notice is reproduced here:
+
+MIT License
+
+Copyright (c) 2022 Ignacio Vizzo, Tiziano Guadagnino, Benedikt Mersch, Cyrill
+Stachniss.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+PINNED PYTHON RUNTIME DEPENDENCIES (exact versions in the lock)
+
+Package                  Version   License declaration                    Upstream source
+-----------------------  --------  -------------------------------------  ---------------------------------------------------------------
+annotated-types           0.8.0     MIT                                    https://github.com/annotated-types/annotated-types
+click                     8.5.0     BSD-3-Clause                          https://github.com/pallets/click
+colorama                  0.4.6     BSD                                  https://github.com/tartley/colorama
+kiss-icp                  1.3.0     MIT                                    https://github.com/PRBonn/kiss-icp
+markdown-it-py            4.2.0     MIT                                    https://github.com/executablebooks/markdown-it-py
+mdurl                     0.1.2     MIT                                    https://github.com/executablebooks/mdurl
+natsort                   8.4.0     MIT                                    https://github.com/SethMMorton/natsort
+numpy                     2.5.4     BSD-3-Clause AND 0BSD AND MIT AND      https://github.com/numpy/numpy
+                                    Zlib AND CC0-1.0
+pydantic                  2.14.2    MIT                                    https://github.com/pydantic/pydantic
+pydantic-core             2.50.2    MIT                                    https://github.com/pydantic/pydantic/tree/main/pydantic-core
+pydantic-settings         2.16.2    MIT                                    https://github.com/pydantic/pydantic-settings
+Pygments                  2.21.0    BSD-2-Clause                          https://github.com/pygments/pygments
+pyquaternion              0.9.9     MIT                                    https://github.com/KieranWynn/pyquaternion
+python-dotenv             1.2.4     BSD-3-Clause                          https://github.com/theskumar/python-dotenv
+rich                      13.9.4    MIT                                    https://github.com/Textualize/rich
+shellingham               1.5.4     ISC License                           https://github.com/sarugaku/shellingham
+tqdm                      4.70.1    MPL-2.0 AND MIT                       https://github.com/tqdm/tqdm
+typer                     0.9.0     MIT                                    https://github.com/tiangolo/typer
+typing-extensions         4.16.0    PSF-2.0                                https://github.com/python/typing_extensions
+typing-inspection         0.4.4     MIT                                    https://github.com/pydantic/typing-inspection
+
+Primary license sources for composite/multi-file package notices include:
+- NumPy 2.5.4: https://numpy.org/doc/2.5/license.html and the files under
+  numpy-2.5.4.dist-info/licenses/ in the official wheel.
+- tqdm 4.70.1: the wheel contains tqdm-4.70.1.dist-info/licenses/LICENCE.
+- Remaining wheel license files are included under each distribution's
+  *.dist-info/licenses/ (or LICENSE) directory when installed.
+
+NATIVE COMPONENTS USED BY THE OFFICIAL KISS-ICP WHEEL
+
+KISS-ICP v1.3.0's CMake dependency scripts pin the following source versions.
+The official Linux CPython 3.12 wheel inspected for this integration has no
+separate Eigen, Sophus, oneTBB, or robin-map shared-library dependency (its
+native extension links only to platform system libraries); these components are
+therefore treated as native code within the KISS-ICP wheel, not as additional
+runtime Python packages. Versions and license texts are cited to upstream:
+
+- Eigen 3.4.0 — primarily MPL-2.0. Eigen notes that some individual files
+  have separate third-party BSD/LGPL licenses; see both its COPYING.README and
+  COPYING.MPL2: https://gitlab.com/libeigen/eigen/-/tree/3.4.0
+- Sophus 1.24.6 — MIT; its LICENSE notice reads "2012-2017 Steven Lovegrove":
+  https://github.com/strasdat/Sophus/blob/1.24.6/LICENSE.txt
+- oneTBB 2022.1.0 — Apache-2.0: https://github.com/uxlfoundation/oneTBB/blob/v2022.1.0/LICENSE.txt
+- tsl-robin-map 1.4.0 — MIT; copyright (c) 2017 Thibaut
+  Goetghebuer-Planchon: https://github.com/Tessil/robin-map/blob/v1.4.0/LICENSE
+
+The upstream Python pyproject declares the build backend scikit-build-core and
+pybind11 without version pins. They are build-time requirements, not packages
+in this runtime lock; wheel-only installation avoids invoking the build
+backend. The pybind11 headers are BSD-3-Clause (copyright notice in
+https://github.com/pybind/pybind11/blob/master/LICENSE). The build backend's
+license is Apache-2.0 (https://github.com/scikit-build/scikit-build-core).
+
+No source captures, sample datasets, pretrained model files, or learned weights
+are redistributed by this feature. Synthetic scans in tests are generated at
+runtime in temporary directories.

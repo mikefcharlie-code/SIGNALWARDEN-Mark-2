@@ -1,0 +1,18 @@
+.worldview .wv-gpsjam { margin: 6px 0; }
+.worldview .wv-gpsjam-panel summary { cursor: pointer; margin: 4px 0; }
+.worldview .wv-gpsjam .gpsjam-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 4px 0; }
+.worldview .wv-gpsjam .gpsjam-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; font-size: 11px; margin: 4px 0; }
+.worldview .wv-gpsjam .gpsjam-legend i { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: -1px; opacity: 0.8; }
+.worldview .wv-gpsjam .gpsjam-legend small { flex-basis: 100%; color: #9ebdc7; }
+.worldview .wv-gpsjam .gpsjam-disclosure { font-size: 11px; color: #d5e3e8; border-left: 2px solid #ffd27a; padding-left: 6px; }
+.worldview .wv-gpsjam .gpsjam-status, .worldview .wv-gpsjam .gpsjam-facts { font-size: 11px; }
+.worldview .wv-gpsjam .gpsjam-facts { margin: 4px 0; padding-left: 16px; }
+.worldview .wv-gpsjam .gpsjam-badge { padding: 0 4px; border-radius: 2px; }
+.worldview .wv-gpsjam .gpsjam-badge-latest { background: #1d5a3a; color: #c9ffe0; }
+.worldview .wv-gpsjam .gpsjam-badge-stale { background: #5a4a1d; color: #ffe9b0; }
+.worldview .wv-gpsjam .gpsjam-badge-historical,
+.worldview .wv-gpsjam .gpsjam-badge-unknown { background: #33444b; color: #d5e3e8; }
+.worldview .wv-gpsjam .gpsjam-warning { color: #ffd27a; }
+.worldview .wv-gpsjam .gpsjam-note { color: #9ebdc7; font-size: 11px; }
+.worldview .wv-gpsjam .gpsjam-top { font-size: 11px; border-collapse: collapse; margin: 4px 0; }
+.worldview .wv-gpsjam .gpsjam-top th, .worldview .wv-gpsjam .gpsjam-top td { padding: 1px 6px; text-align: left; font-variant-numeric: tabular-nums; }

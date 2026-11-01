@@ -1,0 +1,16 @@
+.wv-hazards { margin: 16px 0 24px; padding: 22px; border: 1px solid #7a5a3e; border-radius: 8px; background: #1f1712; color: #f3e9df; font: 13px/1.6 system-ui, sans-serif; }
+.wv-hazards h2 { font-size: 21px; margin-top: 0; }
+.wv-hazards h2 small { display: block; color: #ff9a6a; font-size: 11px; letter-spacing: .1em; }
+.wv-hazards h3 { font-size: 14px; margin: 0 0 6px; }
+.wv-hazards p, .wv-hazards li { overflow-wrap: anywhere; color: #e2d3c6; }
+.wv-hazards .fine { font-size: 12px; color: #c9b6a5; }
+.wv-hazards .hz-bbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; border: 1px solid #5d4636; border-radius: 6px; margin: 10px 0; }
+.wv-hazards .hz-bbox label { display: flex; flex-direction: column; font-size: 11px; text-transform: uppercase; }
+.wv-hazards .hz-bbox input { width: 7em; }
+.wv-hazards .hz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.wv-hazards .hz-card { border: 1px solid #5d4636; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; gap: 6px; }
+.wv-hazards button { align-self: flex-start; }
+.wv-hazards .hz-status.disabled, .wv-hazards .hz-error, .wv-hazards .hz-failed { color: #ff8f8f; }
+.wv-hazards .hz-stale { color: #f0c36a; }
+.wv-hazards .hz-results { padding-left: 18px; }
+.wv-hazards .hz-message { font-weight: 600; }

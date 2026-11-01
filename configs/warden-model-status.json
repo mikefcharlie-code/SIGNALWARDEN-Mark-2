@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "advisoryOnly": true,
+  "weightsAvailable": false,
+  "automaticDownloads": false,
+  "externalInference": "disabled",
+  "models": [
+    {
+      "id": "warden-trust",
+      "name": "Warden-TRUST",
+      "stage": "baseline-only",
+      "foundation": "Deterministic provenance, freshness, synthetic-data and fail-closed reliability labels are integrated with evidence and reports.",
+      "nextGate": "Pinned weights, trained calibration, source-history features and evaluation data."
+    },
+    {
+      "id": "warden-envelope",
+      "name": "Warden-ENVELOPE",
+      "stage": "design-only",
+      "foundation": "Advisory event contract only; no geometry or airspace model implementation.",
+      "nextGate": "Validated non-operational geometry fixtures, evaluation, and reviewed safety limits."
+    },
+    {
+      "id": "warden-change",
+      "name": "Warden-CHANGE",
+      "stage": "design-only",
+      "foundation": "Advisory event contract only; no image-change inference implementation.",
+      "nextGate": "Pinned local model choice, labeled evaluation set, and uncertainty calibration."
+    },
+    {
+      "id": "warden-geo",
+      "name": "Warden-GEO",
+      "stage": "design-only",
+      "foundation": "Advisory event contract only; no geolocation inference implementation.",
+      "nextGate": "Validated camera calibration and labeled geolocation error evaluation."
+    },
+    {
+      "id": "warden-sky",
+      "name": "Warden-SKY",
+      "stage": "design-only",
+      "foundation": "Advisory event contract only; no traffic or deconfliction inference implementation.",
+      "nextGate": "Validated non-DAA fixtures, uncertainty evaluation, and independent safety review."
+    },
+    {
+      "id": "warden-track",
+      "name": "Warden-TRACK",
+      "stage": "design-only",
+      "foundation": "Advisory event contract only; no track-fusion inference implementation.",
+      "nextGate": "Local sensor adapters, labeled track fixtures, and track-continuity evaluation."
+    },
+    {
+      "id": "warden-telemetry-health",
+      "name": "Warden-TH",
+      "stage": "synthetic-prototype",
+      "foundation": "Seeded fault generator, 120-second/2 Hz missingness-age-trust-aware features, deterministic baseline and CPU ONNX worker are integrated. A hash-pinned synthetic-only prototype exists outside Git; it is not installed or field validated.",
+      "nextGate": "Independent review of the synthetic results, then license-reviewed representative non-operational/SITL data and per-airframe calibration under a separately approved safety protocol; synthetic targets do not establish flight readiness."
+    },
+    {
+      "id": "warden-nav",
+      "name": "Warden-NAV",
+      "stage": "synthetic-prototype",
+      "foundation": "A fixed 120-second/2 Hz window, coordinate-free position/velocity, altitude-rate, heading/yaw, MSL-relative and GPS-state/age residuals, a transparent threshold baseline, trust/age/presence gates, evidence-linked advisory events, and an optional hash-pinned local CPU ONNX head are integrated. ONNX weights and calibration are generated from seeded synthetic scenarios only, stored outside Git, and are not installed in the local runtime cache.",
+      "nextGate": "Independent review of synthetic results and residual thresholds, then license-reviewed non-operational/SITL data and per-airframe calibration under a separately approved safety protocol; no flight or operational validation is established."
+    }
+  ],
+  "limitations": [
+    "This registry describes implementation readiness, not flight or operational readiness.",
+    "The Warden-TH prototype is trained only on project-generated synthetic telemetry; its hash manifest is checked in, but weights are not installed in the local runtime cache.",
+    "The Warden-NAV prototype is trained and calibrated only on seeded synthetic telemetry; its pinned hashes are checked in, but weights are not installed in the local runtime cache. No private operational data, public logs, live hardware, SITL run, flight test, or external AI was used.",
+    "Warden-NAV never returns raw absolute coordinates, a corrected position, or a navigation solution, and has no command, control, mission-planning, or actuator path.",
+    "Held-out seeded-synthetic targets were met; those results are not field, SITL, flight or safety validation.",
+    "Any future learned inference must remain local by default and require explicit user selection; no silent external fallback is permitted."
+  ]
+}

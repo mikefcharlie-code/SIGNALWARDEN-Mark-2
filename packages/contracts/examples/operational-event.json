@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "event_id": "event-stream-gap-001",
+  "event_type": "stream_gap",
+  "severity": "warning",
+  "status": "open",
+  "occurred_at": "2026-01-01T00:00:10Z",
+  "received_at": "2026-01-01T00:00:11Z",
+  "source": "telemetry-stream",
+  "entity": {"kind": "stream", "id": "sim-stream-01"},
+  "correlation_id": "corr-telemetry-001",
+  "summary": "Synthetic subscriber fell behind and must resynchronize",
+  "attributes": {"aircraft_id": "sim-ucas-001", "resync_required": true}
+}

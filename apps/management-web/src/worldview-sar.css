@@ -1,0 +1,32 @@
+.wv-sar { margin: 16px 0 24px; padding: 22px; border: 1px solid #507779; border-radius: 8px; background: #0a2029; color: #e4f1ee; font: 13px/1.6 system-ui, sans-serif; }
+.wv-sar h2 { font-size: 21px; margin-top: 0; }
+.wv-sar h2 small { display: block; color: #e4b663; font-size: 11px; letter-spacing: .1em; }
+.wv-sar p, .wv-sar dd, .wv-sar figcaption { overflow-wrap: anywhere; }
+.wv-sar p, .wv-sar figcaption { color: #bed3d5; }
+.wv-sar .sar-opt-in { display: flex; gap: 10px; font-weight: 700; padding: 12px; border: 1px solid #507779; }
+.sar-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.sar-controls label { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.sar-controls input[type=number] { width: 90px; }
+.wv-sar input:not([type=checkbox]), .wv-sar select, .wv-sar button { padding: 9px; border: 1px solid #567c81; border-radius: 4px; background: #16343e; color: #edf8f1; font: inherit; }
+.wv-sar button { cursor: pointer; }
+.wv-sar button:disabled { opacity: .45; cursor: not-allowed; }
+.wv-sar [role=status] { border-left: 3px solid #55c9b9; padding: 12px; background: #12323a; }
+.wv-sar .sar-error, .wv-sar .sar-warning { border-left: 3px solid #e4b663; padding: 12px; color: #f8d19a; background: #342f25; }
+.wv-sar dl { display: grid; grid-template-columns: minmax(160px, 1fr) 3fr; gap: 9px; }
+.wv-sar dt { color: #8fbfbe; }
+.wv-sar dd { margin: 0; }
+.sar-results { margin: 18px 0; }
+.sar-results label { display: grid; gap: 6px; }
+.sar-results select { width: 100%; min-width: 0; }
+.wv-sar figure { margin: 22px 0; }
+.wv-sar figure img { display: block; max-width: 100%; max-height: 680px; object-fit: contain; margin: auto; border: 1px solid #507779; }
+.wv-sar svg { display: block; width: 100%; max-height: 440px; border: 1px solid #507779; }
+.wv-sar a { color: #91dfd2; }
+@media (max-width: 700px) { .wv-sar { padding: 12px; } .wv-sar dl { grid-template-columns: 1fr; } .wv-sar dd { margin-bottom: 10px; } .sar-controls input[type=number] { width: 72px; } }
+
+.wv-sar-sources > label { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 18px; font-weight: 700; }
+.wv-sar-sources > label select { padding: 9px; background: #16343e; color: #edf8f1; border: 1px solid #567c81; max-width: 100%; }
+.wv-sar canvas { display: block; width: min(100%, 900px); height: auto; max-height: 680px; object-fit: contain; margin: auto; image-rendering: auto; border: 1px solid #507779; }
+.wv-sar .umbra-prefix { width: min(600px, 70vw); }
+.wv-sar .sar-controls select { max-width: min(700px, 72vw); }
+.wv-sar li { overflow-wrap: anywhere; margin-bottom: 9px; }

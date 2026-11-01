@@ -1,0 +1,22 @@
+{"provider":"gpsjam","date":"2026-10-30","timeZone":"UTC","periodStart":"2026-10-30T00:00:00Z","periodHours":24,
+ "source":"merged","sourceLabel":"airplanes.live and ADS-B Exchange (de-duplicated per aircraft)","suspect":false,"manifestBadHexes":597,
+ "sourceUrl":"https://gpsjam.org/data/merged/2026-10-30-h3_4.csv","retrievedAt":"2026-10-31T23:58:05Z","h3Resolution":4,
+ "columns":["hex","goodAircraft","badAircraft"],"cellCount":9,"skippedRows":0,
+ "attribution":"GPSJAM by John Wiseman (gpsjam.org); aircraft navigation-accuracy reports from airplanes.live and/or ADS-B Exchange",
+ "termsUrl":"https://gpsjam.org/faq/","termsNote":"x","disclosure":"x","faqUrl":"https://gpsjam.org/faq/","cache":"miss",
+ "cells":[
+  ["841f725ffffffff",40,30],
+  ["841f607ffffffff",90,5],
+  ["84089b1ffffffff",200,3],
+  ["843f4dbffffffff",10,2],
+  ["84488a5ffffffff",50,9],
+  ["842a107ffffffff",300,0],
+  ["841659bffffffff",4,4],
+  ["849b437ffffffff",1,0],
+  ["8408001ffffffff",3,0],
+  ["851f725ffffffff",5,5],
+  ["841f725ffffffff",1,1],
+  ["zz",1,1],
+  ["842a107ffffffff",-1,2],
+  ["84488a7ffffffff",0,0]
+ ]}

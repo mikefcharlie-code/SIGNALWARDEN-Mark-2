@@ -1,0 +1,10 @@
+{"provider":"gpsjam","sourceUrl":"https://gpsjam.org/data/manifest.csv","retrievedAt":"2026-10-31T23:58:00Z","cache":"miss",
+ "attribution":"GPSJAM by John Wiseman (gpsjam.org); aircraft navigation-accuracy reports from airplanes.live and/or ADS-B Exchange",
+ "termsUrl":"https://gpsjam.org/faq/","termsNote":"x","disclosure":"x","latest":"2026-10-30","earliest":"2026-10-27",
+ "dates":[
+  {"date":"2026-10-27","suspect":false,"badHexes":585,"source":"merged"},
+  {"date":"2026-10-28","suspect":true,"badHexes":594,"source":"merged"},
+  {"date":"bogus","suspect":false,"badHexes":1,"source":"merged"},
+  {"date":"2026-10-29","suspect":false,"badHexes":513,"source":"elsewhere"},
+  {"date":"2026-10-30","suspect":false,"badHexes":597,"source":"merged"}
+ ]}

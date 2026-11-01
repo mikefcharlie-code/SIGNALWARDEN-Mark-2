@@ -1,0 +1,25 @@
+.sw-welcome { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; padding: 28px; margin-bottom: 28px; border: 1px solid #36515e; border-radius: 5px; background: #182e39; color: #f6f5ed; }
+.sw-welcome .eyebrow { color: #efa77e; }
+.sw-welcome h1 { font-size: clamp(28px, 3vw, 40px); letter-spacing: -.035em; margin: 12px 0; }
+.sw-welcome-copy p { color: #b6c6cc; line-height: 1.6; max-width: 470px; font-size: 14px; }
+.sw-boundaries { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw-boundaries span { border: 1px solid #49616c; border-radius: 3px; padding: 5px 8px; color: #c3d4dc; font: 9px monospace; letter-spacing: .06em; }
+.sw-launch-links { display: grid; gap: 10px; align-content: center; }
+.sw-launch-links button { border: 1px solid #49616c; border-radius: 4px; padding: 16px; text-align: left; color: #f6f5ed; background: #213b47; }
+.sw-launch-links button:hover { background: #2c4b58; border-color: #efa77e; }
+.sw-launch-links strong { display: flex; justify-content: space-between; font-size: 15px; }
+.sw-launch-links small { display: block; margin-top: 6px; color: #b6c6cc; line-height: 1.5; }
+.sw-welcome .sw-brand-note { grid-column: 1 / -1; border-top: 1px solid #36515e; margin: 0; padding-top: 14px; color: #a7bbc4; font-size: 11px; line-height: 1.6; }
+.sidebar { overflow-y: auto; }
+.brand strong { font-size: 17px; letter-spacing: -.025em; }
+.workspace-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin: -10px 0 22px; }
+.workspace-jumps a { color: var(--blue); border: 1px solid var(--line); border-radius: 3px; padding: 7px 11px; text-decoration: none; background: var(--panel); font-size: 12px; }
+.workspace-jumps a:hover { border-color: var(--blue); }
+.ob-section-anchor { scroll-margin-top: 100px; }
+.ob-connectivity-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 14px 0 20px; }
+.ob-connectivity-cards > div { border: 1px solid var(--line); border-radius: 4px; background: var(--panel); padding: 14px; min-width: 0; }
+.ob-connectivity-cards span, .ob-connectivity-cards small { display: block; font-size: 11px; color: #65727a; line-height: 1.5; }
+.ob-connectivity-cards strong { display: block; margin: 7px 0; font-size: 14px; overflow-wrap: anywhere; }
+.ob-connectivity-cards .is-warning { border-color: #d7ac8c; background: #fff5e9; }
+@media (max-width: 1100px) { .ob-connectivity-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sw-welcome { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .ob-connectivity-cards { grid-template-columns: 1fr; } .sw-welcome { padding: 20px; } }

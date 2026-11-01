@@ -1,0 +1,16 @@
+.wv-basemap { margin: 16px 0 24px; padding: 22px; border: 1px solid #507779; border-radius: 8px; background: #0a2029; color: #e4f1ee; font: 13px/1.6 system-ui, sans-serif; }
+.wv-basemap h2 { font-size: 21px; margin-top: 0; }
+.wv-basemap h2 small { display: block; color: #e4b663; font-size: 11px; letter-spacing: .1em; }
+.wv-basemap p, .wv-basemap li { color: #bed3d5; overflow-wrap: anywhere; }
+.wv-basemap .basemap-opt-in { display: flex; gap: 10px; font-weight: 700; padding: 12px; border: 1px solid #507779; }
+.wv-basemap .basemap-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 10px 0; border: 0; padding: 0; }
+.wv-basemap fieldset.basemap-controls { border: 1px solid #355c60; padding: 10px; }
+.wv-basemap .basemap-controls label { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.wv-basemap input:not([type=checkbox]):not([type=range]), .wv-basemap select, .wv-basemap button { padding: 8px; border: 1px solid #567c81; border-radius: 4px; background: #16343e; color: #edf8f1; font: inherit; max-width: 100%; }
+.wv-basemap button { cursor: pointer; }
+.wv-basemap button:disabled { opacity: .45; cursor: not-allowed; }
+.wv-basemap [role=status] { border-left: 3px solid #55c9b9; padding: 10px; background: #12323a; }
+.wv-basemap .basemap-warning { border-left: 3px solid #e4b663; padding: 10px; color: #f8d19a; background: #342f25; }
+.wv-basemap .basemap-note { font-size: 12px; }
+.wv-basemap a { color: #8fe0d2; }
+.worldview .globe-basemap-credit a { color: #e6f3ed; text-decoration: none; }
